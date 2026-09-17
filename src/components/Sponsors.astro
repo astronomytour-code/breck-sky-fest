@@ -3,7 +3,19 @@ import Icon from './Icon.astro';
 const { compact = false } = Astro.props;
 ---
 <div class:list={['sponsor-grid', {compact}]}>
-  <div class="sponsor sponsor-gold"><span class="sponsor-level">Gold sponsor</span><Icon name="stars" size={34}/><h3>TBA</h3><p>Our next chapter has room for you.</p><a href="/sponsors/#become-a-sponsor" class="text-link">Explore sponsorship <span aria-hidden="true">↗</span></a></div>
-  <div class="sponsor sponsor-silver"><span class="sponsor-level">Silver sponsor</span><Icon name="mountain" size={34}/><h3>Town of<br/>Breckenridge</h3><a href="https://www.townofbreckenridge.com/" class="text-link">Visit the town website <span aria-hidden="true">↗</span></a></div>
-  <div class="sponsor sponsor-bronze"><span class="sponsor-level">Bronze sponsor</span><img src="/images/astrotours-logo.webp" alt="AstroTours.org logo" width="84" height="84" loading="lazy"/><h3>AstroTours.org</h3><a href="https://www.astrotours.org/" class="text-link">Meet the astronomers <span aria-hidden="true">↗</span></a></div>
+  <div class="sponsor sponsor-intergalactic"><span class="sponsor-level">Intergalactic sponsor</span><Icon name="stars" size={34}/><h3>TBA</h3><p>Our biggest orbit has room for a founding supporter.</p><a href="/sponsors/#become-a-sponsor" class="text-link">Explore sponsorship <span aria-hidden="true">↗</span></a></div>
+  <div class="sponsor sponsor-interstellar"><span class="sponsor-level">Interstellar sponsor</span><Icon name="mountain" size={34}/><h3>Town of<br/>Breckenridge</h3><a href="https://www.townofbreckenridge.com/" class="text-link">Visit the town website <span aria-hidden="true">↗</span></a></div>
+  <div class="sponsor sponsor-interplanetary"><span class="sponsor-level">Interplanetary sponsor</span><img src="/images/astrotours-logo.webp" alt="AstroTours.org logo" width="84" height="84" loading="lazy"/><h3>AstroTours.org</h3><a href="https://www.astrotours.org/" class="text-link">Meet the astronomers <span aria-hidden="true">↗</span></a></div>
+  <div class="sponsor sponsor-orbital"><span class="sponsor-level">Orbital sponsor</span><Icon name="stars" size={34}/><h3>TBA</h3><p>A place for local businesses and community supporters to help Breck look up.</p><a href="/sponsors/#become-a-sponsor" class="text-link">Join the orbit <span aria-hidden="true">↗</span></a></div>
 </div>
+
+<style>
+  .sponsor-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .sponsor-intergalactic{--sponsor-color:#c89a38}
+  .sponsor-interstellar{--sponsor-color:#a0c7cc}
+  .sponsor-interplanetary{--sponsor-color:#e9afb5}
+  .sponsor-orbital{--sponsor-color:#bdcba6}
+  .sponsor-intergalactic h3{font-size:3rem;letter-spacing:.04em}
+  @media(max-width:1000px){.sponsor-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:620px){.sponsor-grid{grid-template-columns:1fr}}
+</style>
