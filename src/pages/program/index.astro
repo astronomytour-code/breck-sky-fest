@@ -1,0 +1,26 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import ExperienceCard from '../../components/ExperienceCard.astro';
+import Updates from '../../components/Updates.astro';
+import Icon from '../../components/Icon.astro';
+import {experiences} from '../../data/festival';
+const filters=[['all','All experiences'],['family','Family time'],['day','Daytime'],['night','After dark'],['arts','Arts & making'],['wellness','Wellness'],['school','Schools']];
+---
+<Layout title="Program Preview | Breck Sky Fest" description="Explore the planned Breck Sky Fest program: telescope nights, solar science, school sessions, art, photography, and more. Dates, venues, and tickets coming soon.">
+  <PageIntro eyebrow="The 2026 program preview" title="A little wonder. All day long." description="Take a look at the experiences we’re developing for the first Breck Sky Fest, from hands-on daytime discoveries to a night under the stars." icon="sun"/>
+  <section class="section paper-section"><div class="wrap"><div class="notice"><Icon name="clock" size={26}/><div><strong>The program is taking shape.</strong><p>These are planned and proposed experiences, with dates, venues, hosts, and times still to be confirmed. Tickets and registration are coming soon.</p></div></div><div class="filter-bar" data-filters hidden aria-label="Filter experiences">{filters.map(([value,label])=><button type="button" data-filter={value} aria-pressed={value==='all'}>{label}</button>)}</div><p class="results-count" id="results-count" aria-live="polite">Explore {experiences.length} planned and proposed experiences</p><div class="experience-grid" id="experience-list">{experiences.map(event=><ExperienceCard event={event}/>)}</div><p class="photo-note">Photos are from previous AstroTours programs. Workshops and community additions will take shape with participating partners.</p><div class="inline-callout"><div><span class="eyebrow">See a place for your idea?</span><h2>Help shape what happens next.</h2><p>Artists, educators, local businesses, and community groups are invited to propose an activity or adapt an event they already run.</p></div><a class="button button-dark" href="/get-involved/">Get involved <Icon name="arrow" size={20}/></a></div></div></section>
+  <Updates/>
+  <script>
+    const filterBar=document.querySelector<HTMLElement>('[data-filters]');
+    if(filterBar)filterBar.hidden=false;
+    const cards=Array.from(document.querySelectorAll<HTMLElement>('[data-categories]'));
+    const buttons=Array.from(document.querySelectorAll<HTMLButtonElement>('[data-filter]'));
+    buttons.forEach(button=>button.addEventListener('click',()=>{
+      const category=button.dataset.filter;let visible=0;
+      buttons.forEach(item=>item.setAttribute('aria-pressed',String(item===button)));
+      cards.forEach(card=>{const show=category==='all'||card.dataset.categories?.split(' ').includes(category||'');card.hidden=!show;if(show)visible++;});
+      const count=document.getElementById('results-count');if(count)count.textContent=`${visible} planned and proposed experience${visible===1?'':'s'} · ${button.textContent}`;
+    }));
+  </script>
+</Layout>

@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageIntro from '../components/PageIntro.astro';
+import Icon from '../components/Icon.astro';
+const photos=[
+  {file:'community-night',caption:'An evening gathered around the telescope',alt:'People gathered at a brightly lit telescope during a night program'},
+  {file:'telescope-stars',caption:'A telescope beneath a sky full of stars',alt:'A telescope illuminated red beneath the Milky Way'},
+  {file:'family-telescope',caption:'A first look, shared with the family',alt:'Adults and a child taking turns at a telescope at dusk'},
+  {file:'solar-discovery',caption:'Astronomy starts before sunset',alt:'Visitors observing through a solar telescope'},
+  {file:'mountain-stars',caption:'Telescope time in the mountains',alt:'A telescope silhouetted against stars above a mountain horizon'},
+  {file:'light-painting',caption:'Playing with light after dark',alt:'Colorful light-painting trails made by a group outside'},
+  {file:'moon-closeup',caption:'A closer look at the Moon',alt:'Craters and shadows on the surface of the Moon photographed through a telescope'},
+  {file:'friends-telescope',caption:'Good questions. Good company.',alt:'Friends smiling together beside a telescope'},
+  {file:'stargazers',caption:'Learning the sky together',alt:'A small group under red light pointing into the night sky'},
+];
+---
+<Layout title="Photo Gallery | Breck Sky Fest" description="Explore real telescope sessions, mountain skies, solar observing, and family astronomy from the AstroTours photo collection.">
+  <PageIntro eyebrow="From the AstroTours photo collection" title="A taste of telescope time." description="Real people, real telescopes, and a few very good evenings. These photos show previous AstroTours activities, not a previous Breck Sky Fest." accent="blue" icon="camera"/>
+  <section class="section paper-section"><div class="wrap"><div class="gallery-grid">{photos.map((photo,i)=><figure><a href={`/images/${photo.file}.webp`} class="gallery-link" data-caption={photo.caption} data-alt={photo.alt} aria-label={`View photo: ${photo.caption}`}><img src={`/images/${photo.file}.webp`} alt={photo.alt} width="800" height="650" loading="lazy"/><span aria-hidden="true"><Icon name="diagonal"/></span></a><figcaption><span>{String(i+1).padStart(2,'0')}</span>{photo.caption}</figcaption></figure>)}</div><p class="photo-note">Photos supplied by AstroTours.org. Locations pictured are not confirmed festival venues.</p><div class="inline-callout"><div><h2>Come see what we’re planning.</h2><p>Explore the first festival’s telescope sessions, science activities, and proposed community events.</p></div><a href="/program/" class="button button-dark">Program preview <Icon name="arrow" size={20}/></a></div></div></section>
+  <dialog class="photo-dialog" aria-label="Photo viewer"><button class="close-dialog" type="button" aria-label="Close photo">Close ×</button><img alt=""/><p></p></dialog>
+  <script>
+    const dialog=document.querySelector<HTMLDialogElement>('.photo-dialog');
+    const dialogImage=dialog?.querySelector('img');
+    const caption=dialog?.querySelector('p');
+    let trigger:HTMLAnchorElement|null=null;
+    document.querySelectorAll<HTMLAnchorElement>('.gallery-link').forEach(link=>link.addEventListener('click',event=>{if(!dialog||!dialogImage||!caption)return;event.preventDefault();trigger=link;dialogImage.src=link.href;dialogImage.alt=link.dataset.alt||'';caption.textContent=link.dataset.caption||'';dialog.showModal();}));
+    dialog?.querySelector('button')?.addEventListener('click',()=>dialog.close());
+    dialog?.addEventListener('click',event=>{if(event.target===dialog)dialog.close();});
+    dialog?.addEventListener('close',()=>trigger?.focus());
+  </script>
+</Layout>

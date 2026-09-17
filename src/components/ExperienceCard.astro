@@ -1,0 +1,18 @@
+---
+import Icon from './Icon.astro';
+import type { Experience } from '../data/festival';
+interface Props { event: Experience; }
+const {event} = Astro.props;
+---
+<article class:list={['experience-card', `accent-${event.accent}`]} data-categories={event.filters.join(' ')}>
+  <a class="card-image" href={`/program/${event.slug}/`} tabindex="-1" aria-hidden="true">
+    {event.image ? <img src={`/images/${event.image}.webp`} alt="" width="760" height="540" loading="lazy" decoding="async"/> : <div class="card-art"><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span><Icon name={event.icon} size={88}/><span class="art-label">Breck Sky Fest · 2026</span></div>}
+    <span class="image-tag">{event.category}</span>
+  </a>
+  <div class="card-copy">
+    <span class="status-label"><span></span>{event.status}</span>
+    <h3><a href={`/program/${event.slug}/`}>{event.title}</a></h3>
+    <p>{event.summary}</p>
+    <div class="card-foot"><span>Date & time TBA</span><a href={`/program/${event.slug}/`} aria-label={`Explore ${event.title}`}><Icon name="diagonal" size={20}/></a></div>
+  </div>
+</article>

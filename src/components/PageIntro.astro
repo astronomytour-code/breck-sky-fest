@@ -1,0 +1,5 @@
+---
+import Icon from './Icon.astro';
+const {eyebrow, title, description, accent='yellow', icon='stars'} = Astro.props;
+---
+<section class:list={['page-intro', `accent-${accent}`]}><div class="wrap"><a class="breadcrumb" href="/">Home <span aria-hidden="true">/</span></a><div class="intro-heading"><div><span class="eyebrow">{eyebrow}</span><h1>{title}</h1><p class="lede">{description}</p></div><div class="intro-symbol"><Icon name={icon} size={120}/></div></div></div></section>

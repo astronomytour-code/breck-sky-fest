@@ -1,222 +1,25 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Breck Sky Fest | Retro Science Festival</title>
-<meta name="description" content="Two days of telescopes, solar science, mountain nights, and reasons to look up.">
-<link rel="stylesheet" href="/styles.css">
-</head>
-<body>
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="#top">BRECK <span>SKY FEST</span></a>
-    <nav>
-      <a href="#events">Events</a>
-      <a href="#expect">What to expect</a>
-      <a href="#partners">Want in?</a>
-      <a href="#visit">Visit</a>
-      <a class="button" href="mailto:Luke@AstroTours.org?subject=Breck%20Sky%20Fest%20partnership">Partner with us</a>
-    </nav>
-  </div>
-</header>
-
-<main id="top">
-<section class="hero sky-section">
-  <div class="sky-decor" aria-hidden="true"><img src="/sky/sky-1.svg" alt=""></div>
-<div class="wrap hero-wrap">
-    <div class="hero-copy">
-      <span class="eyebrow">Breckenridge, Colorado · November 2026</span>
-      <h1>BRECK<br><span class="y">SKY</span> <span class="p">FEST</span></h1>
-      <p class="lede">Two days of telescopes, solar science, mountain nights, and very good reasons to look up.</p>
-      <div class="actions">
-        <a class="button" href="#events">Pick your sky ↓</a>
-        <a class="button pink" href="#partners">Want in?</a>
-      </div>
-      <div class="stamps">
-        <span class="stamp">Inaugural festival</span>
-        <span class="stamp">4 programs</span>
-        <span class="stamp">Sunlight → starlight</span>
-      </div>
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import ExperienceCard from '../components/ExperienceCard.astro';
+import Sponsors from '../components/Sponsors.astro';
+import Updates from '../components/Updates.astro';
+import {experiences,faqs} from '../data/festival';
+---
+<Layout>
+  <section class="home-hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy"><span class="eyebrow"><span class="tiny-star">✦</span> A new festival. A shared sky.</span><h1>BRECK<br/><span>SKY FEST</span><span class="hero-period">.</span></h1><p class="hero-tagline">A weekend for looking up.</p><p class="hero-description">Telescopes. Art. Hands-on science. A new astronomy and dark-sky festival for curious people of all ages in Breckenridge, Colorado.</p><div class="actions"><a href="/program/" class="button">Explore the program <Icon name="arrow" size={20}/></a><a href="/visit/" class="quiet-link">Plan your visit <span aria-hidden="true">↗</span></a></div><p class="hero-status"><span class="status-dot"></span> Planned for November 2026 · Dates & venues TBA</p></div>
+      <figure class="hero-figure"><div class="hero-photo"><img src="/images/mountain-stars.webp" alt="A telescope silhouetted against the stars and mountains at an AstroTours observing session" width="1280" height="853" fetchpriority="high"/><span class="photo-coordinate">A little closer to the universe.</span><div class="hero-photo-bottom"><span>Sunlight<br/>to starlight.</span><Icon name="stars" size={46}/></div></div><div class="festival-seal"><span>First edition</span><strong>2026</strong><span>Breckenridge, CO</span></div><figcaption>From the AstroTours photo collection</figcaption></figure>
     </div>
-  </div>
-</section>
-
-<div class="marquee">
-  <div class="track">
-    <span>Solar Lab</span><span>Night Shift</span><span>Telescopes</span><span>Mountain Sky</span><span>Breck Sky School</span><span>Breck Sky Night</span><span>Breck Sky Day</span><span>Breck Sky Summit</span>
-    <span>Solar Lab</span><span>Night Shift</span><span>Telescopes</span><span>Mountain Sky</span>
-  </div>
-</div>
-
-<section class="intro sky-section">
-  <div class="sky-decor" aria-hidden="true"><img src="/sky/sky-2.svg" alt=""></div>
-  <div class="wrap split">
-    <div>
-      <span class="eyebrow" style="background:var(--blue)">What is this?</span>
-      <h2>A whole weekend built around the sky.</h2>
-    </div>
-    <div>
-      <p class="large">Breck Sky Fest is a new astronomy and dark-sky festival designed to make Breckenridge feel a little more like an observatory, a science fair, and a mountain party all at once.</p>
-      <p>The inaugural weekend moves from student science and solar observing into public telescope nights and a signature high-country stargazing experience.</p>
-    </div>
-  </div>
-</section>
-
-<section class="expect" id="expect">
-  <div class="wrap">
-    <span class="eyebrow" style="background:var(--green)">What to expect</span>
-    <h2>Do astronomy. Don’t just hear about it.</h2>
-    <div class="cards3">
-      <div class="card" style="--accent:var(--yellow)"><div class="num">01</div><h3>Look at the Sun</h3><p>Safely observe the Sun through dedicated solar telescopes and see features you cannot see with the naked eye.</p></div>
-      <div class="card" style="--accent:var(--blue)"><div class="num">02</div><h3>Look through telescopes</h3><p>See planets, stars, clusters, galaxies, and objects selected for the actual November sky.</p></div>
-      <div class="card" style="--accent:var(--pink)"><div class="num">03</div><h3>Learn the sky</h3><p>Find constellations, understand what you are seeing, and leave knowing more than when you arrived.</p></div>
-      <div class="card" style="--accent:var(--green)"><div class="num">04</div><h3>Play with light</h3><p>Use spectra, optics, scale models, and hands-on demonstrations to make invisible astronomy tangible.</p></div>
-      <div class="card" style="--accent:var(--orange)"><div class="num">05</div><h3>Get warm</h3><p>Mountain astronomy is cold. Warm-up spaces, drinks, and hospitality can be part of the experience.</p></div>
-      <div class="card" style="--accent:var(--purple)"><div class="num">06</div><h3>Go higher</h3><p>The signature Saturday night is designed as the premium high-country experience of the festival.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="events" id="events">
-  <div class="wrap">
-    <span class="eyebrow" style="background:var(--pink);color:#fff">Pick your sky</span>
-    <h2>Four programs. Four reasons to show up.</h2>
-    <div class="eventgrid">
-      <article class="event" style="--accent:var(--yellow)"><small>Friday · Daytime · Solar Lab</small><h3>Breck Sky School</h3><p>Hands-on astronomy for students with solar observing, spectroscopy, light, color, and science they can test themselves.</p><span class="pill">Best for students</span></article>
-      <article class="event" style="--accent:var(--blue)"><small>Friday · Evening · Night Shift</small><h3>Breck Sky Night</h3><p>The community telescope night: astronomers, constellations, planets, deep-sky objects, and an easy way to wander into the universe.</p><span class="pill">Best for everyone</span></article>
-      <article class="event" style="--accent:var(--green)"><small>Saturday · Afternoon · Field Lab</small><h3>Breck Sky Day</h3><p>Solar telescopes, optics, scale models, light, color, and things you can poke, test, and look through.</p><span class="pill">Best for families</span></article>
-      <article class="event" style="--accent:var(--pink)"><small>Saturday · Evening · Summit Session</small><h3>Breck Sky Summit</h3><p>Limited-capacity mountain stargazing with telescopes, astronomers, warm drinks, and the high-country sky overhead.</p><span class="pill">Best for the full experience</span></article>
-    </div>
-  </div>
-</section>
-
-<section class="guide sky-section">
-  <div class="sky-decor" aria-hidden="true"><img src="/sky/sky-3.svg" alt=""></div>
-  <div class="wrap guidegrid">
-    <div>
-      <span class="eyebrow">Field guide</span>
-      <h2>Four things can change the whole night.</h2>
-      <p>Mountain astronomy is part science, part weather watching, and part being prepared.</p>
-    </div>
-    <div>
-      <div class="guide-row"><strong>Moon</strong><p>Changes how dark the sky looks and which deep-sky objects stand out best.</p></div>
-      <div class="guide-row"><strong>Cloud</strong><p>Can turn a perfect observing plan into a waiting game.</p></div>
-      <div class="guide-row"><strong>Smoke</strong><p>Can affect transparency even when the sky looks technically clear.</p></div>
-      <div class="guide-row"><strong>Road</strong><p>Mountain access matters. Venue and transportation details will be part of every event listing.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="why sky-section">
-  <div class="sky-decor" aria-hidden="true"><img src="/sky/sky-4.svg" alt=""></div>
-  <div class="wrap whygrid">
-    <div>
-      <span class="eyebrow" style="background:var(--blue)">Why Breckenridge?</span>
-      <h2>The place is part of the program.</h2>
-      <p class="large">Breck Sky Fest is meant to feel specific to Breckenridge, not like a telescope event dropped into any town.</p>
-    </div>
-    <div class="whycards">
-      <div class="whycard" style="--accent:var(--yellow)"><h3>Dark-sky identity</h3><p>A direct way to experience why responsible lighting and dark skies matter.</p></div>
-      <div class="whycard" style="--accent:var(--blue)"><h3>Mountain atmosphere</h3><p>Cold air, elevation, open horizons, and alpine landscape become part of the experience.</p></div>
-      <div class="whycard" style="--accent:var(--pink)"><h3>Science tourism</h3><p>An educational, memorable reason to experience Breckenridge differently.</p></div>
-      <div class="whycard" style="--accent:var(--green)"><h3>All-day astronomy</h3><p>Solar viewing and hands-on science mean the festival does not wait until dark.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="audience">
-  <div class="wrap">
-    <span class="eyebrow">Who is this for?</span>
-    <h2>Basically anyone willing to look up.</h2>
-    <div class="audgrid">
-      <div class="aud"><div class="icon">☄</div><h3>Families</h3><p>Daytime science, telescopes, and approachable programs.</p></div>
-      <div class="aud"><div class="icon">✦</div><h3>Science nerds</h3><p>Real observing, spectra, optics, and people happy to go deeper.</p></div>
-      <div class="aud"><div class="icon">△</div><h3>Mountain people</h3><p>A new reason to experience Breckenridge after dark.</p></div>
-      <div class="aud"><div class="icon">☕</div><h3>Curious humans</h3><p>No telescope experience required. Show up curious.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="flow sky-section">
-  <div class="sky-decor" aria-hidden="true"><img src="/sky/sky-5.svg" alt=""></div>
-  <div class="wrap">
-    <span class="eyebrow" style="background:var(--pink);color:#fff">Festival flow</span>
-    <h2>Start with the Sun. End under the stars.</h2>
-    <div class="flowgrid">
-      <div class="stop"><div class="dot" style="--accent:var(--yellow)">01</div><h3>Learn</h3><p>Students start with solar science, light, and spectra.</p></div>
-      <div class="stop"><div class="dot" style="--accent:var(--blue)">02</div><h3>Gather</h3><p>The community comes together for a telescope night.</p></div>
-      <div class="stop"><div class="dot" style="--accent:var(--green)">03</div><h3>Explore</h3><p>Saturday turns astronomy into a daytime festival.</p></div>
-      <div class="stop"><div class="dot" style="--accent:var(--pink)">04</div><h3>Go up</h3><p>The weekend finishes with the signature mountain session.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="partners" id="partners">
-  <div class="wrap">
-    <span class="eyebrow" style="background:var(--green)">Want in?</span>
-    <h2>Bring telescopes. Bring cocoa. Bring weird ideas.</h2>
-    <p class="large" style="max-width:760px">We are looking for organizations that can make one piece of the first festival possible, smarter, warmer, easier, or more memorable.</p>
-    <div class="partnergrid">
-      <div class="partner" style="--accent:#ffe39a"><div class="label">Support</div><h3>Founding sponsors</h3><p>Help underwrite public astronomy, student access, staffing, equipment, or transportation.</p><a href="mailto:Luke@AstroTours.org?subject=Breck%20Sky%20Fest%20sponsorship">Sponsor something →</a></div>
-      <div class="partner" style="--accent:#cfeef4"><div class="label">Place</div><h3>Venues + hosts</h3><p>Hotels, resorts, restaurants, outdoor spaces, and community venues.</p><a href="mailto:Luke@AstroTours.org?subject=Breck%20Sky%20Fest%20venue">Give us a home →</a></div>
-      <div class="partner" style="--accent:#efc3cf"><div class="label">Science</div><h3>Astronomers + groups</h3><p>Bring telescopes, demos, observatory connections, astrophotography, or a great science activity.</p><a href="mailto:Luke@AstroTours.org?subject=Breck%20Sky%20Fest%20astronomy%20partner">Bring science →</a></div>
-      <div class="partner" style="--accent:#d8ebca"><div class="label">Festival</div><h3>Vendors + makers</h3><p>Warm drinks, food, local products, art, outdoor brands, or science gear.</p><a href="mailto:Luke@AstroTours.org?subject=Breck%20Sky%20Fest%20vendor">Set up shop →</a></div>
-      <div class="partner" style="--accent:#ffd2b9"><div class="label">Education</div><h3>Schools + youth groups</h3><p>Help shape Breck Sky School and give students a direct role in year one.</p><a href="mailto:Luke@AstroTours.org?subject=Breck%20Sky%20School">Bring students →</a></div>
-      <div class="partner" style="--accent:#e2d4ef"><div class="label">Community</div><h3>Local organizations</h3><p>Nonprofits, wellness groups, artists, storytellers, and anyone with a complementary idea.</p><a href="mailto:Luke@AstroTours.org?subject=Breck%20Sky%20Fest%20community%20partner">Pitch us something →</a></div>
-    </div>
-  </div>
-</section>
-
-<section class="visit" id="visit">
-  <div class="wrap split">
-    <div>
-      <span class="eyebrow" style="background:var(--blue)">Visit Breckenridge</span>
-      <h2>Come for the mountains. Stay for the universe.</h2>
-      <p class="large">As partners are confirmed, this becomes the weekend field guide for lodging, transport, mountain access, warm-up spots, and more.</p>
-    </div>
-    <div class="visitbox">
-      <div class="visitgrid">
-        <div class="visititem" style="--accent:#ffe39a"><b>Sleep</b><span>Festival lodging + hotel partners</span></div>
-        <div class="visititem" style="--accent:#cfeef4"><b>Move</b><span>Parking, shuttles + mountain access</span></div>
-        <div class="visititem" style="--accent:#efc3cf"><b>Layer up</b><span>Cold-weather stargazing guide</span></div>
-        <div class="visititem" style="--accent:#d8ebca"><b>Refuel</b><span>Food, drinks + local partners</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="faq sky-section">
-  <div class="sky-decor" aria-hidden="true"><img src="/sky/sky-6.svg" alt=""></div>
-  <div class="wrap">
-    <span class="eyebrow">Good questions</span>
-    <h2>Before you look up.</h2>
-    <details open><summary>When is Breck Sky Fest?</summary><p>The inaugural festival is planned for November 2026. Exact dates will be announced after venue coordination.</p></details>
-    <details><summary>Will events be free?</summary><p>The working plan combines free community programming with a ticketed signature experience.</p></details>
-    <details><summary>Do I need to know astronomy?</summary><p>No. It is being designed for first-time telescope users and experienced sky-watchers alike.</p></details>
-    <details><summary>Can my business or organization participate?</summary><p>Yes. Sponsors, venues, astronomers, schools, vendors, local businesses, and community organizations are invited to reach out.</p></details>
-  </div>
-</section>
-
-<section class="cta">
-  <div class="wrap split">
-    <div>
-      <span class="eyebrow">Year one</span>
-      <h2>Want to help make this weird, smart, and memorable?</h2>
-    </div>
-    <div class="ctabox">
-      <p>Tell us who you are, what you do, and what kind of idea you want to bring to Breck Sky Fest.</p>
-      <a class="button dark" href="mailto:Luke@AstroTours.org?subject=Breck%20Sky%20Fest%20partnership">Luke@AstroTours.org</a>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer>
-  <div class="wrap footer">
-    <div><b>BRECK SKY FEST</b><br>Breckenridge, Colorado · November 2026</div>
-    <div>Developed with AstroTours.org</div>
-  </div>
-</footer>
-</body>
-</html>
+  </section>
+  <div class="festival-strip" aria-label="Festival themes"><div class="wrap"><span>Telescopes</span><b aria-hidden="true">✦</b><span>Science</span><b aria-hidden="true">✦</b><span>Art & ideas</span><b aria-hidden="true">✦</b><span>Mountain skies</span><b aria-hidden="true">✦</b><span>Good company</span></div></div>
+  <section class="section paper-section home-intro"><div class="wrap intro-split"><div><span class="eyebrow">Welcome to Breck Sky Fest</span><h2>Bring your people.<br/>Bring your curiosity.</h2></div><div class="intro-body"><p class="large">A first look through a telescope. A question that turns into a conversation. Something new to make, try, or discover together.</p><p>We’re bringing astronomy, hands-on learning, and local creativity into one weekend in Breckenridge. The first festival is taking shape around student programs, community stargazing, daytime activities, and a signature mountain evening.</p><a class="text-link" href="/about/">Meet the festival <Icon name="arrow" size={18}/></a></div></div></section>
+  <section class="section paper-section program-preview" id="events"><div class="wrap"><div class="section-heading"><div><span class="eyebrow">From sunshine to starlight</span><h2>Find your kind<br/>of sky time.</h2></div><div class="section-aside"><p>A first look at what we’re planning. Dates, venues, times, and booking details are coming soon.</p><a class="text-link" href="/program/">Explore all experiences <Icon name="arrow" size={18}/></a></div></div><div class="experience-grid home-events">{experiences.slice(0,3).map(event=><ExperienceCard event={event}/>)}</div><p class="photo-note">Photography shows previous AstroTours programs. Breck Sky Fest’s first edition is in development.</p></div></section>
+  <section class="section community-section"><div class="wrap"><div class="section-heading"><div><span class="eyebrow">More ways to join in</span><h2>A whole town<br/>of possibilities.</h2></div><div class="section-aside"><p>Local people will help make this festival its own. These proposed additions have room for artists, teachers, makers, and businesses to shape them.</p></div></div><div class="possibilities-grid">{[experiences[4],experiences[5],experiences[6],experiences[8]].map(event=><a class:list={['possibility',`accent-${event.accent}`]} href={`/program/${event.slug}/`}><Icon name={event.icon} size={38}/><span class="status-label">{event.status}</span><h3>{event.title}</h3><span class="possibility-arrow" aria-hidden="true">↗</span></a>)}</div><div class="section-bottom"><p>Have an idea for a workshop, pop-up, talk, or local event?</p><a class="button button-outline" href="/get-involved/">Be part of the festival <Icon name="arrow" size={20}/></a></div></div></section>
+  <section class="section paper-section family-section" id="visit"><div class="wrap feature-split"><figure class="family-photo"><img src="/images/family-telescope.webp" alt="A family taking turns at a large telescope at dusk during an AstroTours program" width="1280" height="960" loading="lazy"/><figcaption>Real skies. Real curiosity. An AstroTours family session.</figcaption><span class="photo-sticker">Small people.<br/>Big questions.</span></figure><div><span class="eyebrow">Make a family day of it</span><h2>First telescope?<br/>You’re in the<br/>right place.</h2><p>The festival is being planned with first-time stargazers in mind. Start with daytime science, try something creative, and come back for a look through a telescope after dark.</p><ul class="feature-list"><li><Icon name="sun"/>Daytime activities for curious kids and grown-ups</li><li><Icon name="stars"/>Astronomers who welcome every question</li><li><Icon name="ticket"/>Free community activities planned alongside ticketed events</li></ul><a href="/visit/" class="button button-dark">Start planning your visit <Icon name="arrow" size={20}/></a></div></div></section>
+  <section class="visitor-ribbon"><div class="wrap"><div><span>01 / When</span><strong>November 2026</strong><p>Exact dates coming soon</p></div><div><span>02 / Where</span><strong>Breckenridge, CO</strong><p>Venues & festival map TBA</p></div><div><span>03 / Tickets</span><strong>Coming soon</strong><p>Prices & registration TBA</p></div><a href="/visit/">The practical stuff <Icon name="arrow" size={25}/></a></div></section>
+  <section class="section paper-section" id="partners"><div class="wrap"><div class="section-heading"><div><span class="eyebrow">Helping Breck look up</span><h2>Our sponsors.</h2></div><a class="text-link" href="/sponsors/">Meet the supporters <Icon name="arrow" size={18}/></a></div><Sponsors compact/></div></section>
+  <section class="section faq-preview paper-section"><div class="wrap faq-split"><div><span class="eyebrow">Before you pack the cocoa</span><h2>A few good<br/>questions.</h2><a class="text-link" href="/visit/#questions">All visitor questions <Icon name="arrow" size={18}/></a></div><div class="faq-list">{[faqs[0],faqs[1],faqs[2],faqs[5]].map(faq=><details><summary>{faq.q}<span aria-hidden="true">+</span></summary><p>{faq.a}</p></details>)}</div></div></section>
+  <Updates/>
+</Layout>

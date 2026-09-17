@@ -12,5 +12,9 @@
   "devDependencies": {
     "astro": "7.3.3",
     "wrangler": "4.133.0"
+  },
+  "dependencies": {
+    "@fontsource-variable/dm-sans": "^5.3.0",
+    "@fontsource/barlow-condensed": "^5.3.0"
   }
 }

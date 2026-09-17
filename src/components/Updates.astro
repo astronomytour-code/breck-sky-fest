@@ -1,0 +1,10 @@
+---
+import Icon from './Icon.astro';
+import { emailLink } from '../data/festival';
+---
+<section class="updates-section">
+  <div class="wrap updates-inner">
+    <div><span class="eyebrow">Dates. Details. First dibs.</span><h2>Keep an eye on<br/>the sky.</h2></div>
+    <div><p>Want to hear when the dates and program are announced? Email us to ask for festival updates.</p><a class="button button-dark" href={emailLink('Please send me festival updates','Hi Luke,\n\nPlease email me when the Breck Sky Fest dates, program, and booking details are announced.\n\nThanks!')}>Request updates by email <Icon name="arrow" size={20}/></a><p class="small">Opens your email app. Send the message to request updates.</p></div>
+  </div>
+</section>

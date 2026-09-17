@@ -1,17 +1,9 @@
 ---
-const title = 'Page not found | Breck Sky Fest';
+import Layout from '../layouts/Layout.astro';
+import PageIntro from '../components/PageIntro.astro';
+import Icon from '../components/Icon.astro';
 ---
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{title}</title>
-  </head>
-  <body>
-    <main>
-      <h1>Page not found</h1>
-      <p><a href="/">Return to Breck Sky Fest</a></p>
-    </main>
-  </body>
-</html>
+<Layout title="Page Not Found | Breck Sky Fest" description="This page could not be found. Explore the Breck Sky Fest program or return to the festival homepage." noindex>
+  <PageIntro eyebrow="404 / Page not found" title="A little off course." description="We couldn’t find that page. The festival program is a good place to start." icon="planet"/>
+  <section class="section paper-section"><div class="wrap actions"><a class="button button-dark" href="/">Back to the festival <Icon name="arrow"/></a><a class="text-link" href="/program/">Explore the program <Icon name="arrow"/></a></div></section>
+</Layout>
