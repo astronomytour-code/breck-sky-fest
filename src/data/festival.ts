@@ -5,7 +5,7 @@ export const festival = {
   timing: 'November 2026',
   location: 'Breckenridge, Colorado',
   email: 'Luke@AstroTours.org',
-  description: 'Breckenridge Sky Festival is an astronomy and dark-sky festival in Breckenridge, Colorado. Telescopes, hands-on science, art, and time together under the stars. November 2026; final dates and venues will be posted in October.',
+  description: 'Breckenridge Sky Festival is a Summit County dark-sky celebration centered in Breckenridge, Colorado. Telescopes, hands-on science, art, and time together under the stars. November 2026; final dates and venues will be posted in October.',
 };
 
 export function emailLink(subject: string, body = '') {
