@@ -7,7 +7,7 @@ const { compact = false } = Astro.props;
     <div class="tier-heading"><span>Intergalactic</span><small>Founding-level support</small></div>
     <div class="sponsor-row">
       <article class="tier-sponsor">
-        <Icon name="stars" size={78}/>
+        <Icon name="stars" size={92}/>
         <h3>Room for a founding sponsor</h3>
         <p>Top-level support with a major presence across the first Breckenridge Sky Festival.</p>
         <a href="/sponsors/#become-a-sponsor" class="text-link">Explore sponsorship <span aria-hidden="true">↗</span></a>
@@ -19,7 +19,7 @@ const { compact = false } = Astro.props;
     <div class="tier-heading"><span>Interstellar</span><small>Major festival support</small></div>
     <div class="sponsor-row">
       <article class="tier-sponsor">
-        <img class="town-logo" src="https://www.townofbreckenridge.com/home/showpublishedimage/6653/637211622745670000" alt="Town of Breckenridge logo" loading="lazy"/>
+        <img class="town-logo" src="https://www.townofbreckenridge.com/home/showpublishedimage/6653/637211622745670000" alt="Town of Breckenridge logo" width="387" height="312" loading="lazy"/>
         <h3>Town of Breckenridge</h3>
         <a href="https://www.townofbreckenridge.com/" target="_blank" rel="noopener noreferrer" class="text-link">Visit the town website <span aria-hidden="true">↗</span></a>
       </article>
@@ -59,20 +59,20 @@ const { compact = false } = Astro.props;
 
 <style>
   .sponsor-tiers{display:grid;gap:26px}
-  .sponsor-tier{--sponsor-color:var(--yellow);display:grid;grid-template-columns:190px 1fr;gap:24px;padding:24px;border:1px solid var(--line);border-left:5px solid var(--sponsor-color);background:#faf7ef;border-radius:4px}
+  .sponsor-tier{--sponsor-color:var(--yellow);display:grid;grid-template-columns:190px minmax(0,1fr);gap:24px;padding:24px;border:1px solid var(--line);border-left:5px solid var(--sponsor-color);background:#faf7ef;border-radius:4px}
   .tier-heading{display:flex;flex-direction:column;justify-content:center;gap:5px}
   .tier-heading span{font-family:var(--display);font-size:1.8rem;font-weight:800;text-transform:uppercase;line-height:1}
   .tier-heading small{font-size:.67rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
   .sponsor-row{display:flex;flex-wrap:wrap;gap:18px;align-items:stretch}
   .tier-sponsor{flex:1 1 230px;min-width:0;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:20px 24px;border-left:1px solid var(--line)}
   .tier-sponsor img{object-fit:contain;margin-bottom:12px}
-  .tier-sponsor h3{font-size:1.85rem;margin:6px 0 10px}
+  .tier-sponsor h3{font-size:1.85rem;margin:6px 0 10px;max-width:100%;overflow-wrap:anywhere}
   .tier-sponsor p{font-size:.78rem;color:var(--muted);margin:0 0 12px;max-width:48ch}
   .tier-sponsor .text-link{font-size:.69rem}
-  .sponsor-intergalactic{--sponsor-color:#c89a38}.sponsor-intergalactic .tier-sponsor>svg{width:92px;height:92px;color:#c89a38;margin-bottom:6px}
-  .sponsor-interstellar{--sponsor-color:#a0c7cc}.sponsor-interstellar .tier-sponsor img{width:82px;max-height:82px}
+  .sponsor-intergalactic{--sponsor-color:#c89a38}.sponsor-intergalactic .tier-sponsor>:global(svg){width:92px;height:92px;color:#c89a38;margin-bottom:6px}
+  .sponsor-interstellar{--sponsor-color:#a0c7cc}.sponsor-interstellar .tier-sponsor img{width:82px;height:auto;max-height:82px}
   .sponsor-interplanetary{--sponsor-color:#e9afb5}.sponsor-interplanetary .tier-sponsor img{width:70px;height:70px;border-radius:50%}
-  .sponsor-orbital{--sponsor-color:#bdcba6}.sponsor-orbital .tier-sponsor img{width:56px;height:56px}.sponsor-orbital .tier-sponsor>svg{width:56px;height:56px;color:var(--ink);margin-bottom:12px}
-  .compact{gap:18px}.compact .sponsor-tier{padding:18px;grid-template-columns:165px 1fr}.compact .tier-sponsor{padding:14px 20px}.compact .tier-heading span{font-size:1.55rem}
+  .sponsor-orbital{--sponsor-color:#bdcba6}.sponsor-orbital .tier-sponsor img{width:56px;height:56px}.sponsor-orbital .tier-sponsor>:global(svg){width:56px;height:56px;color:var(--ink);margin-bottom:12px}
+  .compact{gap:18px}.compact .sponsor-tier{padding:18px;grid-template-columns:165px minmax(0,1fr)}.compact .tier-sponsor{padding:14px 20px}.compact .tier-heading span{font-size:1.55rem}
   @media(max-width:760px){.sponsor-tier,.compact .sponsor-tier{grid-template-columns:1fr}.tier-sponsor{border-left:0;border-top:1px solid var(--line);padding-inline:0}.tier-heading{text-align:center}}
 </style>
