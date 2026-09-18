@@ -14,11 +14,13 @@ npm run build
 
 Cloudflare Workers serves the static `dist/` output using the existing `wrangler.jsonc`. The existing GitHub-to-Cloudflare integration deploys `main`. This change preserves both existing custom-domain routes and the `breckskyfest.com` canonical domain. It does not change DNS or redirects.
 
+GitHub Actions validates the install and production build on pushes and pull requests. It does not run a second deployment or require Cloudflare secrets in GitHub. Cloudflare Workers Builds owns publishing; check its build log separately if a deployment reports failure.
+
 ## Content
 
 - `src/data/festival.ts`: contact details, the ten proposed/planned experiences, their status and practical details, and visitor FAQs.
 - `src/pages/program/[slug].astro`: all individual experience pages, generated from the content above.
-- `src/components/Sponsors.astro`: Gold (TBA), Silver (Town of Breckenridge), and Bronze (AstroTours.org).
+- `src/components/Sponsors.astro`: Intergalactic (TBA), Interstellar (Town of Breckenridge), Interplanetary (AstroTours.org), and Orbital (TBA).
 - `src/pages/`: home, program, visitor guide, partner opportunities, sponsors, about, photo gallery, contact, and 404.
 - `src/styles/global.css`: responsive festival design, keyboard focus, and reduced-motion handling.
 - `PHOTO-CREDITS.md`: provenance for all supplied photography.
