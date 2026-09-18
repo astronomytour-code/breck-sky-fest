@@ -16,16 +16,16 @@
       "custom_domain": true
     },
     {
-      "pattern": "www.breckskyfest.com",
-      "custom_domain": true
+      "pattern": "www.breckskyfest.com/*",
+      "zone_name": "breckskyfest.com"
     },
     {
       "pattern": "brecksky.com",
       "custom_domain": true
     },
     {
-      "pattern": "www.brecksky.com",
-      "custom_domain": true
+      "pattern": "www.brecksky.com/*",
+      "zone_name": "brecksky.com"
     }
   ]
 }
