@@ -47,6 +47,12 @@ const { compact = false } = Astro.props;
         <p>Independent visitor guide to Colorado’s official Stargazing Trail. It is not the official trail website.</p>
         <a href="https://coloradostargazingtrail.com/" target="_blank" rel="noopener noreferrer" class="text-link">Explore the independent guide <span aria-hidden="true">↗</span></a>
       </article>
+      <article class="tier-sponsor">
+        <Icon name="stars" size={56}/>
+        <h3>StargazingSolutions.com</h3>
+        <p>Stargazing program development for destinations, resorts, camps, and communities.</p>
+        <a href="https://stargazingsolutions.com/" target="_blank" rel="noopener noreferrer" class="text-link">Visit Stargazing Solutions <span aria-hidden="true">↗</span></a>
+      </article>
     </div>
   </section>
 </div>
@@ -66,7 +72,7 @@ const { compact = false } = Astro.props;
   .sponsor-intergalactic{--sponsor-color:#c89a38}.sponsor-intergalactic .tier-sponsor>svg{width:92px;height:92px;color:#c89a38;margin-bottom:6px}
   .sponsor-interstellar{--sponsor-color:#a0c7cc}.sponsor-interstellar .tier-sponsor img{width:82px;max-height:82px}
   .sponsor-interplanetary{--sponsor-color:#e9afb5}.sponsor-interplanetary .tier-sponsor img{width:70px;height:70px;border-radius:50%}
-  .sponsor-orbital{--sponsor-color:#bdcba6}.sponsor-orbital .tier-sponsor img{width:56px;height:56px}
+  .sponsor-orbital{--sponsor-color:#bdcba6}.sponsor-orbital .tier-sponsor img{width:56px;height:56px}.sponsor-orbital .tier-sponsor>svg{width:56px;height:56px;color:var(--ink);margin-bottom:12px}
   .compact{gap:18px}.compact .sponsor-tier{padding:18px;grid-template-columns:165px 1fr}.compact .tier-sponsor{padding:14px 20px}.compact .tier-heading span{font-size:1.55rem}
   @media(max-width:760px){.sponsor-tier,.compact .sponsor-tier{grid-template-columns:1fr}.tier-sponsor{border-left:0;border-top:1px solid var(--line);padding-inline:0}.tier-heading{text-align:center}}
 </style>
