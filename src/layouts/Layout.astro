@@ -6,7 +6,7 @@ import '../styles/global.css';
 import Icon from '../components/Icon.astro';
 import {festival} from '../data/festival';
 interface Props { title?: string; description?: string; image?: string; noindex?: boolean; }
-const {title='Breck Sky Fest | Breckenridge Astronomy & Dark-Sky Festival', description=festival.description, image='/images/mountain-stars.webp', noindex=false} = Astro.props;
+const {title='Breckenridge Sky Festival | Astronomy & Dark-Sky Festival', description=festival.description, image='/images/mountain-stars.webp', noindex=false} = Astro.props;
 const path=Astro.url.pathname;
 const canonical=new URL(path,Astro.site);
 const nav=[['Program','/program/'],['Plan your visit','/visit/'],['Get involved','/get-involved/'],['Sponsors','/sponsors/']];
@@ -23,7 +23,7 @@ const current=(url:string)=>path===url||(url==='/program/'&&path.startsWith('/pr
     <link rel="canonical" href={canonical}/>
     {noindex && <meta name="robots" content="noindex"/>}
     <meta property="og:type" content="website"/>
-    <meta property="og:site_name" content="Breck Sky Fest"/>
+    <meta property="og:site_name" content="Breckenridge Sky Festival"/>
     <meta property="og:title" content={title}/>
     <meta property="og:description" content={description}/>
     <meta property="og:url" content={canonical}/>
@@ -31,11 +31,11 @@ const current=(url:string)=>path===url||(url==='/program/'&&path.startsWith('/pr
     <meta property="og:image:alt" content="A telescope under a mountain night sky, from the AstroTours photo collection"/>
     <meta name="twitter:card" content="summary_large_image"/>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
-    <script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'WebSite',name:'Breck Sky Fest',url:Astro.site?.toString(),description:festival.description,inLanguage:'en-US'})}/>
+    <script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'WebSite',name:'Breckenridge Sky Festival',url:Astro.site?.toString(),description:festival.description,inLanguage:'en-US'})}/>
   </head>
   <body>
     <a href="#main" class="skip-link">Skip to content</a>
-    <div class="announcement"><div class="wrap"><span>Breckenridge, Colorado <span class="announcement-dot">✦</span> Planned for November 2026</span><a href="/visit/#dates">Dates & venues coming soon <span aria-hidden="true">↗</span></a></div></div>
+    <div class="announcement"><div class="wrap"><span>Breckenridge, Colorado <span class="announcement-dot">✦</span> November 2026</span><a href="/visit/#dates">Final details posted in October <span aria-hidden="true">↗</span></a></div></div>
     <header class="site-header">
       <div class="wrap nav-wrap">
         <a class="brand" href="/" aria-label="Breck Sky Fest home"><Icon name="stars" size={34}/><span>BRECK<span>SKY FEST</span></span></a>
@@ -51,7 +51,7 @@ const current=(url:string)=>path===url||(url==='/program/'&&path.startsWith('/pr
         <div><h2>Be part of it</h2><a href="/get-involved/">Get involved</a><a href="/sponsors/">Sponsors</a><a href="/get-involved/#schools">Schools & youth groups</a><a href="/get-involved/#groups">Groups & private events</a></div>
         <div><h2>Let’s talk</h2><a href="/about/">About the festival</a><a href="/contact/">Contact</a><a href={`mailto:${festival.email}`} class="footer-email">{festival.email}</a><p class="small">We prefer email as it keeps us organised.</p></div>
       </div>
-      <div class="footer-bottom"><span>© 2026 Breck Sky Fest · Organized by AstroTours.org</span><span>First festival in development. Program subject to confirmation.</span></div>
+      <div class="footer-bottom"><span>© 2026 Breckenridge Sky Festival · Organized by AstroTours.org</span><span>First festival in development. Program subject to confirmation. · <a href="https://www.astrotours.org/" target="_blank" rel="noopener noreferrer">Photo credits: AstroTours.org</a></span></div>
     </div></footer>
     <script>
       const menu=document.querySelector<HTMLDetailsElement>('.mobile-menu');
