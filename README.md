@@ -12,7 +12,7 @@ npm run dev
 npm run build
 ```
 
-Cloudflare Workers serves the static `dist/` output using the existing `wrangler.jsonc`. The existing GitHub-to-Cloudflare integration deploys `main`. Both existing custom-domain routes remain configured, with `brecksky.com` as the canonical site. It does not change DNS or redirects.
+Cloudflare Workers serves the static `dist/` output using the existing `wrangler.jsonc`. The existing GitHub-to-Cloudflare integration deploys `main`. Cloudflare Workers Builds publishes `main`. `breckskyfest.com` is the canonical site; `brecksky.com` and both `www` hostnames are attached as Worker Custom Domains and redirected to `https://breckskyfest.com` while preserving path and query string.
 
 GitHub Actions validates the install and production build on pushes and pull requests. It does not run a second deployment or require Cloudflare secrets in GitHub. Cloudflare Workers Builds owns publishing; check its build log separately if a deployment reports failure.
 
@@ -42,4 +42,4 @@ Sources reviewed September 2026. No live transport schedule, festival lodging of
 
 Website source for Breck Sky Fest, Breckenridge's astronomy and dark-sky festival.
 
-Primary site: https://brecksky.com
+Primary site: https://breckskyfest.com
