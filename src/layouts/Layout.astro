@@ -28,7 +28,7 @@ const current=(url:string)=>path===url||(url==='/program/'&&path.startsWith('/pr
     <meta property="og:description" content={description}/>
     <meta property="og:url" content={canonical}/>
     <meta property="og:image" content={new URL(image,Astro.site)}/>
-    <meta property="og:image:alt" content="A telescope under a mountain night sky, from the AstroTours photo collection"/>
+    <meta property="og:image:alt" content="A telescope under a mountain night sky"/>
     <meta name="twitter:card" content="summary_large_image"/>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
     <script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'WebSite',name:'Breckenridge Sky Festival',url:Astro.site?.toString(),description:festival.description,inLanguage:'en-US'})}/>
