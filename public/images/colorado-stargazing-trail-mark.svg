@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Colorado Stargazing Trail mark">
+  <defs>
+    <linearGradient id="red" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff0d1f"/><stop offset="1" stop-color="#d90d1d"/></linearGradient>
+    <linearGradient id="road" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff9a18"/><stop offset="1" stop-color="#ff6b00"/></linearGradient>
+    <linearGradient id="star" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff36b"/><stop offset="1" stop-color="#ffd52f"/></linearGradient>
+  </defs>
+  <rect x="5" y="5" width="502" height="502" rx="72" fill="#020508" stroke="#3a302e" stroke-width="7"/>
+  <path d="M350 154 C314 110 243 98 192 125 C135 155 119 225 143 281" fill="none" stroke="url(#red)" stroke-width="39" stroke-linecap="butt"/>
+  <path d="M256 160 L265 201 L306 211 L265 221 L256 264 L247 221 L206 211 L247 201 Z" fill="url(#star)"/>
+  <path d="M90 351 L210 270 L259 309 L208 287 L150 326 Z" fill="url(#red)"/>
+  <path d="M256 303 L319 254 L409 334 L335 290 L318 278 Z" fill="url(#red)"/>
+  <path d="M245 300 C285 304 320 312 294 322 C271 331 238 335 235 350 C232 366 276 372 281 389 C286 408 247 425 141 433 C212 416 246 404 245 390 C244 377 210 371 213 354 C217 335 263 326 269 316 C274 309 258 304 245 300 Z" fill="url(#road)"/>
+</svg>
