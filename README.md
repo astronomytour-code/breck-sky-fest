@@ -20,7 +20,7 @@ GitHub Actions validates the install and production build on pushes and pull req
 
 - `src/data/festival.ts`: contact details, the ten proposed/planned experiences, their status and practical details, and visitor FAQs.
 - `src/pages/program/[slug].astro`: all individual experience pages, generated from the content above.
-- `src/components/Sponsors.astro`: Intergalactic (open), Interstellar (Town of Breckenridge), Interplanetary (AstroTours.org), and Orbital (ColoradoStargazingTrail.com, an independent visitor guide).
+- `src/components/Sponsors.astro`: Intergalactic (open), Interstellar (Town of Breckenridge), Interplanetary (AstroTours.org), and Orbital (ColoradoStargazingTrail.com, an independent visitor guide, plus StargazingSolutions.com).
 - `src/pages/`: home, program, visitor guide, partner opportunities, sponsors, about, photo gallery, contact, and 404.
 - `src/styles/global.css`: responsive festival design, keyboard focus, and reduced-motion handling.
 - `PHOTO-CREDITS.md`: provenance for all supplied photography.
