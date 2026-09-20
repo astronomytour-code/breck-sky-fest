@@ -27,6 +27,7 @@ export type Experience = {
   description: string[];
   highlights: string[];
   audience: string;
+  venue?: string;
   admission: string;
   duration: string;
   practical: string;
@@ -57,22 +58,22 @@ export const experiences: Experience[] = [
   {
     slug: 'mountain-stargazing', title: 'High Country Stargaze', subtitle: 'Signature stargaze', category: 'Signature experience', filters: ['night'], accent: 'pink',
     image: 'mountain-night', alt: 'A telescope beneath a starry sky with snow-covered mountains beyond', icon: 'mountain', status: 'In development · details TBA',
-    summary: 'A more intimate evening of guided stargazing in a mountain setting. Our signature experience is taking shape.',
-    description: ['The proposed signature event brings a smaller group together for an evening of telescopes, mountain scenery, and guided astronomy.', 'We are exploring venue and hospitality options. The setting, capacity, transport, and any food or drinks will be announced once arrangements are confirmed.'],
-    highlights: ['A smaller-group astronomy experience', 'Guided telescope viewing', 'A mountain setting, subject to venue confirmation'],
+    summary: 'An evening of guided telescope viewing and constellation tours with AstroTours astronomers. Venue and event details coming soon.',
+    description: ['High Country Stargaze is the festival’s signature ticketed astronomy evening. We are developing a program with multiple telescopes and astronomers, with time to learn the constellations and explore different objects through the eyepiece.', 'Venue and hospitality arrangements are being worked out. Capacity, arrival information, and any food or drinks will be published with the confirmed event details.'],
+    highlights: ['Multiple telescopes and guided observing', 'Constellation tours with AstroTours astronomers', 'Time to ask questions and compare telescope views'],
     audience: 'Visitors seeking a longer guided evening; age guidance TBA', admission: 'Ticketed; registration coming soon', duration: 'TBA',
-    practical: 'Mountain access is still being arranged. No lift, gondola, or specific summit venue is confirmed. Weather backup dates are being held; the confirmed date, access plan, and cloud-out policy will be published with registration.',
+    practical: 'The venue and arrival instructions will be announced with registration. A lift or gondola ride is not part of the published offer. Weather backup dates are being held; the confirmed date, access plan, and cloud-out policy will be published with registration.',
     opportunity: 'A mountain venue, resort, accommodation provider, or food and beverage partner could help shape this signature evening.',
   },
   {
     slug: 'sky-school', title: 'Breck Sky School', subtitle: 'A school day with a bigger view', category: 'Schools & youth', filters: ['school', 'day'], accent: 'green',
     image: 'solar-discovery', alt: 'Young visitors and an adult looking through a solar telescope', icon: 'sun', status: 'In development · details TBA',
-    summary: 'Student sessions exploring sunlight, telescopes, and the science of space, with room for questions and experiments.',
-    description: ['We are developing astronomy sessions for local schools and youth groups as part of the first festival. The aim is to give students direct experience with telescopes and the science behind what they see.', 'Teachers can help us plan for their students: age group, curriculum connections, group size, access needs, and the time available. School sessions will be arranged with participating groups.'],
-    highlights: ['Astronomy shaped for the students taking part', 'Hands-on light and solar science', 'A chance to meet working astronomers'],
-    audience: 'School and youth groups; ages and group sizes TBA', admission: 'Free school session; arranged with participating schools', duration: 'Session lengths TBA',
-    practical: 'These are planned group sessions rather than public drop-in events. Teachers and group leaders can contact us now to discuss participation, supervision, timing, and transport.',
-    opportunity: 'Schools, youth organizations, educators, and sponsors can help provide student activities, materials, and transport support.',
+    summary: 'Astronomy and hands-on science for local students, with school visits being developed to bring the activities to them.',
+    description: ['We are developing visits to local elementary schools so students can take part during their school day without needing a bus trip to a separate festival venue. Participating schools, dates, and session lengths are still being arranged.', 'The proposed format combines an AstroTours astronomy station with activities from local science and education organizations. Invitations have gone out to schools and potential education partners; station leaders and activities will be listed once agreed.'],
+    highlights: ['School visits shaped around students and teachers', 'Supervised solar observing and hands-on science', 'Activity stations with room for education partners'],
+    audience: 'Local elementary schools initially; other school and youth-group inquiries welcome', venue: 'Participating schools · locations TBA', admission: 'Free school sessions; arranged with participating schools', duration: 'Session lengths TBA',
+    practical: 'School sessions will be arranged directly with teachers and group leaders. They will not be public drop-in events. Tell us about student ages, available space, supervision, access needs, and the school timetable.',
+    opportunity: 'Educators, museums, and science organizations can propose a hands-on station. Sponsors can help cover materials, equipment, and the cost of bringing the program to schools.',
   },
   {
     slug: 'planet-walk', title: 'Walk the solar system', subtitle: 'Planet walk', category: 'Explore & play', filters: ['day', 'family'], accent: 'orange', icon: 'planet', status: 'Proposed · route TBA',
@@ -86,7 +87,7 @@ export const experiences: Experience[] = [
   {
     slug: 'artist-workshop', title: 'Artist workshops', subtitle: 'Make something inspired by the sky', category: 'Arts & making', filters: ['arts', 'day', 'family'], accent: 'pink', icon: 'spark', status: 'Artists & workshops TBA',
     summary: 'Space for making, with artist-led workshops inspired by stars, planets, light, or the mountain night.',
-    description: ['We would love to add hands-on artist workshops to the festival. Think printmaking, painting, sculpture, or other ways of responding to the sky.', 'Artists, media, age guidance, and materials are still to be announced. Each workshop will take shape with the artist who leads it.'],
+    description: ['We have begun inviting local arts organizations to help shape the creative program. Proposed workshops could include printmaking, painting, sculpture, or other ways of responding to stars, planets, and light.', 'Artists, media, age guidance, and materials are still to be announced. Each workshop will take shape with the artist who leads it.'],
     highlights: ['Workshops led by participating artists', 'Connections between art and astronomy', 'Creative activities to share with friends or family'],
     audience: 'Age guidance to be announced with each workshop', admission: 'Price, materials, and booking TBA', duration: 'TBA',
     practical: 'Materials, clothing advice, accessibility, and any advance booking requirements will be included when the artist and workshop are confirmed.',
@@ -104,7 +105,7 @@ export const experiences: Experience[] = [
   {
     slug: 'talks-and-stories', title: 'Space talks & sky stories', subtitle: 'Good questions welcome', category: 'Talks & conversation', filters: ['day', 'family'], accent: 'green', icon: 'stars', status: 'Speakers & topics TBA',
     summary: 'Hear from people who study, photograph, and care for the night sky. Speakers, stories, and conversations to be announced.',
-    description: ['A proposed series of approachable talks and conversations would bring more voices into the festival: astronomers, researchers, dark-sky advocates, and storytellers.', 'Topics and speakers are being developed. Each listing will include its audience, format, location, and whether you need to reserve a place.'],
+    description: ['Proposed talks and conversations could cover astronomy, local night skies, wildlife, and the effects of outdoor lighting. Outreach has begun to local lighting and open-space contacts to explore dark-sky contributions.', 'Topics and speakers are being developed. Each listing will include its audience, format, location, and whether you need to reserve a place.'],
     highlights: ['Approachable astronomy and dark-sky topics', 'Time for audience questions', 'Contributions from visiting and local speakers'],
     audience: 'Age guidance will vary by session', admission: 'TBA', duration: 'TBA',
     practical: 'Indoor venues, seating, access information, and session times are to be announced. No speakers are currently listed as confirmed.',
@@ -128,6 +129,15 @@ export const experiences: Experience[] = [
     practical: 'Food, drinks, and warm-up spaces are not yet confirmed. Dietary information and available facilities will be published for each participating location.',
     opportunity: 'Cafés, restaurants, chocolatiers, food vendors, and hospitality businesses could offer a festival special, pop-up, or warm-up stop.',
   },
+  {
+    slug: 'sky-on-screen', title: 'Space on screen', subtitle: 'Film & conversation', category: 'Film', filters: ['arts'], accent: 'blue', icon: 'stars', status: 'Proposed · film & venue TBA',
+    summary: 'A proposed screening exploring space, astronomy, dark skies, or science fiction. Film, venue, and audience guidance TBA.',
+    description: ['We have invited a local film organization to explore a screening as part of Breck Sky Fest. A documentary or science-fiction film could bring another way to explore space into the program.', 'The film, screening rights, venue, date, and any accompanying conversation still need to be agreed. Details will be posted here if the screening goes ahead.'],
+    highlights: ['A space or night-sky themed film', 'An indoor festival option', 'Potential conversation alongside the screening'],
+    audience: 'Age guidance and film rating TBA', admission: 'TBA', duration: 'Film and running time TBA',
+    practical: 'No screening is open for booking yet. Film rating, captions, venue access, and admission details will be published if the event is confirmed.',
+    opportunity: 'Film programmers, cinemas, community venues, and speakers can help select, host, or support a screening.',
+  },
 ];
 
 export const faqs = [
@@ -139,6 +149,7 @@ export const faqs = [
   {q:'What happens if it is cloudy or snowy?', a:'Telescope viewing depends on the sky, and outdoor activities depend on safe conditions. Each confirmed event will publish its weather plan. The High Country Stargaze has backup dates being held; the final cloud-out and refund policy will be posted with registration.'},
   {q:'Will the venues be accessible?', a:'Venues are still being arranged, so step-free routes, surfaces, accessible toilets, seating, and telescope access are not yet confirmed. We will publish access information for each event. Please email us with any requirements that would help you take part.'},
   {q:'Where should we park, and is there a shuttle?', a:'Venue addresses, parking, drop-off points, and any festival transport are TBA. Breckenridge has public transport, but festival connections and late-night service are not confirmed. Check the visitor page for official travel resources.'},
-  {q:'Does the High Country Stargaze include a gondola ride?', a:'No lift, gondola, or specific resort venue is confirmed. We are exploring options for the signature event and will publish the access plan before registration opens.'},
+  {q:'Does the High Country Stargaze include a gondola ride?', a:'A lift or gondola ride is not part of the published offer. The venue and arrival instructions will be announced before registration opens.'},
+  {q:'Is the festival only for Breckenridge?', a:'Breckenridge is the festival’s home base, and residents, schools, businesses, and community organizations across Summit County are invited to take part. Confirmed event locations will be listed individually; activities in other towns are not yet announced.'},
   {q:'Can our school, business, or group take part?', a:'Yes. We are inviting schools, venues, artists, educators, vendors, community organizations, and sponsors to help shape the first festival. The Get involved page explains the opportunities and how to reach us.'},
 ];
