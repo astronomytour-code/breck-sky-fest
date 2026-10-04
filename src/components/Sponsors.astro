@@ -36,6 +36,12 @@ const { compact = false } = Astro.props;
         <p>Festival organizer and astronomy program partner.</p>
         <a href="https://www.astrotours.org/" target="_blank" rel="noopener noreferrer" class="text-link">Meet the astronomers <span aria-hidden="true">↗</span></a>
       </article>
+      <article class="tier-sponsor">
+        <img class="partner-logo" src="/images/boec-logo.png" alt="Breckenridge Outdoor Education Center (BOEC) logo" width="583" height="207" loading="lazy"/>
+        <h3>Breckenridge Outdoor Education Center (BOEC)</h3>
+        <p>Accessible and inclusive astronomy partner for the official festival kickoff.</p>
+        <a href="https://boec.org/" target="_blank" rel="noopener noreferrer" class="text-link">Visit BOEC <span aria-hidden="true">↗</span></a>
+      </article>
     </div>
   </section>
 
@@ -53,6 +59,12 @@ const { compact = false } = Astro.props;
         <h3>Beaver Run Resort</h3>
         <p>Venue and hospitality support for the festival.</p>
         <a href="https://beaverrun.com/" target="_blank" rel="noopener noreferrer" class="text-link">Visit Beaver Run <span aria-hidden="true">↗</span></a>
+      </article>
+      <article class="tier-sponsor">
+        <img class="partner-logo historic-park-logo" src="/images/frisco-historic-park-logo.png" alt="Frisco Historic Park & Museum logo" width="620" height="176" loading="lazy"/>
+        <h3>Frisco Historic Park &amp; Museum</h3>
+        <p>Community partner and host of November 27 stargazing.</p>
+        <a href="https://www.townoffrisco.com/things-to-do/frisco-historic-park-museum/" target="_blank" rel="noopener noreferrer" class="text-link">Visit Frisco Historic Park <span aria-hidden="true">↗</span></a>
       </article>
     </div>
   </section>
@@ -75,6 +87,7 @@ const { compact = false } = Astro.props;
   .sponsor-interplanetary{--sponsor-color:#e9afb5}.sponsor-interplanetary .tier-sponsor img{width:70px;height:70px;border-radius:50%}
   .sponsor-orbital{--sponsor-color:#bdcba6}.sponsor-orbital .tier-sponsor img{width:56px;height:56px}.sponsor-orbital .tier-sponsor>:global(svg){width:56px;height:56px;color:var(--ink);margin-bottom:12px}
   .sponsor-orbital .tier-sponsor img.beaver-run-logo{width:180px;height:auto;max-height:100px}
+  .sponsor-tier .tier-sponsor img.partner-logo{width:220px;max-width:100%;height:auto;max-height:100px;border-radius:0}
   .compact{gap:18px}.compact .sponsor-tier{padding:18px;grid-template-columns:165px minmax(0,1fr)}.compact .tier-sponsor{padding:14px 20px}.compact .tier-heading span{font-size:1.55rem}
   @media(max-width:760px){.sponsor-tier,.compact .sponsor-tier{grid-template-columns:1fr}.tier-sponsor{border-left:0;border-top:1px solid var(--line);padding-inline:0}.tier-heading{text-align:center}}
 </style>
