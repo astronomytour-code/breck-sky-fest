@@ -5,7 +5,7 @@ export const festival = {
   timing: 'November 2026',
   location: 'Breckenridge, Colorado',
   email: 'Luke@AstroTours.org',
-  description: 'Breckenridge Sky Festival is a Summit County dark-sky celebration centered in Breckenridge, Colorado. Telescopes, hands-on science, art, and time together under the stars. November 2026; final dates and venues will be posted in October.',
+  description: 'Breckenridge Sky Festival is a Summit County dark-sky celebration centered in Breckenridge, Colorado. Telescopes, hands-on science, art, and time together under the stars. Kickoff November 11; main weekend November 27–28; weather backup November 30. Remaining times and venues are clearly marked TBA.',
 };
 
 export function emailLink(subject: string, body = '') {
@@ -32,28 +32,23 @@ export type Experience = {
   duration: string;
   practical: string;
   opportunity: string;
+  date?: string;
+  time?: string;
+  ctaHref?: string;
+  ctaLabel?: string;
 };
 
 export const experiences: Experience[] = [
   {
-    slug: 'community-stargazing', title: 'Community stargazing', subtitle: 'Breck Sky Night', category: 'After dark', filters: ['night', 'family'], accent: 'blue',
-    image: 'community-night', alt: 'Guests gathered around a telescope at an AstroTours evening program', icon: 'stars', status: 'In development · details TBA',
-    summary: 'Look through big telescopes, learn a few constellations, and ask an astronomer the question you have always wondered about.',
-    description: ['An easy way to spend an evening with the sky. The plan is a welcoming community telescope night for families, locals, and visitors, with astronomers on hand to explain the view.', 'We will choose observing targets for the actual night, Moon, and weather. Planets, star clusters, and distant galaxies all offer something different to discover.'],
-    highlights: ['Guided telescope viewing', 'Constellation spotting', 'Time for your astronomy questions'],
-    audience: 'Families, visitors, and curious locals', admission: 'Free community event; final access details coming in October', duration: 'TBA',
-    practical: 'Dress for standing outside on a cold November evening. Children should stay with their accompanying adult. The venue, access details, and weather plan will be published before registration opens.',
-    opportunity: 'A local venue, astronomy group, or hospitality partner could help host the evening, bring telescopes, or create a place to warm up.',
-  },
-  {
-    slug: 'sky-day', title: 'Public solar astronomy', subtitle: 'Breck Sky Day', category: 'Daytime discovery', filters: ['day', 'family'], accent: 'yellow',
-    image: 'solar-telescope', alt: 'A telescope fitted with a solar filter at a daytime AstroTours session', icon: 'sun', status: 'In development · details TBA',
-    summary: 'Safely meet our nearest star, experiment with light and color, and get hands-on with astronomy before sunset.',
-    description: ['Astronomy starts well before dark. We are planning daytime activities that let children and adults explore the Sun, light, color, and the scale of our solar system.', 'Solar observing will use equipment designed and filtered for the Sun, operated by the astronomy team. Hands-on demonstrations will give curious visitors plenty to try between telescope views.'],
-    highlights: ['Supervised solar telescope viewing', 'Light, color, and optics activities', 'Science to try together as a family'],
-    audience: 'Families and all ages; activity guidance TBA', admission: 'Free community event; final access details coming in October', duration: 'TBA',
-    practical: 'Bring warm layers even for daytime activities. Look at the Sun only through equipment approved and supervised by the astronomy team. Specific activities and indoor options are still being developed.',
-    opportunity: 'Science educators, museums, makers, and local organizations can bring a demonstration, activity table, or family workshop.',
+    slug: 'community-stargazing', title: 'Breck Sky Fest: Main Festival Day', subtitle: 'Solar astronomy + evening stargazing', category: 'Day & night', filters: ['day', 'night', 'family'], accent: 'blue',
+    image: 'community-night', alt: 'Guests gathered around a telescope at an AstroTours evening program', icon: 'stars', status: 'Date confirmed · location & times TBA',
+    date: 'Saturday, November 28, 2026', time: 'To Be Announced', venue: 'To Be Announced',
+    summary: 'The main festival day and night: solar astronomy during the day and telescope observing under the stars in the evening.',
+    description: ['Daytime: Solar Astronomy. Explore our nearest star through safe solar observing, solar telescopes, astronomy demonstrations, and related festival programming.', 'Evening: Stargazing. Join telescope observing, astronomy presentations and talks, constellation pointing, and the festival’s nighttime programming.', 'The exact Breckenridge location and times are still being finalized. Check back as the full program is announced.'],
+    highlights: ['Daytime: safe solar observing and solar telescopes', 'Daytime: astronomy demonstrations and festival programming', 'Evening: telescope observing, astronomy talks, and constellation pointing'],
+    audience: 'Families, visitors, and curious locals', admission: 'Full participation details coming soon', duration: 'Times: To Be Announced',
+    practical: 'Look at the Sun only through approved solar equipment supervised by the astronomy team. Dress warmly for evening observing. Location, times, access, and the full program will be announced here. November 30 at Beaver Run Resort is the weather backup for astronomy affected by poor weather during the main weekend.',
+    opportunity: 'Science educators and local organizations can propose an activity or demonstration for the festival.',
   },
   {
     slug: 'mountain-stargazing', title: 'High Country Stargaze', subtitle: 'Signature stargaze', category: 'Signature experience', filters: ['night'], accent: 'pink',
@@ -138,18 +133,54 @@ export const experiences: Experience[] = [
     practical: 'No screening is open for booking yet. Film rating, captions, venue access, and admission details will be published if the event is confirmed.',
     opportunity: 'Film programmers, cinemas, community venues, and speakers can help select, host, or support a screening.',
   },
+  {
+    slug: 'accessible-astronomy-boec', title: 'Breck Sky Fest Kickoff: Accessible Astronomy with BOEC', subtitle: 'Official festival kickoff', category: 'Accessible astronomy', filters: ['family', 'day', 'night'], accent: 'green',
+    image: 'family-telescope', alt: 'Visitors taking turns at an AstroTours telescope', icon: 'stars', status: 'Date & partner confirmed · details coming soon',
+    date: 'Wednesday, November 11, 2026', time: 'To Be Announced', venue: 'Public location: To Be Announced',
+    summary: 'Kick off Breck Sky Fest with accessible and inclusive astronomy programming in partnership with Breckenridge Outdoor Education Center (BOEC).',
+    description: ['The official kickoff to Breck Sky Fest celebrates accessible and inclusive ways to explore astronomy with Breckenridge Outdoor Education Center (BOEC).', 'The exact public time and detailed schedule are being finalized. Additional program, location, and access details are coming soon.'],
+    highlights: ['Official Breck Sky Fest kickoff', 'Partner: Breckenridge Outdoor Education Center (BOEC)', 'Accessible and inclusive astronomy programming'],
+    audience: 'Public participation details coming soon', admission: 'Details coming soon', duration: 'To Be Announced',
+    practical: 'Time: To Be Announced. Please check back for the public schedule and specific accessibility arrangements, or contact us with access questions.',
+    opportunity: 'Get in touch with any access questions that would help you take part.',
+  },
+  {
+    slug: 'frisco-historic-park-stargazing', title: 'Frisco Historic Park Stargazing', subtitle: 'Free drop-in astronomy', category: 'After dark', filters: ['night', 'family'], accent: 'blue',
+    image: 'friends-telescope', alt: 'Guests beside a telescope at an AstroTours astronomy program', icon: 'stars', status: 'Confirmed · free RSVP requested',
+    date: 'Friday, November 27, 2026', time: '5:30–7:30 PM MST · drop in anytime', venue: 'Frisco Historic Park',
+    ctaHref: '/rsvp/frisco/', ctaLabel: 'Free RSVP · $0',
+    summary: 'Drop in between 5:30 and 7:30 PM for free telescope viewing, short astronomy talks, and constellation pointing at Frisco Historic Park.',
+    description: ['Join Breck Sky Fest at Frisco Historic Park for an evening under the stars. Drop in anytime between 5:30 and 7:30 PM to look through telescopes, meet astronomers, explore the night sky, hear short astronomy talks, and learn to identify constellations overhead.', 'The program is free and designed as a flexible drop-in event, so guests may arrive and leave throughout the evening.', 'A free RSVP helps us estimate attendance and allows us to contact guests if weather forces a postponement or cancellation.'],
+    highlights: ['Free telescope observing with astronomers', 'Short astronomy talks and constellation pointing', 'Flexible drop-in format: arrive and leave throughout the evening'],
+    audience: 'Families, visitors, and curious locals', admission: 'Free · $0 · RSVP requested', duration: 'Drop in anytime from 5:30–7:30 PM',
+    practical: 'Dress warmly and keep children with their accompanying adult. RSVP for weather updates. You do not need to arrive at 5:30 PM. Access and facility details are coming soon.',
+    opportunity: 'Contact the festival with questions about attending or access.',
+  },
+  {
+    slug: 'weather-backup-stargazing', title: 'Breck Sky Fest Weather Backup Night', subtitle: 'Weather backup date', category: 'After dark', filters: ['night', 'family'], accent: 'yellow',
+    image: 'evening-telescope', alt: 'An AstroTours telescope ready for an evening program', icon: 'stars', status: 'Weather backup · November 30',
+    date: 'Monday, November 30, 2026', time: 'See AstroTours booking page', venue: 'Beaver Run Resort',
+    ctaHref: 'https://www.astrotours.org/booking-calendar/breckenridge-dark-sky-tour-1?referral=service_list_widget', ctaLabel: 'Reserve Weather Backup Stargazing',
+    summary: 'The festival’s weather backup date at Beaver Run Resort for astronomy programming affected by poor weather during the main festival weekend.',
+    description: ['November 30 is reserved as the festival’s weather backup date for astronomy programming affected by poor weather during the main festival weekend.', 'Reserve the weather-backup astronomy program through AstroTours. Check the booking page for available times, admission, and reservation details.'],
+    highlights: ['Weather backup for main-weekend astronomy programming', 'Location: Beaver Run Resort', 'Reservations handled directly by AstroTours'],
+    audience: 'See AstroTours booking details', admission: 'See AstroTours booking page', duration: 'See AstroTours booking page',
+    practical: 'This is the weather backup night. Check the festival for weather changes and AstroTours for reservation details.',
+    opportunity: 'Contact the festival if you have questions about weather changes.',
+  },
+
 ];
 
 export const faqs = [
-  {q:'When is Breck Sky Fest?', a:'Breckenridge Sky Festival is in November 2026. Final dates, venues, and event times will be posted here in October. Please wait for confirmed details before making travel plans specifically for an event.'},
-  {q:'Can I register yet?', a:'Registration is not open yet. The AstroTours-produced school session, community stargazing night, and public solar astronomy are planned as free programs. The High Country Stargaze will be ticketed, with its booking link posted on that event page when registration opens.'},
+  {q:'When is Breck Sky Fest?', a:'Breck Sky Fest kicks off with BOEC on November 11. Frisco Historic Park Stargazing is November 27, 5:30–7:30 PM. The main festival day and night are November 28, with location and times TBA. November 30 at Beaver Run Resort is the weather backup.'},
+  {q:'Can I register yet?', a:'Free RSVPs are open for Frisco Historic Park Stargazing on November 27. Arrive anytime between 5:30 and 7:30 PM. Reserve November 30 weather-backup stargazing through the linked AstroTours booking page. Participation details for the BOEC kickoff and November 28 main festival are coming soon.'},
   {q:'Is it suitable for children?', a:'Families are a central part of the plan, especially daytime science, the planet walk, and community stargazing. Final age guidance will be listed for each activity. Children will need to stay with their accompanying adult; drop-off childcare is not planned.'},
   {q:'Do I need a telescope or astronomy experience?', a:'No experience is needed for the main astronomy activities, and the astronomy team plans to provide telescopes for those sessions. Any specialist workshop equipment, such as a camera, will be listed in advance.'},
   {q:'What should we wear?', a:'Bring a warm coat, insulating layers, a hat, gloves, warm socks, and sturdy footwear for possible snow or ice. Standing at a telescope can feel much colder than walking. A thermos and hand warmers can be useful.'},
-  {q:'What happens if it is cloudy or snowy?', a:'Telescope viewing depends on the sky, and outdoor activities depend on safe conditions. Each confirmed event will publish its weather plan. The High Country Stargaze has backup dates being held; the final cloud-out and refund policy will be posted with registration.'},
+  {q:'What happens if it is cloudy or snowy?', a:'Telescope viewing depends on the sky, and outdoor activities depend on safe conditions. November 30 at Beaver Run Resort is the festival’s weather backup for astronomy affected by poor weather during the main weekend. RSVP for the free Frisco event so we can contact you about postponement or cancellation. Check the festival and your event’s booking information for updates.'},
   {q:'Will the venues be accessible?', a:'Venues are still being arranged, so step-free routes, surfaces, accessible toilets, seating, and telescope access are not yet confirmed. We will publish access information for each event. Please email us with any requirements that would help you take part.'},
   {q:'Where should we park, and is there a shuttle?', a:'Venue addresses, parking, drop-off points, and any festival transport are TBA. Breckenridge has public transport, but festival connections and late-night service are not confirmed. Check the visitor page for official travel resources.'},
   {q:'Does the High Country Stargaze include a gondola ride?', a:'A lift or gondola ride is not part of the published offer. The venue and arrival instructions will be announced before registration opens.'},
-  {q:'Is the festival only for Breckenridge?', a:'Breckenridge is the festival’s home base, and residents, schools, businesses, and community organizations across Summit County are invited to take part. Confirmed event locations will be listed individually; activities in other towns are not yet announced.'},
+  {q:'Is the festival only for Breckenridge?', a:'Breckenridge is the festival’s home base, and residents, schools, businesses, and community organizations across Summit County are invited to take part. Confirmed event locations will be listed individually; Frisco Historic Park hosts free stargazing on November 27.'},
   {q:'Can our school, business, or group take part?', a:'Yes. We are inviting schools, venues, artists, educators, vendors, community organizations, and sponsors to help shape the first festival. The Get involved page explains the opportunities and how to reach us.'},
 ];

@@ -43,3 +43,13 @@ Sources reviewed September 2026. No live transport schedule, festival lodging of
 Website source for Breck Sky Fest, Breckenridge's astronomy and dark-sky festival.
 
 Primary site: https://breckskyfest.com
+
+## Confirmed 2026 schedule and RSVPs
+
+The home and program pages share `FestivalSchedule.astro`. Dated events are kept separate from proposals. The existing community-stargazing route holds November 28 daytime and evening programming; the older sky-day route redirects there to retain existing links.
+
+Free Frisco RSVP: `/rsvp/frisco/`. Submissions are stored persistently in the Cloudflare Worker’s SQLite-backed `FestivalRsvps` Durable Object, bound as `RSVP_STORE`. Wrangler creates the namespace through the `frisco-rsvps-v1` migration when deployed. Only the name, email, group size, timestamp, and reference are stored as attendance records. Short-lived hashed IP rate limits expire as subsequent requests clean them up. No payment or email delivery service is connected. The confirmation is shown on the website after saving; weather outreach is manual using the CSV export.
+
+Organizer view: `/admin/rsvps/`, excluded from indexing. Enter the private access key supplied to the organizer. Only its SHA-256 digest is committed in `worker/admin-auth.js`; the key is never placed in a URL or browser storage. Optionally set the Cloudflare secret `RSVP_ADMIN_KEY` to rotate/override it. The admin page lists submissions and total attendance and downloads a CSV. No attendee data is included in static builds or public page responses.
+
+Verify the first production deployment creates the Durable Object binding before accepting RSVPs. `wrangler dev` tests use a separate local database. Never commit the local `.wrangler` state.

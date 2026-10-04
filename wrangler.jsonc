@@ -27,5 +27,21 @@
       "pattern": "www.brecksky.com/*",
       "zone_name": "brecksky.com"
     }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "RSVP_STORE",
+        "class_name": "FestivalRsvps"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "frisco-rsvps-v1",
+      "new_sqlite_classes": [
+        "FestivalRsvps"
+      ]
+    }
   ]
 }
