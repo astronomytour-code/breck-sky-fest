@@ -10,24 +10,6 @@
     "not_found_handling": "404-page",
     "html_handling": "force-trailing-slash"
   },
-  "routes": [
-    {
-      "pattern": "breckskyfest.com",
-      "custom_domain": true
-    },
-    {
-      "pattern": "www.breckskyfest.com/*",
-      "zone_name": "breckskyfest.com"
-    },
-    {
-      "pattern": "brecksky.com",
-      "custom_domain": true
-    },
-    {
-      "pattern": "www.brecksky.com/*",
-      "zone_name": "brecksky.com"
-    }
-  ],
   "durable_objects": {
     "bindings": [
       {

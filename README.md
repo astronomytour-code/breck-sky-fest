@@ -12,7 +12,7 @@ npm run dev
 npm run build
 ```
 
-Cloudflare Workers serves the static `dist/` output using the existing `wrangler.jsonc`. The existing GitHub-to-Cloudflare integration deploys `main`. Cloudflare Workers Builds publishes `main`. `breckskyfest.com` is the canonical site; `brecksky.com` and both `www` hostnames are attached as Worker Custom Domains and redirected to `https://breckskyfest.com` while preserving path and query string.
+Cloudflare Workers serves the static `dist/` output using the existing `wrangler.jsonc`. The existing GitHub-to-Cloudflare integration deploys `main`. Cloudflare Workers Builds publishes `main`. `breckskyfest.com` is the canonical site; `brecksky.com` and both `www` hostnames route to the Worker and redirected to `https://breckskyfest.com` while preserving path and query string.
 
 GitHub Actions validates the install and production build on pushes and pull requests. It does not run a second deployment or require Cloudflare secrets in GitHub. Cloudflare Workers Builds owns publishing; check its build log separately if a deployment reports failure.
 
@@ -53,3 +53,5 @@ Free Frisco RSVP: `/rsvp/frisco/`. Submissions are stored persistently in the Cl
 Organizer view: `/admin/rsvps/`, excluded from indexing. Enter the private access key supplied to the organizer. Only its SHA-256 digest is committed in `worker/admin-auth.js`; the key is never placed in a URL or browser storage. Optionally set the Cloudflare secret `RSVP_ADMIN_KEY` to rotate/override it. The admin page lists submissions and total attendance and downloads a CSV. No attendee data is included in static builds or public page responses.
 
 Verify the first production deployment creates the Durable Object binding before accepting RSVPs. `wrangler dev` tests use a separate local database. Never commit the local `.wrangler` state.
+
+Domain and route attachments are managed in Cloudflare. The Wrangler config intentionally omits `routes`, which preserves the existing dashboard-managed domains and DNS records on deployment. This avoids custom-domain DNS conflict 100117 for the already configured BreckSky.com redirect.
