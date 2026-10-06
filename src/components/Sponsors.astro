@@ -19,13 +19,8 @@ const { compact = false } = Astro.props;
     <div class="invitation-content"><h3>Help power a major festival experience.</h3><a href="/sponsors/#become-a-sponsor" class="text-link">Become a sponsor</a></div>
   </section>
 
-  <section class="sponsor-tier sponsor-interplanetary sponsor-invitation">
+  <section class="sponsor-tier sponsor-interplanetary">
     <div class="tier-heading"><span>Interplanetary</span><small>Program-level support</small></div>
-    <div class="invitation-content"><h3>Help bring a festival program to life.</h3><a href="/sponsors/#become-a-sponsor" class="text-link">Become a sponsor</a></div>
-  </section>
-
-  <section class="sponsor-tier sponsor-orbital">
-    <div class="tier-heading"><span>Orbital</span><small>Community support</small></div>
     <div class="sponsor-row">
       <article class="tier-sponsor">
         <img class="partner-logo" src="/images/boec-logo.png" alt="Breckenridge Outdoor Education Center (BOEC) logo" width="583" height="207" loading="lazy"/>
@@ -33,6 +28,12 @@ const { compact = false } = Astro.props;
         <p>Accessible astronomy partner for the festival kickoff.</p>
         <a href="https://boec.org/" target="_blank" rel="noopener noreferrer" class="text-link">Visit BOEC <span aria-hidden="true">↗</span></a>
       </article>
+    </div>
+  </section>
+
+  <section class="sponsor-tier sponsor-orbital">
+    <div class="tier-heading"><span>Orbital</span><small>Community support</small></div>
+    <div class="sponsor-row">
       <article class="tier-sponsor">
         <img class="partner-logo historic-park-logo" src="/images/frisco-historic-park-logo.png" alt="Frisco Historic Park & Museum logo" width="620" height="176" loading="lazy"/>
         <h3>Frisco Historic Park &amp; Museum</h3>
@@ -42,7 +43,7 @@ const { compact = false } = Astro.props;
       <article class="tier-sponsor">
         <img class="beaver-run-logo" src="/images/beaver-run-logo.png" alt="Beaver Run Resort & Conference Center logo" width="240" height="123" loading="lazy"/>
         <h3>Beaver Run Resort</h3>
-        <p>Venue and hospitality partner.</p>
+        <p>Festival venue partner.</p>
         <a href="https://beaverrun.com/" target="_blank" rel="noopener noreferrer" class="text-link">Visit Beaver Run <span aria-hidden="true">↗</span></a>
       </article>
       <article class="tier-sponsor">
