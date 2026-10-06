@@ -14,6 +14,16 @@ const { compact = false } = Astro.props;
     </div>
   </section>
 
+  <section class="sponsor-tier sponsor-interstellar sponsor-invitation">
+    <div class="tier-heading"><span>Interstellar</span><small>Major festival support</small></div>
+    <div class="invitation-content"><h3>Help power a major festival experience.</h3><a href="/sponsors/#become-a-sponsor" class="text-link">Become a sponsor</a></div>
+  </section>
+
+  <section class="sponsor-tier sponsor-interplanetary sponsor-invitation">
+    <div class="tier-heading"><span>Interplanetary</span><small>Program-level support</small></div>
+    <div class="invitation-content"><h3>Help bring a festival program to life.</h3><a href="/sponsors/#become-a-sponsor" class="text-link">Become a sponsor</a></div>
+  </section>
+
   <section class="sponsor-tier sponsor-orbital">
     <div class="tier-heading"><span>Orbital</span><small>Community support</small></div>
     <div class="sponsor-row">
@@ -66,6 +76,7 @@ const { compact = false } = Astro.props;
   .sponsor-orbital .tier-sponsor img.beaver-run-logo{width:180px;height:auto;max-height:100px}
   .sponsor-tier .tier-sponsor img.partner-logo{width:220px;max-width:100%;height:auto;max-height:100px;border-radius:0}
   .organizer-credit{display:flex;align-items:center;justify-content:center;gap:14px;padding:12px;text-decoration:none;color:var(--ink);font-size:1rem}.organizer-credit img{width:48px;height:48px;object-fit:contain}
+  .sponsor-invitation{padding-block:18px}.invitation-content{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px}.invitation-content h3{font-size:1.35rem;margin:0}.invitation-content .text-link{font-size:.875rem;white-space:nowrap}
   .compact{gap:18px}.compact .sponsor-tier{padding:18px;grid-template-columns:165px minmax(0,1fr)}.compact .tier-sponsor{padding:14px 20px}.compact .tier-heading span{font-size:1.55rem}
   @media(max-width:760px){.sponsor-tier,.compact .sponsor-tier{grid-template-columns:1fr}.tier-sponsor{border-left:0;border-top:1px solid var(--line);padding-inline:0}.tier-heading{text-align:center}}
 </style>
