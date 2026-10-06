@@ -14,84 +14,36 @@ const { compact = false } = Astro.props;
     </div>
   </section>
 
-  <section class="sponsor-tier sponsor-interstellar">
-    <div class="tier-heading"><span>Interstellar</span><small>Major festival support</small></div>
-    <div class="sponsor-row">
-      <article class="tier-sponsor">
-        <h3>Interstellar sponsorship opportunities</h3>
-        <p>Help make free community astronomy and the wider festival program possible.</p>
-        <a href="/sponsors/#become-a-sponsor" class="text-link">Explore sponsorship <span aria-hidden="true">↗</span></a>
-      </article>
-    </div>
-  </section>
-
-  <section class="sponsor-tier sponsor-interplanetary">
-    <div class="tier-heading"><span>Interplanetary</span><small>Program-level support</small></div>
-    <div class="sponsor-row">
-      <article class="tier-sponsor">
-        <h3>Interplanetary sponsorship opportunities</h3>
-        <p>Help make free community astronomy and the wider festival program possible.</p>
-        <a href="/sponsors/#become-a-sponsor" class="text-link">Explore sponsorship <span aria-hidden="true">↗</span></a>
-      </article>
-    </div>
-  </section>
-
   <section class="sponsor-tier sponsor-orbital">
     <div class="tier-heading"><span>Orbital</span><small>Community support</small></div>
     <div class="sponsor-row">
       <article class="tier-sponsor">
-        <h3>Orbital sponsorship opportunities</h3>
-        <p>Help make free community astronomy and the wider festival program possible.</p>
-        <a href="/sponsors/#become-a-sponsor" class="text-link">Explore sponsorship <span aria-hidden="true">↗</span></a>
-      </article>
-    </div>
-  </section>
-
-  <div class="partner-intro"><span class="eyebrow">Festival organizer</span><h2>Bringing the sky to you.</h2></div>
-
-  <section class="sponsor-tier sponsor-organizer">
-    <div class="tier-heading"><span>AstroTours</span><small>Organizer &amp; lead astronomy</small></div>
-    <div class="sponsor-row">
-      <article class="tier-sponsor">
-        <img src="/images/astrotours-logo.webp" alt="AstroTours.org logo" loading="lazy"/>
-        <h3>AstroTours.org</h3>
-        <p>Festival Organizer and Lead Astronomy Partner</p>
-        <a href="https://www.astrotours.org/" target="_blank" rel="noopener noreferrer" class="text-link">Meet the astronomers <span aria-hidden="true">↗</span></a>
-      </article>
-    </div>
-  </section>
-
-  <div class="partner-intro"><span class="eyebrow">Community &amp; Program Partners</span><h2>Making it happen together.</h2><p>Our hosts, accessible astronomy collaborators, and promotional partners help bring the festival to the community. Their roles are recognized separately from sponsorship tiers.</p></div>
-
-  <section class="sponsor-tier sponsor-partners">
-    <div class="tier-heading"><span>Partners</span><small>Community &amp; program support</small></div>
-    <div class="sponsor-row">
-      <article class="tier-sponsor">
         <img class="partner-logo" src="/images/boec-logo.png" alt="Breckenridge Outdoor Education Center (BOEC) logo" width="583" height="207" loading="lazy"/>
         <h3>Breckenridge Outdoor Education Center (BOEC)</h3>
-        <p>Official Accessible Astronomy Partner. Supporting accessible and inclusive astronomy for the festival kickoff.</p>
+        <p>Accessible astronomy partner for the festival kickoff.</p>
         <a href="https://boec.org/" target="_blank" rel="noopener noreferrer" class="text-link">Visit BOEC <span aria-hidden="true">↗</span></a>
       </article>
       <article class="tier-sponsor">
         <img class="partner-logo historic-park-logo" src="/images/frisco-historic-park-logo.png" alt="Frisco Historic Park & Museum logo" width="620" height="176" loading="lazy"/>
         <h3>Frisco Historic Park &amp; Museum</h3>
-        <p>Community Host Partner. Hosting November 27 stargazing at Frisco Historic Park.</p>
+        <p>Community host for November 27 stargazing.</p>
         <a href="https://www.townoffrisco.com/things-to-do/frisco-historic-park-museum/" target="_blank" rel="noopener noreferrer" class="text-link">Visit Frisco Historic Park <span aria-hidden="true">↗</span></a>
       </article>
       <article class="tier-sponsor">
         <img class="beaver-run-logo" src="/images/beaver-run-logo.png" alt="Beaver Run Resort & Conference Center logo" width="240" height="123" loading="lazy"/>
         <h3>Beaver Run Resort</h3>
-        <p>Venue and Hospitality Partner. Supporting festival spaces and hospitality.</p>
+        <p>Venue and hospitality partner.</p>
         <a href="https://beaverrun.com/" target="_blank" rel="noopener noreferrer" class="text-link">Visit Beaver Run <span aria-hidden="true">↗</span></a>
       </article>
       <article class="tier-sponsor">
         <img src="/images/colorado-stargazing-trail-mark.svg" alt="Colorado Stargazing Trail independent visitor guide mark" loading="lazy"/>
         <h3>ColoradoStargazingTrail.com</h3>
-        <p>Promotional Partner. An independent visitor guide to Colorado’s official Stargazing Trail.</p>
+        <p>Promotional partner and independent Colorado stargazing guide.</p>
         <a href="https://www.coloradostargazingtrail.com/events/breckenridge-sky-festival-2026/" target="_blank" rel="noopener noreferrer" class="text-link">View the Breckenridge Sky Festival guide <span aria-hidden="true">↗</span></a>
       </article>
     </div>
   </section>
+  <a class="organizer-credit" href="https://www.astrotours.org/" target="_blank" rel="noopener noreferrer"><img src="/images/astrotours-logo.webp" alt="AstroTours.org logo" width="48" height="48" loading="lazy"/><span>Organized and delivered by <strong>AstroTours.org</strong>.</span></a>
 </div>
 
 <style>
@@ -108,13 +60,12 @@ const { compact = false } = Astro.props;
   .tier-sponsor .text-link{font-size:.69rem}
   .sponsor-intergalactic{--sponsor-color:#c89a38}.sponsor-intergalactic .tier-sponsor>:global(svg){width:92px;height:92px;color:#c89a38;margin-bottom:6px}
   .sponsor-intergalactic .tier-sponsor img{width:110px;height:auto;max-height:110px}
-  .partner-intro{margin-top:24px}.partner-intro h2{margin:8px 0 14px}.partner-intro p{max-width:70ch}
-  .sponsor-organizer .tier-sponsor img{width:90px;height:90px;object-fit:contain}.sponsor-partners{--sponsor-color:#bdcba6}.sponsor-partners .tier-sponsor img{width:70px;height:70px}.sponsor-partners .tier-sponsor img.beaver-run-logo{width:180px;height:auto;max-height:100px}
   .sponsor-interstellar{--sponsor-color:#a0c7cc}.sponsor-interstellar .tier-sponsor img{width:82px;height:auto;max-height:82px}
   .sponsor-interplanetary{--sponsor-color:#e9afb5}.sponsor-interplanetary .tier-sponsor img{width:70px;height:70px;border-radius:50%}
   .sponsor-orbital{--sponsor-color:#bdcba6}.sponsor-orbital .tier-sponsor img{width:56px;height:56px}.sponsor-orbital .tier-sponsor>:global(svg){width:56px;height:56px;color:var(--ink);margin-bottom:12px}
   .sponsor-orbital .tier-sponsor img.beaver-run-logo{width:180px;height:auto;max-height:100px}
   .sponsor-tier .tier-sponsor img.partner-logo{width:220px;max-width:100%;height:auto;max-height:100px;border-radius:0}
+  .organizer-credit{display:flex;align-items:center;justify-content:center;gap:14px;padding:12px;text-decoration:none;color:var(--ink);font-size:1rem}.organizer-credit img{width:48px;height:48px;object-fit:contain}
   .compact{gap:18px}.compact .sponsor-tier{padding:18px;grid-template-columns:165px minmax(0,1fr)}.compact .tier-sponsor{padding:14px 20px}.compact .tier-heading span{font-size:1.55rem}
   @media(max-width:760px){.sponsor-tier,.compact .sponsor-tier{grid-template-columns:1fr}.tier-sponsor{border-left:0;border-top:1px solid var(--line);padding-inline:0}.tier-heading{text-align:center}}
 </style>
