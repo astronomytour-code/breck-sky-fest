@@ -113,7 +113,7 @@ export const experiences: Experience[] = [
     summary: 'A 60-minute moon-inspired guided meditation and sound journey with Alison at Spirit Alchemy Studio. Choose the 4 PM or 6 PM session.',
     description: ['Inspired by the night sky and the moon, this guided meditation and sound journey invites you to slow down, turn inward, and reconnect to the vastness of the cosmos.', 'Begin with a guided meditation inspired by the moon and the seasonal transition into winter, followed by an immersive sound session with crystal quartz singing bowls, gongs, chimes, and other instruments.', 'Hosted by Alison at Spirit Alchemy Studio as an official Breck Sky Fest program. No experience is necessary; yoga mats and props are provided.'],
     highlights: ['Two sessions on November 21: 4 PM and 6 PM', 'Guided meditation followed by a sound journey', 'Crystal quartz singing bowls, gongs, chimes, and other instruments', 'Yoga mats and props provided'],
-    audience: 'No experience necessary', admission: 'Paid class · see Spirit Alchemy booking page for price and availability', duration: '60 minutes per session',
+    audience: 'No experience necessary', admission: '$40 per person · book directly with Spirit Alchemy', duration: '60 minutes per session',
     practical: 'Reserve your chosen session directly through Spirit Alchemy. Studio capacity is up to eight people per session. Studio address: 106 N French St, GL7, Breckenridge. See your booking confirmation for arrival details. Contact the studio about accessibility or sound-related needs.',
     opportunity: 'Hosted by Alison at Spirit Alchemy Studio. Find the studio on Instagram: @spirit_alchemy_studio.',
   },
