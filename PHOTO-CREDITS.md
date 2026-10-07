@@ -18,3 +18,8 @@ Files are EXIF-oriented, resized where noted, and compressed as WebP. No generat
 - `evening-telescope.webp`: `compressed best AstroPics 2024 copy/Beyond/IMG_2804 Large.jpeg`
 - `telescope-sunset.webp`: `compressed best AstroPics 2024 copy/Beyond/IMG_7273 Large.jpeg`
 - `astrotours-logo.webp`: `compressed best AstroPics 2024 copy/Logos/ circle logo.png`
+
+## Spirit Alchemy Studio
+
+- `spirit-alchemy-sound-journey.webp`: Photo supplied by Luke for the Celestial Sound Journey listing, courtesy of Spirit Alchemy Studio. Optimized from sunmoon.jpeg.
+- `spirit-alchemy-logo.png`: Official studio logo retrieved from https://www.spirit-alchemy.com/ for partner recognition.

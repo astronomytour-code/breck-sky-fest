@@ -107,14 +107,14 @@ export const experiences: Experience[] = [
     opportunity: 'Scientists, educators, speakers, libraries, and community venues can propose a talk or host a conversation.',
   },
   {
-    slug: 'wellness-under-the-sky', title: 'Celestial Sound Journey', subtitle: 'Hosted by Spirit Alchemy Studio', category: 'Wellness', filters: ['wellness'], accent: 'purple', icon: 'moon', status: 'Confirmed · booking open',
-    date: 'Saturday, November 21, 2026', time: '4:00 PM & 6:00 PM MST · two separate sessions', venue: 'Spirit Alchemy Studio, Breckenridge',
+    slug: 'wellness-under-the-sky', title: 'Celestial Sound Journey', subtitle: 'Hosted by Spirit Alchemy Studio', category: 'Wellness', filters: ['wellness'], accent: 'purple', image: 'spirit-alchemy-sound-journey', alt: 'Alison at Spirit Alchemy Studio with singing bowls and gongs', icon: 'moon', status: 'Confirmed · booking open',
+    date: 'Saturday, November 21, 2026', time: '4:00 PM & 6:00 PM MST · two separate sessions', venue: 'Spirit Alchemy Studio · 106 N French St, GL7, Breckenridge, CO 80424',
     ctaHref: 'https://spiritalchemystudio.as.me/schedule/59d4976b/category/Community%2520Classes/appointment/97147833/calendar/9409023', ctaLabel: 'Book with Spirit Alchemy',
     summary: 'A 60-minute moon-inspired guided meditation and sound journey with Alison at Spirit Alchemy Studio. Choose the 4 PM or 6 PM session.',
     description: ['Inspired by the night sky and the moon, this guided meditation and sound journey invites you to slow down, turn inward, and reconnect to the vastness of the cosmos.', 'Begin with a guided meditation inspired by the moon and the seasonal transition into winter, followed by an immersive sound session with crystal quartz singing bowls, gongs, chimes, and other instruments.', 'Hosted by Alison at Spirit Alchemy Studio as an official Breck Sky Fest program. No experience is necessary; yoga mats and props are provided.'],
     highlights: ['Two sessions on November 21: 4 PM and 6 PM', 'Guided meditation followed by a sound journey', 'Crystal quartz singing bowls, gongs, chimes, and other instruments', 'Yoga mats and props provided'],
     audience: 'No experience necessary', admission: 'Paid class · see Spirit Alchemy booking page for price and availability', duration: '60 minutes per session',
-    practical: 'Reserve your chosen session directly through Spirit Alchemy. Studio capacity is up to eight people per session. See your booking confirmation for the studio address and arrival details. Contact the studio about accessibility or sound-related needs.',
+    practical: 'Reserve your chosen session directly through Spirit Alchemy. Studio capacity is up to eight people per session. Studio address: 106 N French St, GL7, Breckenridge. See your booking confirmation for arrival details. Contact the studio about accessibility or sound-related needs.',
     opportunity: 'Hosted by Alison at Spirit Alchemy Studio. Find the studio on Instagram: @spirit_alchemy_studio.',
   },
   {
