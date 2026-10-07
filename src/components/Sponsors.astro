@@ -14,9 +14,16 @@ const { compact = false } = Astro.props;
     </div>
   </section>
 
-  <section class="sponsor-tier sponsor-interstellar sponsor-invitation">
+  <section class="sponsor-tier sponsor-interstellar">
     <div class="tier-heading"><span>Interstellar</span><small>Major festival support</small></div>
-    <div class="invitation-content"><h3>Help power a major festival experience.</h3><a href="/sponsors/#become-a-sponsor" class="text-link">Become a sponsor</a></div>
+    <div class="sponsor-row">
+      <article class="tier-sponsor">
+        <img class="bgv-logo" src="/images/bgv-gives-logo.png" alt="BGV Gives logo" width="980" height="919" loading="lazy"/>
+        <h3>BGV Gives</h3>
+        <p>Supporting community astronomy and educational programming for the first Breck Sky Fest.</p>
+        <a href="https://www.breckenridgegrandvacations.com/" target="_blank" rel="noopener noreferrer" class="text-link">Visit Breckenridge Grand Vacations <span aria-hidden="true">↗</span></a>
+      </article>
+    </div>
   </section>
 
   <section class="sponsor-tier sponsor-interplanetary">
@@ -78,6 +85,7 @@ const { compact = false } = Astro.props;
   .sponsor-intergalactic{--sponsor-color:#c89a38}.sponsor-intergalactic .tier-sponsor>:global(svg){width:92px;height:92px;color:#c89a38;margin-bottom:6px}
   .sponsor-intergalactic .tier-sponsor img{width:110px;height:auto;max-height:110px}
   .sponsor-interstellar{--sponsor-color:#a0c7cc}.sponsor-interstellar .tier-sponsor img{width:82px;height:auto;max-height:82px}
+  .sponsor-interstellar .tier-sponsor img.bgv-logo{width:150px;max-width:100%;height:auto;max-height:150px}
   .sponsor-interplanetary{--sponsor-color:#e9afb5}.sponsor-interplanetary .tier-sponsor img{width:70px;height:70px;border-radius:50%}
   .sponsor-orbital{--sponsor-color:#bdcba6}.sponsor-orbital .tier-sponsor img{width:56px;height:56px}.sponsor-orbital .tier-sponsor>:global(svg){width:56px;height:56px;color:var(--ink);margin-bottom:12px}
   .sponsor-orbital .tier-sponsor img.beaver-run-logo{width:180px;height:auto;max-height:100px}
