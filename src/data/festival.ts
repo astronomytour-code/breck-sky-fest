@@ -107,13 +107,15 @@ export const experiences: Experience[] = [
     opportunity: 'Scientists, educators, speakers, libraries, and community venues can propose a talk or host a conversation.',
   },
   {
-    slug: 'wellness-under-the-sky', title: 'A quieter moment under the sky', subtitle: 'Yoga, sound & wellbeing', category: 'Wellness', filters: ['wellness'], accent: 'purple', icon: 'moon', status: 'Practitioner & session TBA',
-    summary: 'A proposed sky-inspired yoga, sound-bath, or wellbeing session led by a local practitioner. Details coming soon.',
-    description: ['We are inviting local practitioners to propose a gentle change of pace within the festival, such as a sky-inspired yoga class or sound-bath session.', 'The practitioner will help shape the format, setting, and suitability. An indoor setting may be part of the plan for November conditions.'],
-    highlights: ['A session shaped by a local practitioner', 'Space to slow down during the festival', 'Format and setting announced before booking'],
-    audience: 'Suitability and age guidance TBA', admission: 'TBA', duration: 'TBA',
-    practical: 'Indoor or outdoor setting, mats or other equipment, sound levels, and accessibility will be listed with the confirmed session.',
-    opportunity: 'Yoga teachers, sound practitioners, studios, and wellness venues are invited to propose a session or adapt an existing offering.',
+    slug: 'wellness-under-the-sky', title: 'Celestial Sound Journey', subtitle: 'Hosted by Spirit Alchemy Studio', category: 'Wellness', filters: ['wellness'], accent: 'purple', icon: 'moon', status: 'Confirmed · booking open',
+    date: 'Saturday, November 21, 2026', time: '4:00 PM & 6:00 PM MST · two separate sessions', venue: 'Spirit Alchemy Studio, Breckenridge',
+    ctaHref: 'https://spiritalchemystudio.as.me/schedule/59d4976b/category/Community%2520Classes/appointment/97147833/calendar/9409023', ctaLabel: 'Book with Spirit Alchemy',
+    summary: 'A 60-minute moon-inspired guided meditation and sound journey with Alison at Spirit Alchemy Studio. Choose the 4 PM or 6 PM session.',
+    description: ['Inspired by the night sky and the moon, this guided meditation and sound journey invites you to slow down, turn inward, and reconnect to the vastness of the cosmos.', 'Begin with a guided meditation inspired by the moon and the seasonal transition into winter, followed by an immersive sound session with crystal quartz singing bowls, gongs, chimes, and other instruments.', 'Hosted by Alison at Spirit Alchemy Studio as an official Breck Sky Fest program. No experience is necessary; yoga mats and props are provided.'],
+    highlights: ['Two sessions on November 21: 4 PM and 6 PM', 'Guided meditation followed by a sound journey', 'Crystal quartz singing bowls, gongs, chimes, and other instruments', 'Yoga mats and props provided'],
+    audience: 'No experience necessary', admission: 'Paid class · see Spirit Alchemy booking page for price and availability', duration: '60 minutes per session',
+    practical: 'Reserve your chosen session directly through Spirit Alchemy. Studio capacity is up to eight people per session. See your booking confirmation for the studio address and arrival details. Contact the studio about accessibility or sound-related needs.',
+    opportunity: 'Hosted by Alison at Spirit Alchemy Studio. Find the studio on Instagram: @spirit_alchemy_studio.',
   },
   {
     slug: 'food-and-warm-drinks', title: 'Something warm between the stars', subtitle: 'Food & warm drinks', category: 'Around town', filters: ['family'], accent: 'orange', icon: 'cup', status: 'Vendors & locations TBA',
@@ -184,8 +186,8 @@ export const experiences: Experience[] = [
 ];
 
 export const faqs = [
-  {q:'When is Breck Sky Fest?', a:'Breck Sky Fest kicks off with BOEC on November 11. Frisco Historic Park Stargazing is November 27, 5:30–7:30 PM. The main festival day and night are November 28, with location and times TBA. November 30 at Beaver Run Resort is the weather backup.'},
-  {q:'Can I register yet?', a:'Free RSVPs are required and open for Frisco Historic Park Stargazing on November 27. Arrive anytime between 5:30 and 7:30 PM. Reserve November 30 weather-backup stargazing through the linked AstroTours booking page. RSVPs are also open for public accessible stargazing with BOEC on November 11, with a field for accessibility needs. The separate 1 PM BOEC school session is for BOEC students only. BOEC evening time and location, and November 28 main festival details, are coming soon.'},
+  {q:'When is Breck Sky Fest?', a:'Breck Sky Fest kicks off with BOEC on November 11. Celestial Sound Journey at Spirit Alchemy Studio is November 21, with 4 PM and 6 PM sessions. Frisco Historic Park Stargazing is November 27, 5:30–7:30 PM. The main festival day and night are November 28, with location and times TBA. November 30 at Beaver Run Resort is the weather backup.'},
+  {q:'Can I register yet?', a:'Booking is open directly through Spirit Alchemy for Celestial Sound Journey on November 21 at 4 PM or 6 PM. Free RSVPs are required and open for Frisco Historic Park Stargazing on November 27. Arrive anytime between 5:30 and 7:30 PM. Reserve November 30 weather-backup stargazing through the linked AstroTours booking page. RSVPs are also open for public accessible stargazing with BOEC on November 11, with a field for accessibility needs. The separate 1 PM BOEC school session is for BOEC students only. BOEC evening time and location, and November 28 main festival details, are coming soon.'},
   {q:'Is it suitable for children?', a:'Families are a central part of the plan, especially daytime science, the planet walk, and community stargazing. Final age guidance will be listed for each activity. Children will need to stay with their accompanying adult; drop-off childcare is not planned.'},
   {q:'Do I need a telescope or astronomy experience?', a:'No experience is needed for the main astronomy activities, and the astronomy team plans to provide telescopes for those sessions. Any specialist workshop equipment, such as a camera, will be listed in advance.'},
   {q:'What should we wear?', a:'Bring a warm coat, insulating layers, a hat, gloves, warm socks, and sturdy footwear for possible snow or ice. Standing at a telescope can feel much colder than walking. A thermos and hand warmers can be useful.'},
