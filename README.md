@@ -20,7 +20,7 @@ GitHub Actions validates the install and production build on pushes and pull req
 
 - `src/data/festival.ts`: contact details, the ten proposed/planned experiences, their status and practical details, and visitor FAQs.
 - `src/pages/program/[slug].astro`: all individual experience pages, generated from the content above.
-- `src/components/Sponsors.astro`: Town of Breckenridge is the Intergalactic founding grant supporter. The roster shows occupied levels only; all four sponsorship opportunities remain described on the sponsors page. BOEC, Frisco Historic Park, Beaver Run, and Colorado Stargazing Trail receive Orbital community recognition. AstroTours.org has a compact organizer credit. Orbital accepts financial support or approved community contributions; significant in-kind support may qualify for higher levels by agreement. No contribution amounts are displayed publicly.
+- `src/components/Sponsors.astro`: Town of Breckenridge is the Intergalactic founding grant supporter. The roster shows occupied levels only; all four sponsorship opportunities remain described on the sponsors page. BOEC, Frisco Historic Park, and Beaver Run receive Orbital community recognition. AstroTours.org has a compact organizer credit. Orbital accepts financial support or approved community contributions; significant in-kind support may qualify for higher levels by agreement. No contribution amounts are displayed publicly.
 - `src/pages/`: home, program, visitor guide, partner opportunities, sponsors, about, photo gallery, contact, and 404.
 - `src/styles/global.css`: responsive festival design, keyboard focus, and reduced-motion handling.
 - `PHOTO-CREDITS.md`: provenance for all supplied photography.
