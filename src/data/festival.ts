@@ -5,7 +5,7 @@ export const festival = {
   timing: 'November 2026',
   location: 'Breckenridge, Colorado',
   email: 'Luke@AstroTours.org',
-  description: 'Breckenridge Sky Festival is a Summit County dark-sky celebration centered in Breckenridge, Colorado. Telescopes, hands-on science, art, and time together under the stars. Kickoff November 11; main weekend November 27–28; weather backup November 30. Remaining times and venues are clearly marked TBA.',
+  description: 'Breckenridge Sky Festival is a Summit County dark-sky celebration centered in Breckenridge, Colorado. Telescopes, hands-on science, art, and time together under the stars. Kickoff November 11; school program November 23; main program November 27; weather backup November 30. Remaining times and venues are clearly marked TBA.',
 };
 
 export function emailLink(subject: string, body = '') {
@@ -41,13 +41,13 @@ export type Experience = {
 export const experiences: Experience[] = [
   {
     slug: 'community-stargazing', title: 'Breck Sky Fest: Main Festival Day', subtitle: 'Solar astronomy + evening stargazing', category: 'Day & night', filters: ['day', 'night', 'family'], accent: 'blue',
-    image: 'community-night', alt: 'Guests gathered around a telescope at an AstroTours evening program', icon: 'stars', status: 'Date confirmed · location & times TBA',
-    date: 'Saturday, November 28, 2026', time: 'To Be Announced', venue: 'To Be Announced',
+    image: 'community-night', alt: 'Guests gathered around a telescope at an AstroTours evening program', icon: 'stars', status: 'Date & venue confirmed · times TBA',
+    date: 'Friday, November 27, 2026', time: 'To Be Announced', venue: 'Breckenridge Ski Resort · Quicksilver chair base area',
     summary: 'The main festival day and night: solar astronomy during the day and telescope observing under the stars in the evening.',
-    description: ['Daytime: Solar Astronomy. Explore our nearest star through safe solar observing, solar telescopes, astronomy demonstrations, and related festival programming.', 'Evening: Stargazing. Join telescope observing, astronomy presentations and talks, constellation pointing, and the festival’s nighttime programming.', 'The exact Breckenridge location and times are still being finalized. Check back as the full program is announced.'],
+    description: ['Daytime: Solar Astronomy. Explore our nearest star through safe solar observing, solar telescopes, astronomy demonstrations, and related festival programming.', 'Evening: Stargazing. Join telescope observing, astronomy presentations and talks, constellation pointing, and the festival’s nighttime programming.', 'Join us at Breckenridge Ski Resort near the Quicksilver chair base area on November 27. Times and the full program will be announced.'],
     highlights: ['Daytime: safe solar observing and solar telescopes', 'Daytime: astronomy demonstrations and festival programming', 'Evening: telescope observing, astronomy talks, and constellation pointing'],
     audience: 'Families, visitors, and curious locals', admission: 'Full participation details coming soon', duration: 'Times: To Be Announced',
-    practical: 'Look at the Sun only through approved solar equipment supervised by the astronomy team. Dress warmly for evening observing. Location, times, access, and the full program will be announced here. November 30 at Beaver Run Resort is the weather backup for astronomy affected by poor weather during the main weekend.',
+    practical: 'Look at the Sun only through approved solar equipment supervised by the astronomy team. Dress warmly for evening observing. Times, arrival details, access, and the full program will be announced here. November 30 at Beaver Run Resort is the weather backup for astronomy affected by poor weather during the main weekend.',
     opportunity: 'Science educators and local organizations can propose an activity or demonstration for the festival.',
   },
   {
@@ -62,12 +62,12 @@ export const experiences: Experience[] = [
   },
   {
     slug: 'sky-school', title: 'Breck Sky School', subtitle: 'A school day with a bigger view', category: 'Schools & youth', filters: ['school', 'day'], accent: 'green',
-    image: 'solar-discovery', alt: 'Young visitors and an adult looking through a solar telescope', icon: 'sun', status: 'Tentative dates · details TBA',
-    date: 'November 23 and/or 24, 2026', time: 'School day · details TBA',
-    summary: 'Astronomy and hands-on science at Breckenridge elementary schools, planned for one or both days on November 23 and 24. Details TBA.',
-    description: ['We are developing visits to local elementary schools so students can take part during their school day without needing a bus trip to a separate festival venue. Visits are planned for one or both days on November 23 and 24, 2026. Participating schools, the final date or dates, times, and session lengths are still being arranged.', 'The proposed format combines an AstroTours astronomy station with activities from local science and education organizations. Invitations have gone out to schools and potential education partners; station leaders and activities will be listed once agreed.'],
+    image: 'solar-discovery', alt: 'Young visitors and an adult looking through a solar telescope', icon: 'sun', status: 'Date confirmed · school-day times TBA',
+    date: 'Monday, November 23, 2026', time: 'School day · details TBA',
+    summary: 'Astronomy and hands-on science at Breckenridge Elementary and Upper Blue Elementary on November 23. School-day times and session details TBA.',
+    description: ['Breck Sky School takes place at Breckenridge Elementary and Upper Blue Elementary on Monday, November 23, 2026, so students can take part during their school day. Times and session lengths are being arranged directly with the schools.', 'The proposed format combines an AstroTours astronomy station with activities from local science and education organizations. Invitations have gone out to schools and potential education partners; station leaders and activities will be listed once agreed.'],
     highlights: ['School visits shaped around students and teachers', 'Supervised solar observing and hands-on science', 'Activity stations with room for education partners'],
-    audience: 'Local elementary schools initially; other school and youth-group inquiries welcome', venue: 'Breckenridge elementary schools · details TBA', admission: 'Free school sessions; arranged with participating schools', duration: 'Session lengths TBA',
+    audience: 'Local elementary schools initially; other school and youth-group inquiries welcome', venue: 'Breckenridge Elementary & Upper Blue Elementary', admission: 'Free school sessions; arranged with participating schools', duration: 'Session lengths TBA',
     practical: 'School sessions will be arranged directly with teachers and group leaders. They will not be public drop-in events. Tell us about student ages, available space, supervision, access needs, and the school timetable.',
     opportunity: 'Educators, museums, and science organizations can propose a hands-on station. Sponsors can help cover materials, equipment, and the cost of bringing the program to schools.',
   },
@@ -142,7 +142,7 @@ export const experiences: Experience[] = [
     date: 'Wednesday, November 11, 2026', time: 'Evening · To Be Announced', venue: 'To Be Announced',
     ctaHref: '/rsvp/boec/', ctaLabel: 'RSVP for accessible stargazing',
     summary: 'Public accessible stargazing with BOEC, with priority for community members and their families who need increased accessibility.',
-    description: ['Celebrate the official Breck Sky Fest kickoff with an evening of accessible and inclusive stargazing in partnership with Breckenridge Outdoor Education Center (BOEC).', 'This evening program is open to the public, with priority for community members and their families who need increased accessibility. Please RSVP and share any accessibility needs to help us plan.', 'We encourage most community members to RSVP for free Frisco Historic Park Stargazing on November 27 or join the main Breck Sky Fest program on November 28. The evening time, location, and specific accessibility arrangements for November 11 are still being finalized. Check back for additional details.'],
+    description: ['Celebrate the official Breck Sky Fest kickoff with an evening of accessible and inclusive stargazing in partnership with Breckenridge Outdoor Education Center (BOEC).', 'This evening program is open to the public, with priority for community members and their families who need increased accessibility. Please RSVP and share any accessibility needs to help us plan.', 'We encourage most community members to RSVP for free Frisco Historic Park Stargazing on November 27 or join the main Breck Sky Fest program on November 27. The evening time, location, and specific accessibility arrangements for November 11 are still being finalized. Check back for additional details.'],
     highlights: ['Public evening accessible stargazing', 'Priority for community members and families who need increased accessibility', 'RSVP includes a field for accessibility needs'],
     audience: 'Public, with priority for community members and families who need increased accessibility', admission: 'RSVP available', duration: 'To Be Announced',
     practical: 'Evening time and location: To Be Announced. Share accessibility needs in your RSVP. The separate 1 PM BOEC homeschool program is for BOEC students only.',
@@ -187,8 +187,8 @@ export const experiences: Experience[] = [
 ];
 
 export const faqs = [
-  {q:'When is Breck Sky Fest?', a:'Breck Sky Fest kicks off with BOEC on November 11. Celestial Sound Journey at Spirit Alchemy Studio is November 21, with 4 PM and 6 PM sessions. Frisco Historic Park Stargazing is November 27, 5:30–7:30 PM. The main festival day and night are November 28, with location and times TBA. November 30 at Beaver Run Resort is the weather backup.'},
-  {q:'Can I register yet?', a:'Booking is open directly through Spirit Alchemy for Celestial Sound Journey on November 21 at 4 PM or 6 PM. Free RSVPs are required and open for Frisco Historic Park Stargazing on November 27. Arrive anytime between 5:30 and 7:30 PM. Reserve November 30 weather-backup stargazing through the linked AstroTours booking page. RSVPs are also open for public accessible stargazing with BOEC on November 11, with a field for accessibility needs. The separate 1 PM BOEC school session is for BOEC students only. BOEC evening time and location, and November 28 main festival details, are coming soon.'},
+  {q:'When is Breck Sky Fest?', a:'Breck Sky Fest kicks off with BOEC on November 11. Celestial Sound Journey at Spirit Alchemy Studio is November 21, with 4 PM and 6 PM sessions. Frisco Historic Park Stargazing is November 27, 5:30–7:30 PM. Breck Sky School is November 23 at Breckenridge Elementary and Upper Blue Elementary. The main festival day and night are November 27 at Breckenridge Ski Resort near the Quicksilver chair base area, with times TBA. November 30 at Beaver Run Resort is the weather backup.'},
+  {q:'Can I register yet?', a:'Booking is open directly through Spirit Alchemy for Celestial Sound Journey on November 21 at 4 PM or 6 PM. Free RSVPs are required and open for Frisco Historic Park Stargazing on November 27. Arrive anytime between 5:30 and 7:30 PM. Reserve November 30 weather-backup stargazing through the linked AstroTours booking page. RSVPs are also open for public accessible stargazing with BOEC on November 11, with a field for accessibility needs. The separate 1 PM BOEC school session is for BOEC students only. BOEC evening time and location, and November 27 main festival details, are coming soon.'},
   {q:'Is it suitable for children?', a:'Families are a central part of the plan, especially daytime science, the planet walk, and community stargazing. Final age guidance will be listed for each activity. Children will need to stay with their accompanying adult; drop-off childcare is not planned.'},
   {q:'Do I need a telescope or astronomy experience?', a:'No experience is needed for the main astronomy activities, and the astronomy team plans to provide telescopes for those sessions. Any specialist workshop equipment, such as a camera, will be listed in advance.'},
   {q:'What should we wear?', a:'Bring a warm coat, insulating layers, a hat, gloves, warm socks, and sturdy footwear for possible snow or ice. Standing at a telescope can feel much colder than walking. A thermos and hand warmers can be useful.'},
