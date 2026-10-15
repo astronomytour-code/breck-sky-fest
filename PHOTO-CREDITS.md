@@ -23,3 +23,5 @@ Files are EXIF-oriented, resized where noted, and compressed as WebP. No generat
 
 - `spirit-alchemy-sound-journey.webp`: Photo supplied by Luke for the Celestial Sound Journey listing, courtesy of Spirit Alchemy Studio. Optimized from sunmoon.jpeg.
 - `spirit-alchemy-logo.png`: Official studio logo retrieved from https://www.spirit-alchemy.com/ for partner recognition.
+
+- `ready-paint-fire-canvas.webp`: canvas artwork image supplied by Ready Paint Fire! for its November 29, 2026 Breck Sky Fest program; painting led by Brittney Issacs.
