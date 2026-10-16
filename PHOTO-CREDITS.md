@@ -25,3 +25,5 @@ Files are EXIF-oriented, resized where noted, and compressed as WebP. No generat
 - `spirit-alchemy-logo.png`: Official studio logo retrieved from https://www.spirit-alchemy.com/ for partner recognition.
 
 - `ready-paint-fire-canvas.webp`: canvas artwork image supplied by Ready Paint Fire! for its November 29, 2026 Breck Sky Fest program; painting led by Brittney Issacs.
+
+- `ready-paint-fire-mosaic.webp`: constellation glass mosaic example supplied by Ready Paint Fire! for its November 29, 2026 Breck Sky Fest program.
