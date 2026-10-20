@@ -27,3 +27,5 @@ Files are EXIF-oriented, resized where noted, and compressed as WebP. No generat
 - `ready-paint-fire-canvas.webp`: canvas artwork image supplied by Ready Paint Fire! for its November 29, 2026 Breck Sky Fest program; painting led by Brittney Issacs.
 
 - `ready-paint-fire-mosaic.webp`: constellation glass mosaic example supplied by Ready Paint Fire! for its November 29, 2026 Breck Sky Fest program.
+
+- `mountain-top-explorium-logo.png`: official Mountain Top Explorium logo, extracted with original transparency from the organization’s Summer Program Facilitator document: https://www.mountaintopbreck.org/_files/ugd/19e0f0_279311e918254daf928bad982a291f5e.pdf
