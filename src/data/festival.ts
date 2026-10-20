@@ -40,6 +40,28 @@ export type Experience = {
 
 export const experiences: Experience[] = [
   {
+    slug: 'reach-for-the-stars-storytime', title: 'Reach for the Stars', subtitle: 'Storytime at Other Worlds with Breck Sky Fest', category: 'Storytime & play', filters: ['family', 'day', 'arts'], accent: 'green', icon: 'stars', status: 'Program confirmed · date & time TBA',
+    date: 'November 2026 · date to be announced', time: 'To Be Announced', venue: 'Other Worlds exhibition · Old Masonic Hall · 136 S. Main St., Breckenridge',
+    ctaHref: 'https://breckcreate.org/arts-district/old-masonic-hall/', ctaLabel: 'Other Worlds information',
+    summary: 'Bring your little explorers for an interactive Storytime inspired by the wonders of nature, themed for Breck Sky Fest. Enjoy a book, movement, and a fun activity, then keep exploring through art and play.',
+    description: ['Bring your little explorers for an interactive Storytime inspired by the wonders of nature. Each week features a different book, movement, and a fun activity. This special program will be themed to match Breck Sky Fest.', 'After Storytime, continue your adventure by exploring the interactive art within the Other Worlds exhibition. Enjoy art-making, a scavenger hunt, games, and more.', 'Then continue the fun at Mountain Top Explorium with half-price day passes. Contact Mountain Top Explorium for details of the Storytime offer.', 'The festival session date, start time, admission, and any reservation requirements will be announced here once confirmed.'],
+    highlights: ['Interactive Storytime with a book, movement, and an activity', 'Explore interactive art in the Other Worlds exhibition', 'Art-making, scavenger hunt, games, and more', 'Continue playing at Mountain Top Explorium with half-price day passes'],
+    audience: 'Little explorers and their families · specific age guidance TBA', admission: 'Storytime admission and booking details TBA · half-price Mountain Top Explorium day passes offered after Storytime', duration: 'To Be Announced',
+    practical: 'The festival session date and time are still to be announced. Please contact Mountain Top Explorium or Breck Create about admission, reservations, accessibility, and the half-price Explorium day-pass offer. Storytime takes place within Other Worlds at Old Masonic Hall; the subsequent Explorium visit is a separate stop.',
+    opportunity: 'A Mountain Top Explorium program at Breck Create’s Other Worlds exhibition, themed for Breck Sky Fest.',
+  },
+  {
+    slug: 'cosmic-creators-steam-saturday', title: 'Cosmic Creators', subtitle: 'STEAM Saturday at Other Worlds with Breck Sky Fest', category: 'STEAM & making', filters: ['family', 'day', 'arts'], accent: 'orange', icon: 'spark', status: 'Program confirmed · Saturday date TBA',
+    date: 'Saturday in November 2026 · date to be announced', time: '10:00 AM–1:00 PM MST · drop in anytime', venue: 'Other Worlds exhibition · Old Masonic Hall · 136 S. Main St., Breckenridge',
+    ctaHref: 'https://breckcreate.org/arts-district/old-masonic-hall/', ctaLabel: 'Other Worlds information',
+    summary: 'Get creative with facilitated STEAM activities inspired by Other Worlds and themed for Breck Sky Fest. Drop in between 10 AM and 1 PM. Recommended for ages 5+; activities are included with exhibition admission.',
+    description: ['Get creative with a rotating selection of facilitated STEAM activities inspired by Other Worlds. STEAM brings together Science, Technology, Engineering, Art, and Math.', 'Mountain Top Explorium will theme this STEAM Saturday program to match Breck Sky Fest. Drop in anytime between 10 AM and 1 PM for creative, hands-on exploration within the exhibition.', 'Activities are included with exhibition admission. Recommended ages: 5+. The exact Saturday date for the festival session will be announced once confirmed.'],
+    highlights: ['Facilitated Science, Technology, Engineering, Art, and Math activities', 'Inspired by Other Worlds and themed for Breck Sky Fest', 'Drop in anytime between 10 AM and 1 PM', 'Recommended ages 5+ · activities included with exhibition admission'],
+    audience: 'Recommended ages 5+', admission: 'Activities included with exhibition admission · check with the host for exhibition ticket pricing', duration: 'Three-hour drop-in window · stay for an activity',
+    practical: 'The exact festival Saturday is still to be announced. Drop in anytime from 10 AM to 1 PM MST on the confirmed date. Exhibition admission applies; activities are included. Contact Mountain Top Explorium or Breck Create for ticket prices, any admission requirements, and accessibility questions.',
+    opportunity: 'Facilitated by Mountain Top Explorium at Breck Create’s Other Worlds exhibition, themed for Breck Sky Fest.',
+  },
+  {
     slug: 'create-among-the-stars', title: 'Create Among the Stars at Ready Paint Fire!', subtitle: 'A family-friendly art afternoon', category: 'Arts & making', filters: ['arts', 'day', 'family'], accent: 'pink',
     image: 'ready-paint-fire-canvas', alt: 'Ready Paint Fire canvas painting of snowy mountains and trees beneath a moon and colorful star-filled sky', icon: 'spark', status: 'Confirmed · booking link coming soon',
     date: 'Sunday, November 29, 2026', time: 'Noon–3:00 PM MST · arrive at noon; instruction starts at 12:15 PM', venue: 'Ready Paint Fire! · 112 S. Ridge St., Breckenridge',
