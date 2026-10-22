@@ -40,6 +40,28 @@ export type Experience = {
 
 export const experiences: Experience[] = [
   {
+    slug: 'full-moon-hike-with-pride', title: 'Trail Tuesdays: Full Moon Hike with Pride at Gold Hill', subtitle: 'An educational and social hike with FDRD & Mountain Pride', category: 'Night hikes', filters: ['night'], accent: 'purple', icon: 'moon', status: 'Confirmed · registration open',
+    date: 'Tuesday, November 24, 2026', time: '5:30–7:30 PM MST', venue: 'Gold Hill Trailhead · Breckenridge',
+    ctaHref: 'https://fdrd.app.neoncrm.com/nx/portal/neonevents/events?path=%2Fportal%2Fevents%2F43813', ctaLabel: 'Register with FDRD',
+    summary: 'Join Friends of the Dillon Ranger District and Mountain Pride for a free educational and social full-moon hike from Gold Hill Trailhead. All are welcome! Bring a headlamp and a thermos for hot drinks before departure.',
+    description: ['Join Friends of the Dillon Ranger District (FDRD) and Mountain Pride for an educational and social hike. All are welcome! This event is free and open to the public.', 'Part of the partners’ Trail Tuesdays series on the last Tuesday of each month, November’s hike meets at Gold Hill Trailhead in Breckenridge. Enjoy time outdoors together under the glow of the full moon, followed by a post-hike social hour.', 'Bring a headlamp and a thermos to fill with hot drinks before the group departs. Register directly with FDRD for event information and updates.'],
+    highlights: ['Full-moon hike with FDRD and Mountain Pride', 'Free and open to the public · all are welcome', 'Meet at Gold Hill Trailhead in Breckenridge', 'Hot drinks before departure and a post-hike social hour'],
+    audience: 'All are welcome · open to the public', admission: 'Free · register directly with FDRD', duration: '5:30–7:30 PM event window',
+    practical: 'Meet at Gold Hill Trailhead in Breckenridge. Bring a headlamp and a thermos to fill with hot drinks before departure. See FDRD’s registration page for arrival details and updates, and contact FDRD about trail access or equipment needs.',
+    opportunity: 'Hosted by Friends of the Dillon Ranger District and Mountain Pride as part of Trail Tuesdays, included in the Breck Sky Fest program.',
+  },
+  {
+    slug: 'night-sky-hike-fdrd', title: 'Night Sky Hike with FDRD', subtitle: 'A leisurely hike or snowshoe tour beneath the night sky', category: 'Night hikes', filters: ['night'], accent: 'blue', icon: 'mountain', status: 'Confirmed · registration open',
+    date: 'Friday, November 27, 2026', time: '7:30–9:30 PM MST', venue: 'Peak 1 & Rainbow Lake area · exact meeting point: check with FDRD',
+    ctaHref: 'https://fdrd.app.neoncrm.com/nx/portal/neonevents/events?path=%2Fportal%2Fevents%2F62734', ctaLabel: 'Register with FDRD',
+    summary: 'Explore the night sky on a leisurely, educational hike or snowshoe tour with Friends of the Dillon Ranger District. Take in sweeping views of Peak 1 and Rainbow Lake, with hot drinks before setting off.',
+    description: ['Join Friends of the Dillon Ranger District on a leisurely paced, two-hour hike or snowshoe tour under the night sky. During this educational tour, take in the sweeping views of Peak 1 and Rainbow Lake.', 'Before setting off, fill your thermos with hot drinks. The tour will last roughly two hours, depending on weather conditions and group morale, with a planned return to the parking lot by 9:30 PM.', 'Register directly with FDRD. Check the host’s registration information for the exact meeting point, equipment requirements, and event updates.'],
+    highlights: ['Leisurely, educational hike or snowshoe tour', 'Night-sky views around Peak 1 and Rainbow Lake', 'Fill your thermos with hot drinks before departure', 'Plan to return to the parking lot by 9:30 PM'],
+    audience: 'Visitors interested in a leisurely guided night hike or snowshoe tour · contact FDRD about suitability', admission: 'Register directly with FDRD · see the host’s registration page for participation details', duration: 'Roughly 2 hours, depending on weather conditions and the group',
+    practical: 'Bring a thermos for hot drinks before departure. Confirm the exact meeting point, trail access, and any snowshoe or other equipment requirements with FDRD before attending. The group plans to return to the parking lot by 9:30 PM; duration depends on weather conditions and group morale.',
+    opportunity: 'Hosted by Friends of the Dillon Ranger District as part of the Breck Sky Fest program.',
+  },
+  {
     slug: 'reach-for-the-stars-storytime', title: 'Storytime at Other Worlds with Breck Sky Fest', subtitle: 'Stories, movement, and a fun craft', category: 'Storytime & play', filters: ['family', 'day', 'arts'], accent: 'green', icon: 'stars', status: 'Confirmed · November 25',
     date: 'Wednesday, November 25, 2026', time: '10:30 AM–11:30 AM MST', venue: 'Other Worlds exhibition · Old Masonic Hall · 136 S. Main St., Breckenridge',
     ctaHref: 'https://breckcreate.org/events/storytime', ctaLabel: 'Purchase Storytime tickets',
