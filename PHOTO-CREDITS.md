@@ -29,3 +29,6 @@ Files are EXIF-oriented, resized where noted, and compressed as WebP. No generat
 - `ready-paint-fire-mosaic.webp`: constellation glass mosaic example supplied by Ready Paint Fire! for its November 29, 2026 Breck Sky Fest program.
 
 - `mountain-top-explorium-logo.png`: official Mountain Top Explorium logo, extracted with original transparency from the organization’s Summer Program Facilitator document: https://www.mountaintopbreck.org/_files/ugd/19e0f0_279311e918254daf928bad982a291f5e.pdf
+
+- `fdrd-full-moon-pride.webp`: Photo 1 supplied by Maddie Retrosi, Friends of the Dillon Ranger District, for the November 24 Full Moon Hike with Pride at Gold Hill. Original proportions preserved; optimized as WebP.
+- `fdrd-night-sky-hike.webp`: Photo 2 supplied by Maddie Retrosi, Friends of the Dillon Ranger District, for the November 27 Night Sky Hike. EXIF orientation applied and resized proportionally to 1200 × 1600 pixels as WebP.
