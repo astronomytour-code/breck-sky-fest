@@ -40,6 +40,28 @@ export type Experience = {
 
 export const experiences: Experience[] = [
   {
+    slug: 'chelsea-kaiah-open-studio', title: 'Open Studio: Chelsea Kaiah', subtitle: 'Visit Breck Create’s November Artist in Residence', category: 'Arts & open studio', filters: ['arts', 'day'], accent: 'green', icon: 'spark', status: 'Confirmed · November 22',
+    date: 'Sunday, November 22, 2026', time: '1:00–5:00 PM MST', venue: 'Tin Shop · Breckenridge Arts District',
+    ctaHref: 'https://breckcreate.org/events/open-studio-chelsea-kaiah', ctaLabel: 'Breck Create event information',
+    summary: 'Visit Artist in Residence Chelsea Kaiah at the Tin Shop to see the work she has been creating during her November residency. Her practice connects traditional materials and techniques with Native rights, sustainability, resilience, and healing.',
+    description: ['Come see what Breck Create Artist in Residence Chelsea Kaiah has been working on in her studio during her stay in November. Visit the Tin Shop on Sunday, November 22, from 1 to 5 PM.', 'A passionate activist for Native rights, awareness, and sustainability, Chelsea adapts traditional materials and techniques, including pine needle weaving, porcupine quilling, and hide work, to explore resilience, mental health, system reformation, and means of healing.'],
+    highlights: ['Visit Chelsea Kaiah’s studio during her November residency', 'Explore traditional materials and techniques in a contemporary art practice', 'Themes of Native rights, sustainability, resilience, and healing', 'Free open studio at the Tin Shop · 1–5 PM'],
+    audience: 'Open studio visitors', admission: 'Free', duration: 'Four-hour open studio window',
+    practical: 'Sunday, November 22, 1–5 PM MST at the Tin Shop in the Breckenridge Arts District. See Breck Create’s event page for host information and contact the host with access or participation questions.',
+    opportunity: 'Hosted by Breck Create and included in the Breck Sky Fest program.',
+  },
+  {
+    slug: 'bob-ross-style-painting-galaxies', title: 'Bob Ross Style Painting: Galaxies', subtitle: 'A galaxy-inspired painting evening with Breck Create', category: 'Arts & making', filters: ['arts', 'night'], accent: 'purple', icon: 'stars', status: 'Confirmed · November 25',
+    date: 'Wednesday, November 25, 2026', time: '6:00–8:30 PM MST', venue: 'Randall Barn · Breckenridge Arts District',
+    ctaHref: 'https://breckcreate.org/events/bob-ross-style-painting', ctaLabel: 'Breck Create class information',
+    summary: 'Create a galaxy-inspired painting in a Bob Ross–style class at Randall Barn. Breck Create brings an evening of art and cosmic inspiration to the festival on November 25, from 6 to 8:30 PM.',
+    description: ['Join Breck Create at Randall Barn for Bob Ross Style Painting: Galaxies, a galaxy-inspired painting class during Breck Sky Fest.', 'The special festival session takes place on Wednesday, November 25, from 6 to 8:30 PM. Breck Create handles class registration and participation details. The linked page describes the Bob Ross Style Painting series; the special November 25 session’s booking option will be added when available.'],
+    highlights: ['Galaxy-inspired Bob Ross–style painting', 'Hosted by Breck Create at Randall Barn', 'Wednesday, November 25 · 6–8:30 PM', 'See Breck Create for pricing and participation details'],
+    audience: 'See Breck Create for age and participation requirements', admission: 'See Breck Create for pricing and registration details', duration: '2.5 hours',
+    practical: 'Wednesday, November 25, 6–8:30 PM MST at Randall Barn in the Breckenridge Arts District. Consult Breck Create for pricing, age requirements, accessibility, and registration. The linked class series page does not yet show the special November 25 booking option.',
+    opportunity: 'Hosted by Breck Create as part of Breck Sky Fest.',
+  },
+  {
     slug: 'full-moon-hike-with-pride', image: 'fdrd-full-moon-pride', alt: 'Full Moon framed by bare tree branches with a rainbow across a blue night sky', title: 'Trail Tuesdays: Full Moon Hike with Pride at Gold Hill', subtitle: 'An educational and social hike with FDRD & Mountain Pride', category: 'Night hikes', filters: ['night'], accent: 'purple', icon: 'moon', status: 'Confirmed · registration open',
     date: 'Tuesday, November 24, 2026', time: '5:30–7:30 PM MST', venue: 'Gold Hill Trailhead · Breckenridge',
     ctaHref: 'https://fdrd.app.neoncrm.com/nx/portal/neonevents/events?path=%2Fportal%2Fevents%2F43813', ctaLabel: 'Register with FDRD',
