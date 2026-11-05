@@ -38,6 +38,8 @@ export type Experience = {
   ctaLabel?: string;
 };
 
+export const boecStargazingVenue = 'BOEC Wilderness Campus - 300 Snowy Ridge Road';
+
 export const experiences: Experience[] = [
   {
     slug: 'chelsea-kaiah-open-studio', title: 'Open Studio: Chelsea Kaiah', subtitle: 'Visit Breck Create’s November Artist in Residence', category: 'Arts & open studio', filters: ['arts', 'day'], accent: 'green', icon: 'spark', status: 'Confirmed · November 22',
@@ -217,14 +219,14 @@ export const experiences: Experience[] = [
   },
   {
     slug: 'accessible-astronomy-boec', title: 'Breck Sky Fest Kickoff: Accessible Stargazing with BOEC', subtitle: 'Public evening kickoff', category: 'Accessible astronomy', filters: ['family', 'night'], accent: 'green',
-    image: 'family-telescope', alt: 'Visitors taking turns at an AstroTours telescope', icon: 'stars', status: 'Evening time confirmed · location TBA',
-    date: 'Wednesday, November 11, 2026', time: '5:30–7:00 PM MST', venue: 'To Be Announced',
+    image: 'family-telescope', alt: 'Visitors taking turns at an AstroTours telescope', icon: 'stars', status: 'Confirmed · November 11',
+    date: 'Wednesday, November 11, 2026', time: '5:30–7:00 PM MST', venue: boecStargazingVenue,
     ctaHref: '/rsvp/boec/', ctaLabel: 'RSVP for accessible stargazing',
     summary: 'Public accessible stargazing with BOEC, with priority for community members and their families who need increased accessibility.',
-    description: ['Celebrate the official Breck Sky Fest kickoff with an evening of accessible and inclusive stargazing in partnership with Breckenridge Outdoor Education Center (BOEC).', 'This evening program is open to the public, with priority for community members and their families who need increased accessibility. Please RSVP and share any accessibility needs to help us plan.', 'We encourage most community members to RSVP for free Frisco Historic Park Stargazing on November 27 or join the main Breck Sky Fest program on November 28. The program runs from 5:30 to 7:00 PM MST on November 11. The location and specific accessibility arrangements are still being finalized. Check back for additional details.'],
+    description: ['Celebrate the official Breck Sky Fest kickoff with an evening of accessible and inclusive stargazing in partnership with Breckenridge Outdoor Education Center (BOEC).', 'This evening program is open to the public, with priority for community members and their families who need increased accessibility. Please RSVP and share any accessibility needs to help us plan.', 'We encourage most community members to RSVP for free Frisco Historic Park Stargazing on November 27 or join the main Breck Sky Fest program on November 28. The program runs from 5:30 to 7:00 PM MST on November 11. Specific accessibility arrangements are still being finalized. Check back for additional details.'],
     highlights: ['Public evening accessible stargazing', 'Priority for community members and families who need increased accessibility', 'RSVP includes a field for accessibility needs'],
     audience: 'Public, with priority for community members and families who need increased accessibility', admission: 'RSVP available', duration: '90 minutes',
-    practical: 'Evening program: 5:30–7:00 PM MST. Location: To Be Announced. Share accessibility needs in your RSVP. The separate 1 PM BOEC homeschool program is for BOEC students only.',
+    practical: 'Evening program: 5:30–7:00 PM MST. Share accessibility needs in your RSVP. The separate 1 PM BOEC homeschool program is for BOEC students only.',
     opportunity: 'Get in touch with any access questions that would help you take part.',
   },
   {
@@ -232,7 +234,7 @@ export const experiences: Experience[] = [
     image: 'family-telescope', alt: 'Visitors beside an astronomy telescope', icon: 'stars', status: 'Confirmed · BOEC students only',
     date: 'Wednesday, November 11, 2026', time: '1:00–2:00 PM MST', venue: 'Coordinated directly with BOEC',
     summary: 'A private astronomy session for BOEC homeschool students. Not open to the public.',
-    description: ['The BOEC homeschool astronomy program runs from 1:00 to 2:00 PM MST on Wednesday, November 11.', 'This session is exclusively for BOEC students and is not open to the public. Participation is coordinated directly with BOEC.', 'Public accessible stargazing is a separate evening program. It runs from 5:30 to 7:00 PM MST; location To Be Announced.'],
+    description: ['The BOEC homeschool astronomy program runs from 1:00 to 2:00 PM MST on Wednesday, November 11.', 'This session is exclusively for BOEC students and is not open to the public. Participation is coordinated directly with BOEC.', `Public accessible stargazing is a separate evening program. It runs from 5:30 to 7:00 PM MST at ${boecStargazingVenue}.`],
     highlights: ['1:00 PM MST start', 'BOEC homeschool students only', 'Private session, not open to the public'],
     audience: 'BOEC homeschool students only', admission: 'Private student program', duration: '60 minutes',
     practical: 'No public registration. BOEC coordinates student participation directly.',
@@ -291,7 +293,7 @@ export const experiences: Experience[] = [
 
 export const faqs = [
   {q:'When is Breck Sky Fest?', a:'Breck Sky Fest kicks off with BOEC on November 11. A regular guided AstroTours stargazing tour at Beaver Run is November 18, with paid booking through AstroTours. Celestial Sound Journey at Spirit Alchemy Studio is November 21, with 4 PM and 6 PM sessions. Frisco Historic Park Stargazing is November 27, 5:30–7:30 PM. Breck Sky School is November 23 at Breckenridge Elementary and Upper Blue Elementary. The main festival day and night are November 28 at Breckenridge Ski Resort near the Quicksilver chair base area, with public evening stargazing from 6:00–7:30 PM MST and daytime solar astronomy times TBA. VIP Stargazing at Beaver Run is also November 28: $57 per person, limited to 22 guests. Create Among the Stars at Ready Paint Fire is Sunday, November 29, noon–3 PM, with canvas painting and glow-in-the-dark glass mosaics. November 30 at Beaver Run Resort is the weather backup.'},
-  {q:'Can I register yet?', a:'Book the regular November 18 AstroTours stargazing tour at Beaver Run directly through AstroTours. Booking is open directly through Spirit Alchemy for Celestial Sound Journey on November 21 at 4 PM or 6 PM. Free RSVPs are required and open for the main Breckenridge Ski Resort program on November 28 and Frisco Historic Park Stargazing on November 27. Arrive anytime between 5:30 and 7:30 PM. Book VIP Stargazing at Beaver Run on November 28 directly through AstroTours: $57 per person, capped at 22 guests, with early access, tea and coffee, and access to a warming area and fire. Reserve November 30 weather-backup stargazing through the linked AstroTours booking page. RSVPs are also open for public accessible stargazing with BOEC on November 11, with a field for accessibility needs. The separate 1 PM BOEC school session is for BOEC students only. BOEC evening stargazing runs 5:30–7:00 PM MST; its location is coming soon. November 28 public evening stargazing runs 6:00–7:30 PM MST; daytime solar astronomy times are coming soon.'},
+  {q:'Can I register yet?', a:`Book the regular November 18 AstroTours stargazing tour at Beaver Run directly through AstroTours. Booking is open directly through Spirit Alchemy for Celestial Sound Journey on November 21 at 4 PM or 6 PM. Free RSVPs are required and open for the main Breckenridge Ski Resort program on November 28 and Frisco Historic Park Stargazing on November 27. Arrive anytime between 5:30 and 7:30 PM. Book VIP Stargazing at Beaver Run on November 28 directly through AstroTours: $57 per person, capped at 22 guests, with early access, tea and coffee, and access to a warming area and fire. Reserve November 30 weather-backup stargazing through the linked AstroTours booking page. RSVPs are also open for public accessible stargazing with BOEC on November 11, with a field for accessibility needs. The separate 1 PM BOEC school session is for BOEC students only. BOEC evening stargazing runs 5:30–7:00 PM MST at ${boecStargazingVenue}. November 28 public evening stargazing runs 6:00–7:30 PM MST; daytime solar astronomy times are coming soon.`},
   {q:'Is it suitable for children?', a:'Families are a central part of the plan, especially daytime science, the planet walk, and community stargazing. Final age guidance will be listed for each activity. Children will need to stay with their accompanying adult; drop-off childcare is not planned.'},
   {q:'Do I need a telescope or astronomy experience?', a:'No experience is needed for the main astronomy activities, and the astronomy team plans to provide telescopes for those sessions. Any specialist workshop equipment, such as a camera, will be listed in advance.'},
   {q:'What should we wear?', a:'Bring a warm coat, insulating layers, a hat, gloves, warm socks, and sturdy footwear for possible snow or ice. Standing at a telescope can feel much colder than walking. A thermos and hand warmers can be useful.'},
