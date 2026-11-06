@@ -53,14 +53,14 @@ export const experiences: Experience[] = [
     opportunity: 'Hosted by Breck Create and included in the Breck Sky Fest program.',
   },
   {
-    slug: 'bob-ross-style-painting-galaxies', title: 'Bob Ross Style Painting: Galaxies', subtitle: 'A galaxy-inspired painting evening with Breck Create', category: 'Arts & making', filters: ['arts', 'night'], accent: 'purple', icon: 'stars', status: 'Confirmed · November 25',
+    slug: 'bob-ross-style-painting-galaxies', title: 'Bob Ross Style Painting: Galaxies', subtitle: 'A galaxy-inspired painting evening with Breck Create', category: 'Arts & making', filters: ['arts', 'night'], accent: 'purple', icon: 'stars', status: 'Confirmed · booking open',
     date: 'Wednesday, November 25, 2026', time: '6:00–8:30 PM MST', venue: 'Randall Barn · Breckenridge Arts District',
-    ctaHref: 'https://breckcreate.org/events/bob-ross-style-painting', ctaLabel: 'Breck Create class information',
+    ctaHref: 'https://tickets.breckcreate.org/Online/seatSelect.asp?createBO::WSmap=1&BOparam::WSmap::loadBestAvailable::performance_ids=94E3AF9D-C94C-4C87-A546-7DA3C5A32BA6', ctaLabel: 'Book with Breck Create',
     summary: 'Create a galaxy-inspired painting in a Bob Ross–style class at Randall Barn. Breck Create brings an evening of art and cosmic inspiration to the festival on November 25, from 6 to 8:30 PM.',
-    description: ['Join Breck Create at Randall Barn for Bob Ross Style Painting: Galaxies, a galaxy-inspired painting class during Breck Sky Fest.', 'The special festival session takes place on Wednesday, November 25, from 6 to 8:30 PM. Breck Create handles class registration and participation details. The linked page describes the Bob Ross Style Painting series; the special November 25 session’s booking option will be added when available.'],
+    description: ['Join Breck Create at Randall Barn for Bob Ross Style Painting: Galaxies, a galaxy-inspired painting class during Breck Sky Fest.', 'The special festival session takes place on Wednesday, November 25, from 6 to 8:30 PM. Book this festival session directly with Breck Create.'],
     highlights: ['Galaxy-inspired Bob Ross–style painting', 'Hosted by Breck Create at Randall Barn', 'Wednesday, November 25 · 6–8:30 PM', 'See Breck Create for pricing and participation details'],
     audience: 'See Breck Create for age and participation requirements', admission: 'See Breck Create for pricing and registration details', duration: '2.5 hours',
-    practical: 'Wednesday, November 25, 6–8:30 PM MST at Randall Barn in the Breckenridge Arts District. Consult Breck Create for pricing, age requirements, accessibility, and registration. The linked class series page does not yet show the special November 25 booking option.',
+    practical: 'Wednesday, November 25, 6–8:30 PM MST at Randall Barn in the Breckenridge Arts District. See Breck Create’s booking page for pricing and contact Breck Create about age requirements or accessibility.',
     opportunity: 'Hosted by Breck Create as part of Breck Sky Fest.',
   },
   {
