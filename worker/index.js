@@ -2,9 +2,18 @@ import { DurableObject } from 'cloudflare:workers';
 import { adminKeyDigest } from './admin-auth.js';
 const events={
   frisco:{id:'frisco-2026-11-27',label:'Frisco · 11/27',details:'Frisco Historic Park · Friday, November 27, 2026 · 5:30–7:30 PM MST.',slug:'frisco-historic-park-stargazing'},
-  boec:{id:'boec-2026-11-11',label:'BOEC public stargazing · 11/11',details:'Public accessible stargazing with BOEC · Wednesday, November 11, 2026 · Evening time and location: To Be Announced.',slug:'accessible-astronomy-boec'},
-  breck:{id:'breck-2026-11-28',label:'Breck Ski Resort main program · 11/28',details:'Free main program · Breckenridge Ski Resort · Quicksilver chair base area · Saturday, November 28, 2026 · Times: To Be Announced.',slug:'community-stargazing'}
+  boec:{id:'boec-2026-11-11',label:'BOEC public stargazing · 11/11',details:'Public accessible stargazing with BOEC · Wednesday, November 11, 2026 · 5:30–7:00 PM MST · BOEC Wilderness Campus',slug:'accessible-astronomy-boec'},
+  breck:{id:'breck-2026-11-28',label:'Breck Ski Resort main program · 11/28',details:'Main Festival Stargazing · Breckenridge Ski Resort · Quicksilver chair base area · Saturday, November 28, 2026 · 6:00–7:30 PM MST.',slug:'community-stargazing'}
 };
+const retiredProgramRoutes = new Map([
+  ['/program/sky-day', '/program/community-stargazing/'],
+  ['/program/mountain-stargazing', '/program/'],
+  ['/program/artist-workshop', '/get-involved/#artists'],
+  ['/program/night-sky-photography', '/get-involved/#science'],
+  ['/program/talks-and-stories', '/get-involved/#science'],
+  ['/program/food-and-warm-drinks', '/get-involved/#vendors'],
+  ['/program/sky-on-screen', '/get-involved/#film'],
+]);
 const json=(data,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});
 async function digest(value){return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(value)))).map(x=>x.toString(16).padStart(2,'0')).join('');}
 export class FestivalRsvps extends DurableObject {
@@ -26,7 +35,12 @@ export default {
   async fetch(request,env){
     const url=new URL(request.url);const hostname=url.hostname.toLowerCase();
     if(['brecksky.com','www.brecksky.com','www.breckskyfest.com'].includes(hostname)||(hostname==='breckskyfest.com'&&url.protocol!=='https:')){url.protocol='https:';url.hostname='breckskyfest.com';url.port='';return Response.redirect(url.toString(),301);}
-    if(['/program/sky-day','/program/sky-day/'].includes(url.pathname)){url.pathname='/program/community-stargazing/';return Response.redirect(url.toString(),301);}
+    const destination = retiredProgramRoutes.get(url.pathname.replace(/\/$/, ''));
+    if (destination) {
+      const redirect = new URL(destination, url);
+      redirect.search = url.search;
+      return Response.redirect(redirect.toString(), 301);
+    }
     if(url.pathname==='/api/admin/rsvps'){
       if(request.method!=='GET')return json({error:'Method not allowed.'},405);
       const key=request.headers.get('Authorization')?.replace(/^Bearer /,'')||'';
@@ -42,6 +56,7 @@ export default {
         const raw=await request.text();if(new TextEncoder().encode(raw).byteLength>8192)return json({error:'Submission too large.'},413);
         const form=await new Request(request.url,{method:'POST',headers:{'Content-Type':request.headers.get('Content-Type')||''},body:raw}).formData();
         const name=String(form.get('name')||'').trim();const email=String(form.get('email')||'').trim().toLowerCase();const phone=String(form.get('phone')||'').trim();if(phone.length>50||(phone&&!/^[+\d\s().xX#-]+$/.test(phone)))return json({error:'Please enter a valid phone number, or leave the optional phone field blank.'},400);const people=Number(form.get('people'));const event=String(form.get('event')||'frisco');const accessibility=event==='boec'?String(form.get('accessibility')||'').trim():'';if(!Object.hasOwn(events,event)||accessibility.length>2000)return json({error:'Please select a valid event and keep accessibility notes under 2,000 characters.'},400);
+        if(event==='boec')return json({error:'Registration for November 11 BOEC stargazing is closed.'},410);
         if(form.get('website'))return json({error:'Unable to save your RSVP. Please contact the festival.'},400);
         if(!name||name.length>120||email.length>254||! /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)||!Number.isInteger(people)||people<1||people>500)return json({error:'Please enter your name, a valid email address, and a whole-number group size from 1 to 500.'},400);
         const ipHash=await digest((request.headers.get('CF-Connecting-IP')||'local')+new Date().toISOString().slice(0,10));

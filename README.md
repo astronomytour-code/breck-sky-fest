@@ -18,16 +18,16 @@ GitHub Actions validates the install and production build on pushes and pull req
 
 ## Content
 
-- `src/data/festival.ts`: contact details, the ten proposed/planned experiences, their status and practical details, and visitor FAQs.
+- `src/data/festival.ts`: contact details, festival events, their status and practical details, and visitor FAQs.
 - `src/pages/program/[slug].astro`: all individual experience pages, generated from the content above.
-- `src/components/Sponsors.astro`: Town of Breckenridge is the Intergalactic founding grant supporter. The roster shows occupied levels only; all four sponsorship opportunities remain described on the sponsors page. BOEC, Frisco Historic Park, and Beaver Run receive Orbital community recognition. AstroTours.org has a compact organizer credit. Orbital accepts financial support or approved community contributions; significant in-kind support may qualify for higher levels by agreement. No contribution amounts are displayed publicly.
+- `src/components/Sponsors.astro`: Town of Breckenridge is the Intergalactic founding grant supporter. The roster shows occupied levels only; all four sponsorship opportunities remain described on the sponsors page. See the component for the current partner roster and tiers. AstroTours.org has a compact organizer credit. Orbital accepts financial support or approved community contributions; significant in-kind support may qualify for higher levels by agreement. No contribution amounts are displayed publicly.
 - `src/pages/`: home, program, visitor guide, partner opportunities, sponsors, about, photo gallery, contact, and 404.
 - `src/styles/global.css`: responsive festival design, keyboard focus, and reduced-motion handling.
 - `PHOTO-CREDITS.md`: provenance for all supplied photography.
 
 Before confirming an experience, update its status, date, time, venue, admission, audience, access, and weather arrangements together. Booking buttons should be added only when a real booking destination is available. Do not add Event structured data until the event dates and location are confirmed.
 
-Contact links open an email draft to Luke. The site does not use an email-update signup; final festival details are posted on the site. There is no simulated newsletter subscription or form backend. The program filters, mobile navigation, gallery viewer, and visitor FAQs work without a framework hydration bundle. Core content and links remain usable without JavaScript.
+Contact links open an email draft to Luke. The site does not use an email-update signup; final festival details are posted on the site. RSVP forms use the Cloudflare Worker described below. The mobile navigation, gallery viewer, and visitor FAQs work without a framework hydration bundle. Core content and links remain usable without JavaScript.
 
 Fonts are bundled locally through Fontsource. Images are optimized WebP files from the user-provided AstroTours collection. Photos illustrate previous AstroTours activities, not a previous Breck Sky Fest or confirmed festival locations.
 
@@ -46,9 +46,9 @@ Primary site: https://breckskyfest.com
 
 ## Confirmed 2026 schedule and RSVPs
 
-The home and program pages share `FestivalSchedule.astro`. Dated events are kept separate from proposals. The existing community-stargazing route holds November 28 daytime and evening programming; the older sky-day route redirects there to retain existing links.
+The home and program pages share `FestivalSchedule.astro`. The schedule lists dated events, and the Planet Walk has a separate listing while the route and timing are pending. The older sky-day route redirects to Main Festival Stargazing on November 28.
 
-Free Frisco RSVP: `/rsvp/frisco/`. Submissions are stored persistently in the Cloudflare Worker’s SQLite-backed `FestivalRsvps` Durable Object, bound as `RSVP_STORE`. Wrangler creates the namespace through the `frisco-rsvps-v1` migration when deployed. Only the name, email, group size, timestamp, and reference are stored as attendance records. Short-lived hashed IP rate limits expire as subsequent requests clean them up. No payment or email delivery service is connected. The confirmation is shown on the website after saving; weather outreach is manual using the CSV export.
+Free stargazing RSVPs: `/rsvp/frisco/` and `/rsvp/breck/`. BOEC registration is closed. Submissions are stored persistently in the Cloudflare Worker’s SQLite-backed `FestivalRsvps` Durable Object, bound as `RSVP_STORE`. Wrangler creates the namespace through the `frisco-rsvps-v1` migration when deployed. Attendance records contain the name, email, group size, timestamp, reference, and optional phone number. Existing BOEC records may also contain optional accessibility notes. Short-lived hashed IP rate limits expire as subsequent requests clean them up. No payment or email delivery service is connected. The confirmation is shown on the website after saving; weather outreach is manual using the CSV export.
 
 Organizer view: `/admin/rsvps/`, excluded from indexing. Enter the private access key supplied to the organizer. Only its SHA-256 digest is committed in `worker/admin-auth.js`; the key is never placed in a URL or browser storage. Optionally set the Cloudflare secret `RSVP_ADMIN_KEY` to rotate/override it. The admin page lists submissions and total attendance and downloads a CSV. No attendee data is included in static builds or public page responses.
 
