@@ -1,0 +1,286 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import 'leaflet/dist/leaflet.css';
+
+const stops = [
+  { planet: 'Sun', venue: 'Breck Create', address: 'Old Masonic Hall · 136 S. Main St., Breckenridge', lat: 39.48085, lng: -106.04590, distance: '0', color: '#f2c665', note: 'The starting point of the Solar System model.' },
+  { planet: 'Mercury', venue: 'Ready Paint Fire!', address: '112 S. Ridge St., Breckenridge', lat: 39.48156, lng: -106.04442, distance: '371 ft', color: '#d0c5ba' },
+  { planet: 'Venus', venue: 'A Racer’s Edge', address: '114 Lincoln Ave., Breckenridge', lat: 39.48233, lng: -106.04513, distance: '692 ft', color: '#ee986e' },
+  { planet: 'Earth', venue: 'Carvers Ski & Bike Rentals', address: '203 N. Main St., Breckenridge', lat: 39.48382, lng: -106.04640, distance: '958 ft', color: '#a0c7cc' },
+  { planet: 'Mars', venue: 'Blue River Bistro', address: '305 N. Main St., Breckenridge', lat: 39.48515, lng: -106.04636, distance: '1,460 ft', color: '#e9afb5' },
+  { planet: 'Asteroid Belt', venue: 'Windy City Pizza and Pub', address: '400 N. Park Ave., Breckenridge', lat: 39.48873, lng: -106.04682, distance: '0.51 mi', color: '#bdcba6', note: 'City Market, in the same shopping center, is an alternate host. Final host and flag spot to be agreed.' },
+  { planet: 'Jupiter', venue: 'Welcome to Breck sign', address: 'Highway 9 · near the Breckenridge Recreation Center', lat: 39.49580, lng: -106.04610, distance: '0.94 mi', color: '#ee986e', note: 'The marker shows the sign’s approximate location. Exact flag spot and access to be agreed with the land manager.' },
+  { planet: 'Saturn', venue: 'Breckenridge Distillery', address: '1925 Airport Rd., Breckenridge', lat: 39.50965, lng: -106.05225, distance: '1.73 mi', color: '#f2c665' },
+  { planet: 'Uranus', venue: 'Breckenridge Golf Club', address: '200 Clubhouse Dr., Breckenridge', lat: 39.52437, lng: -106.03330, distance: '3.48 mi', color: '#a0c7cc' },
+  { planet: 'Neptune', venue: 'Frisco Adventure Park', address: '621 Recreation Way, Frisco', lat: 39.57411, lng: -106.07785, distance: '5.45 mi', color: '#b7bde5' },
+  { planet: 'Pluto', venue: 'Frisco Historic Park & Museum', address: '120 E. Main St., Frisco', lat: 39.57524, lng: -106.10056, distance: '7.16 mi', color: '#c2b5d9' },
+];
+const googleMapsLink = (stop: typeof stops[number]) => 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(`${stop.venue === 'Breck Create' ? 'Old Masonic Hall' : stop.venue}, ${stop.address}`);
+const contactLink = 'mailto:Luke@AstroTours.org?subject=' + encodeURIComponent('Breck Sky Fest Planet Walk partner');
+---
+
+<Layout title="Planet Walk Partner Map | Breck Sky Fest" description="A partner preview of proposed Planet Walk flag locations across Breckenridge and Frisco for November 27–29, 2026." noindex>
+  <section class="partner-intro dark-section">
+    <div class="wrap">
+      <p class="partner-kicker">Unlisted partner preview</p>
+      <h1>Planet Walk<br/><span>Partner map.</span></h1>
+      <p class="partner-description">Help build a Solar System model across Breckenridge and Frisco. Explore the proposed flag locations and see where your organization fits.</p>
+      <p class="partner-dates">Proposed display · November 27–29, 2026</p>
+      <div class="partner-actions">
+        <a class="button" href={contactLink}>Discuss hosting a stop</a>
+        <button class="partner-share" type="button" id="copy-partner-link" hidden>Copy page link</button>
+        <span id="share-status" role="status"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="partner-map-section" aria-labelledby="map-heading">
+    <div class="wrap">
+      <div class="partner-map-heading">
+        <div>
+          <h2 id="map-heading">The proposed stops.</h2>
+          <p>Choose a pin or a stop below to explore its location.</p>
+        </div>
+        <div class="partner-map-controls" id="map-controls" hidden aria-label="Map views">
+          <button type="button" data-map-view="all" aria-controls="planet-walk-map" aria-pressed="true">All stops</button>
+          <button type="button" data-map-view="downtown" aria-controls="planet-walk-map" aria-pressed="false">Downtown Breck</button>
+          <button type="button" data-map-view="frisco" aria-controls="planet-walk-map" aria-pressed="false">Frisco</button>
+        </div>
+      </div>
+      <p class="partner-planning-note">Locations are proposed for partner discussion. Pins show the venues; we’ll agree each exact flag spot and access arrangements with its host.</p>
+      <div class="partner-map-layout">
+        <div class="partner-map-panel">
+          <div id="planet-walk-map" aria-label="Map of eleven proposed Solar System stops in Breckenridge and Frisco"></div>
+          <p id="map-status" class="partner-map-status" role="status">Loading the map. Each stop also has a Google Maps link below.</p>
+          <noscript><p class="partner-map-status">Enable JavaScript to explore the interactive map, or use the location links in the stop list.</p></noscript>
+          <p class="partner-map-caption">Map pins show proposed locations. Walking routes and travel distances will be finalized separately.</p>
+        </div>
+        <div class="partner-stops" role="region" aria-label="Proposed stops from the Sun to Pluto" tabindex="0">
+          <ol class="partner-stop-list">
+            {stops.map((stop, index) => (
+              <li class="partner-stop" id={`stop-${index}`} data-lat={stop.lat} data-lng={stop.lng} data-planet={stop.planet} data-color={stop.color} data-number={index + 1}>
+                <span class="partner-stop-number" style={`--stop-color:${stop.color}`} aria-hidden="true">{index + 1}</span>
+                <div class="partner-stop-body">
+                  <p class="partner-planet">{stop.planet}</p>
+                  <h3>{stop.venue}</h3>
+                  <p class="partner-address">{stop.address}</p>
+                  {stop.note && <p class="partner-stop-note">{stop.note}</p>}
+                  <div class="partner-stop-actions">
+                    <button type="button" class="show-stop" aria-controls="planet-walk-map" aria-label={`Show ${stop.planet} at ${stop.venue} on the map`} hidden>Show on map</button>
+                    <a href={googleMapsLink(stop)} target="_blank" rel="noopener noreferrer">Google Maps</a>
+                  </div>
+                </div>
+                <template class="stop-popup">
+                  <div class="planet-popup">
+                    <p class="planet-popup-planet">{stop.planet}</p>
+                    <h3>{stop.venue}</h3>
+                    <p>{stop.address}</p>
+                    {stop.note && <p>{stop.note}</p>}
+                    <a href={googleMapsLink(stop)} target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+                  </div>
+                </template>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="partner-details">
+    <div class="wrap partner-details-grid">
+      <div>
+        <h2>Hosting a planet.</h2>
+        <p>We’re inviting each host to provide a visible space for one Solar System flag. Visitors can explore the stops at their own pace and scan the flags to learn more through the <a href="https://www.astrotours.org/solar-system" target="_blank" rel="noopener noreferrer">AstroTours Solar System passport</a>.</p>
+        <p>AstroTours will coordinate flag delivery, setup and collection. The proposed plan is to install on Friday, November 27 and collect on Sunday, November 29. We’ll work out the flag spot, display hours and practical details together.</p>
+        <a class="button button-dark" href={contactLink}>Talk with Luke about participating</a>
+      </div>
+      <div class="partner-scale">
+        <h2>The distance scale.</h2>
+        <p>With Pluto set at 7.16 miles from the Sun, one astronomical unit is about 958 feet. These are model targets for comparing the spacing of the stops.</p>
+        <table>
+          <caption>Model distance from the Sun at Breck Create</caption>
+          <thead><tr><th scope="col">Stop</th><th scope="col">Scale target</th></tr></thead>
+          <tbody>{stops.map(stop => <tr><th scope="row">{stop.planet}</th><td>{stop.distance}</td></tr>)}</tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import L from 'leaflet';
+
+  const mapContainer = document.getElementById('planet-walk-map');
+  const mapStatus = document.getElementById('map-status');
+  const stopElements = Array.from(document.querySelectorAll<HTMLElement>('.partner-stop'));
+  const viewButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-map-view]'));
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (mapContainer && mapStatus) {
+    try {
+      const map = L.map(mapContainer, { scrollWheelZoom: false });
+      const points = stopElements.map(stop => L.latLng(Number(stop.dataset.lat), Number(stop.dataset.lng)));
+      const views = {
+        all: L.latLngBounds(points),
+        downtown: L.latLngBounds(points.slice(0, 6)),
+        frisco: L.latLngBounds(points.slice(9)),
+      };
+
+      const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      });
+      let tileFailed = false;
+      tiles.on('tileerror', () => {
+        tileFailed = true;
+        mapStatus.textContent = 'Some map tiles could not load. You can still select the pins or open each stop in Google Maps.';
+        mapStatus.hidden = false;
+      });
+      tiles.on('load', () => {
+        if (!tileFailed) mapStatus.hidden = true;
+      });
+      tiles.addTo(map);
+      L.control.scale({ imperial: true, metric: false }).addTo(map);
+
+      const selectStop = (selected: HTMLElement | null) => {
+        stopElements.forEach(stop => stop.classList.toggle('is-selected', stop === selected));
+      };
+
+      stopElements.forEach((stop, index) => {
+        const iconContent = document.createElement('span');
+        iconContent.className = 'planet-pin';
+        iconContent.style.backgroundColor = stop.dataset.color || '#f2c665';
+        iconContent.textContent = stop.dataset.number || '';
+        const marker = L.marker(points[index], {
+          title: `${stop.dataset.planet} · ${stop.querySelector('h3')?.textContent}`,
+          icon: L.divIcon({ className: 'planet-marker', html: iconContent, iconSize: [34, 34], iconAnchor: [17, 17], popupAnchor: [0, -16] }),
+        }).addTo(map);
+        const template = stop.querySelector<HTMLTemplateElement>('.stop-popup');
+        if (template) marker.bindPopup(template.content.firstElementChild!.cloneNode(true) as HTMLElement, { maxWidth: 270 });
+        marker.on('popupopen', () => selectStop(stop));
+        marker.on('popupclose', () => selectStop(null));
+        const showButton = stop.querySelector<HTMLButtonElement>('.show-stop');
+        if (showButton) {
+          showButton.hidden = false;
+          showButton.addEventListener('click', () => {
+            viewButtons.forEach(button => button.setAttribute('aria-pressed', 'false'));
+            map.setView(points[index], 16, { animate: !reduceMotion });
+            marker.openPopup();
+            mapContainer.scrollIntoView({ block: 'center', behavior: reduceMotion ? 'instant' : 'smooth' });
+          });
+        }
+      });
+
+      viewButtons.forEach(button => button.addEventListener('click', () => {
+        const view = button.dataset.mapView as keyof typeof views;
+        map.closePopup();
+        viewButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+        map.fitBounds(views[view], { padding: [38, 38], maxZoom: 16, animate: !reduceMotion });
+      }));
+      map.fitBounds(views.all, { padding: [38, 38], maxZoom: 13, animate: false });
+      document.getElementById('map-controls')!.hidden = false;
+    } catch {
+      mapStatus.textContent = 'The interactive map could not load. Use each stop’s Google Maps link to explore its location.';
+      mapStatus.hidden = false;
+    }
+  }
+
+  const copyButton = document.querySelector<HTMLButtonElement>('#copy-partner-link');
+  const shareStatus = document.getElementById('share-status');
+  if (copyButton && shareStatus && navigator.clipboard) {
+    copyButton.hidden = false;
+    copyButton.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(`${window.location.origin}${window.location.pathname}`);
+        shareStatus.textContent = 'Link copied.';
+      } catch {
+        shareStatus.textContent = 'Copy the page address from your browser to share it.';
+      }
+    });
+  }
+</script>
+
+<style>
+  .partner-intro { padding: 48px 0 46px; }
+  .partner-kicker { color: var(--blue); font-size: .875rem; font-weight: 700; margin-bottom: 18px; }
+  .partner-intro h1 { font-size: clamp(3.25rem, 6vw, 5.8rem); margin-bottom: 22px; }
+  .partner-intro h1 span { color: var(--yellow); }
+  .partner-description { max-width: 650px; font-size: 1.125rem; color: #e0e3df; }
+  .partner-dates { color: var(--yellow); font-weight: 700; margin: 24px 0; }
+  .partner-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 18px 24px; }
+  .partner-actions .button { font-size: 1rem; }
+  .partner-share { color: var(--paper); border: 0; border-bottom: 1px solid currentColor; background: transparent; padding: 6px 0; font-size: 1rem; }
+  #share-status { font-size: .875rem; }
+  .partner-map-section { padding: 52px 0; }
+  .partner-map-heading { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+  .partner-map-heading h2, .partner-details h2 { font-size: clamp(2.4rem, 4vw, 3.25rem); margin-bottom: 12px; }
+  .partner-map-heading p { font-size: 1rem; }
+  .partner-map-controls { display: flex; flex-wrap: wrap; gap: 8px; }
+  .partner-map-controls button { background: transparent; border: 1px solid var(--ink); border-radius: 4px; padding: 10px 14px; min-height: 44px; color: var(--ink); font-size: .875rem; font-weight: 700; }
+  .partner-map-controls button[aria-pressed="true"] { color: var(--paper); background: var(--night); }
+  .partner-planning-note { max-width: none; background: #e4ebeb; border-left: 4px solid #537d84; padding: 15px 20px; margin-bottom: 24px; font-size: 1rem; }
+  .partner-map-layout { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(300px, 1fr); gap: 24px; align-items: start; }
+  .partner-map-panel { min-width: 0; }
+  #planet-walk-map { width: 100%; height: 620px; border: 1px solid #b4b9b3; border-radius: 6px; background: #e0e6df; z-index: 0; }
+  .partner-map-status { font-size: .875rem; padding: 12px 0 0; }
+  .partner-map-caption { color: var(--muted); font-size: .875rem; margin-top: 14px; }
+  .partner-stops { max-height: 620px; overflow-y: auto; overscroll-behavior: contain; border-top: 2px solid var(--ink); }
+  .partner-stop-list { margin: 0; padding: 0; list-style: none; }
+  .partner-stop { display: flex; gap: 15px; padding: 21px 14px 21px 6px; border-bottom: 1px solid var(--line); }
+  .partner-stop.is-selected { background: #fff9e8; box-shadow: inset 4px 0 0 #936420; }
+  .partner-stop-number { display: flex; align-items: center; justify-content: center; flex-shrink: 0; height: 34px; width: 34px; border: 1px solid #17223066; border-radius: 50%; background: var(--stop-color); color: var(--ink); font-size: .875rem; font-weight: 800; }
+  .partner-stop-body { min-width: 0; }
+  .partner-planet { font-weight: 800; font-size: .875rem; margin-bottom: 5px; }
+  .partner-stop h3 { font-size: 1.7rem; margin: 0 0 9px; }
+  .partner-address { margin: 0; color: var(--muted); font-size: 1rem; line-height: 1.5; }
+  .partner-stop-note { margin-top: 10px; font-size: .875rem; line-height: 1.55; }
+  .partner-stop-actions { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-top: 12px; }
+  .partner-stop-actions a, .partner-stop-actions button { font-size: .875rem; font-weight: 700; border: 0; background: transparent; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; padding: 6px 0; min-height: 32px; }
+  .partner-details { padding: 12px 0 64px; }
+  .partner-details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; }
+  .partner-details p { font-size: 1rem; }
+  .partner-details p a { text-decoration: underline; text-underline-offset: 3px; }
+  .partner-details .button { font-size: 1rem; margin-top: 12px; }
+  .partner-scale table { width: 100%; border-collapse: collapse; margin-top: 24px; font-size: 1rem; }
+  .partner-scale caption { text-align: left; font-size: .875rem; margin-bottom: 12px; color: var(--muted); }
+  .partner-scale th, .partner-scale td { padding: 8px 0; text-align: left; border-bottom: 1px solid var(--line); }
+  .partner-scale td, .partner-scale thead th:last-child { text-align: right; }
+  .partner-scale tbody th { font-weight: 500; }
+  :global(.planet-marker) { background: none; border: 0; }
+  :global(.planet-pin) { display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border: 2px solid #172230; border-radius: 50%; box-shadow: 0 2px 6px #0004; color: #172230; font-family: 'DM Sans Variable', sans-serif; font-size: 14px; font-weight: 800; }
+  :global(.planet-popup) { font-family: 'DM Sans Variable', sans-serif; font-size: 14px; line-height: 1.5; color: #172230; }
+  :global(.planet-popup h3) { font-family: 'Barlow Condensed', sans-serif; font-size: 26px; margin: 0 0 10px; }
+  :global(.planet-popup p) { margin: 0 0 10px; }
+  :global(.planet-popup-planet) { font-weight: 800; }
+  :global(.planet-popup a) { text-decoration: underline; text-underline-offset: 3px; color: #234f5b; font-weight: 700; }
+  :global(.leaflet-container .leaflet-control-attribution) { font-size: 12px; }
+  :global(.leaflet-container a.leaflet-popup-close-button) { min-width: 30px; min-height: 30px; font-size: 22px; }
+  @media (max-width: 900px) {
+    .partner-map-heading { align-items: flex-start; flex-direction: column; }
+    .partner-map-layout { grid-template-columns: minmax(0, 1fr); }
+    #planet-walk-map { height: 470px; }
+    .partner-stops { max-height: none; overflow: visible; }
+    .partner-stop-list { display: grid; grid-template-columns: 1fr 1fr; }
+    .partner-stop { padding-right: 20px; }
+    .partner-details-grid { gap: 36px; }
+  }
+  @media (max-width: 600px) {
+    .partner-intro { padding: 34px 0; }
+    .partner-map-section { padding: 34px 0; }
+    .partner-map-controls { width: 100%; gap: 6px; }
+    .partner-map-controls button { font-size: .875rem; padding: 10px; }
+    #planet-walk-map { height: 410px; }
+    .partner-stop-list, .partner-details-grid { grid-template-columns: 1fr; }
+    .partner-stop-actions a, .partner-stop-actions button { min-height: 44px; }
+    .partner-details { padding-bottom: 44px; }
+  }
+  @media print {
+    .partner-intro { padding: 0 0 24px; }
+    .partner-intro h1 span, .partner-description, .partner-dates, .partner-kicker { color: #000; }
+    .partner-actions, .partner-map-controls, .partner-map-panel, .show-stop { display: none !important; }
+    .partner-map-layout, .partner-details-grid { display: block; }
+    .partner-stops { max-height: none; overflow: visible; }
+    .partner-stop { break-inside: avoid; }
+  }
+</style>
