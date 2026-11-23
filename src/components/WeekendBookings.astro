@@ -1,0 +1,47 @@
+---
+import {experiences} from '../data/festival';
+const choices = [
+  {slug:'vip-stargazing-beaver-run', label:'Saturday · November 28 · VIP', price:'$57 per person', action:'Book November 28 VIP', note:'Select November 28 in the Breckenridge Dark Sky Tour calendar. Existing reservations include the festival extras.'},
+  {slug:'frisco-historic-park-stargazing', label:'Friday · November 27 · Free', price:'Free · RSVP required', action:'Free Frisco RSVP', note:'Drop in anytime during the program. RSVP for attendance planning and weather updates.'},
+  {slug:'community-stargazing', label:'Saturday · November 28 · Free', price:'Free · RSVP required', action:'Free Breckenridge RSVP', note:'Meet near the Quicksilver chair base. RSVP for attendance planning and weather updates.'},
+].map(choice=>({...choice,event:experiences.find(event=>event.slug===choice.slug)!}));
+---
+<section class="section paper-section weekend-bookings" id="weekend-bookings" aria-labelledby="weekend-heading">
+  <div class="wrap">
+    <div class="section-heading">
+      <div><span class="eyebrow">Thanksgiving weekend · November 27–29, 2026</span><h2 id="weekend-heading">Choose your night.</h2></div>
+      <p class="section-aside">Book Saturday’s VIP tour or RSVP for a free telescope night. All times are local Colorado time (MST).</p>
+    </div>
+    <div class="weekend-options">
+      {choices.map(({event,label,price,action,note})=><article class:list={['weekend-option',{'weekend-vip':event.slug==='vip-stargazing-beaver-run'}]}>
+        <span class="eyebrow">{label}</span>
+        <h3><a href={`/program/${event.slug}/`}>{event.title}</a></h3>
+        <p class="weekend-price">{price}</p>
+        <p><strong>{event.time}</strong><br/>{event.venue}</p>
+        {event.slug==='vip-stargazing-beaver-run'&&<p>Guided observing, tea and coffee, and access to a warming area and fire.</p>}
+        <p class="weekend-note">{note}</p>
+        <a class="button button-dark" href={event.ctaHref}>{action}</a>
+      </article>)}
+    </div>
+    <p class="weekend-after">Keep exploring on Sunday, November 29: <a class="text-link" href="/program/create-among-the-stars/">Create Among the Stars at Ready Paint Fire!</a> Noon–3 PM · $40 plus taxes · Book directly with the studio.</p>
+    <p class="weekend-weather">Outdoor programs depend on conditions. Dress warmly and check your event page or booking updates before heading out.</p>
+  </div>
+</section>
+
+<style>
+  .weekend-bookings{padding-block:52px}
+  .weekend-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+  .weekend-option{display:flex;flex-direction:column;padding:27px;background:#faf7ef;border:1px solid var(--line);border-top:4px solid var(--green);border-radius:5px}
+  .weekend-vip{border-top-color:var(--yellow)}
+  .weekend-option .eyebrow{font-size:.65rem;margin-bottom:18px}
+  .weekend-option h3{font-size:2rem;margin-bottom:17px}
+  .weekend-option h3 a:hover{text-decoration:underline;text-underline-offset:4px}
+  .weekend-option p{font-size:.86rem;margin-bottom:17px}
+  .weekend-option .weekend-price{font-weight:700;color:var(--ink)}
+  .weekend-option .weekend-note{font-size:.78rem;color:var(--muted)}
+  .weekend-option .button{margin-top:auto;text-align:center;font-size:.8rem}
+  .weekend-after{max-width:none;font-size:.9rem;margin-top:25px}
+  .weekend-after .text-link{font-size:inherit}
+  .weekend-weather{font-size:.78rem;color:var(--muted);max-width:none;margin-top:16px}
+  @media(max-width:850px){.weekend-options{grid-template-columns:1fr}.weekend-option{padding:24px}.weekend-option .button{align-self:start}.weekend-bookings{padding-block:38px}}
+</style>
