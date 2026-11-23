@@ -47,7 +47,7 @@ const otherWorldsAdmission = '$10 adults · $15 ages 4–18 · free for children
 
 export const experiences: Experience[] = [
   {
-    slug: 'chelsea-kaiah-open-studio', title: 'Open Studio: Chelsea Kaiah', subtitle: 'Visit Breck Create’s November Artist in Residence', category: 'Arts & open studio', filters: ['arts', 'day'], accent: 'green', icon: 'spark', status: 'Confirmed · November 22',
+    slug: 'chelsea-kaiah-open-studio', title: 'Open Studio: Chelsea Kaiah', subtitle: 'Visit Breck Create’s November Artist in Residence', category: 'Arts & open studio', filters: ['arts', 'day'], accent: 'green', icon: 'spark', status: 'Past event · November 22', past: true,
     date: 'Sunday, November 22, 2026', time: '1:00–5:00 PM MST', venue: 'Tin Shop · Breckenridge Arts District',
     ctaHref: 'https://breckcreate.org/events/open-studio-chelsea-kaiah', ctaLabel: 'Breck Create event information',
     summary: 'Visit Artist in Residence Chelsea Kaiah at the Tin Shop to see the work she has been creating during her November residency. Her practice connects traditional materials and techniques with Native rights, sustainability, resilience, and healing.',
@@ -158,7 +158,7 @@ export const experiences: Experience[] = [
     opportunity: 'Local businesses, designers, makers, and public-space hosts could help create displays or host a planet stop.',
   },
   {
-    slug: 'wellness-under-the-sky', title: 'Celestial Sound Journey', subtitle: 'Hosted by Spirit Alchemy Studio', category: 'Wellness', filters: ['wellness'], accent: 'purple', image: 'spirit-alchemy-sound-journey', alt: 'Alison at Spirit Alchemy Studio with singing bowls and gongs', icon: 'moon', status: 'Confirmed · booking open',
+    slug: 'wellness-under-the-sky', title: 'Celestial Sound Journey', subtitle: 'Hosted by Spirit Alchemy Studio', category: 'Wellness', filters: ['wellness'], accent: 'purple', image: 'spirit-alchemy-sound-journey', alt: 'Alison at Spirit Alchemy Studio with singing bowls and gongs', icon: 'moon', status: 'Past event · November 21', past: true,
     date: 'Saturday, November 21, 2026', time: '4:00 PM & 6:00 PM MST · two separate sessions', venue: 'Spirit Alchemy Studio · 106 N French St, GL7, Breckenridge, CO 80424',
     ctaHref: 'https://spiritalchemystudio.as.me/schedule/59d4976b/category/Community%2520Classes/appointment/97147833/calendar/9409023', ctaLabel: 'Book with Spirit Alchemy',
     summary: 'A 60-minute moon-inspired guided meditation and sound journey with Alison at Spirit Alchemy Studio. Choose the 4 PM or 6 PM session.',
@@ -204,7 +204,7 @@ export const experiences: Experience[] = [
   },
   {
     slug: 'astrotours-stargazing-beaver-run', title: 'AstroTours Stargazing at Beaver Run', subtitle: 'A guided night under the stars', category: 'Guided astronomy tour', filters: ['night', 'family'], accent: 'blue',
-    image: 'friends-telescope', alt: 'Guests beside a telescope at an AstroTours astronomy program', icon: 'stars', status: 'Booking open · regular AstroTours program',
+    image: 'friends-telescope', alt: 'Guests beside a telescope at an AstroTours astronomy program', icon: 'stars', status: 'Past event · November 18', past: true,
     date: 'Wednesday, November 18, 2026', time: '5:30–7:15 PM MST', venue: 'Beaver Run Resort',
     ctaHref: 'https://www.astrotours.org/booking-form?referral=next_available_widget&bookings_sessionId=2mmoW0vwKcSFyxtOfCdKJxN7an24zMshm9KCnjBHzdQOldhQ7rGjz0RFTICH64XoLN77DRV6UuUUN1BDZlJ0s0ZpvnC4GecpGJTx&bookings_timezone=America/Denver', ctaLabel: 'Book November 18 Stargazing',
     summary: 'Keep looking up between the festival kickoff and main weekend. Join a regular guided AstroTours stargazing tour at Beaver Run Resort on November 18.',
@@ -218,7 +218,7 @@ export const experiences: Experience[] = [
     slug: 'vip-stargazing-beaver-run', title: 'VIP Stargazing at Beaver Run', subtitle: 'A special Breck Sky Fest experience', category: 'VIP experience', filters: ['night', 'family'], accent: 'orange',
     image: 'evening-telescope', alt: 'An AstroTours telescope ready for an evening program', icon: 'stars', status: 'Booking open · festival edition of the regular tour',
     date: 'Saturday, November 28, 2026', time: '5:30–7:30 PM MST', venue: 'Beaver Run Resort',
-    ctaHref: 'https://www.astrotours.org/booking-form?timezone=America%2FDenver&referral=booking_calendar_widget', ctaLabel: 'Book VIP Stargazing · $57',
+    ctaHref: 'https://www.astrotours.org/booking-calendar/breckenridge-dark-sky-tour-1?referral=service_list_widget', ctaLabel: 'Book VIP Stargazing · $57',
     summary: 'Enjoy guided telescope viewing and constellation stories at Beaver Run, with early access, tea and coffee service, and access to a warming area and fire. Book the existing November 28 Breckenridge Dark Sky Tour at the regular $57 price.',
     description: ['Celebrate Breck Sky Fest with a special VIP edition of the regular AstroTours Breckenridge tour at Beaver Run Resort on November 28. Admission stays at $57 per person. Select the existing November 28 Breckenridge Dark Sky Tour in the AstroTours booking calendar; no separate VIP reservation is needed.', 'Explore the night sky with AstroTours astronomers through guided telescope viewing, constellation pointing, and astronomy stories, with time for questions.', 'The festival experience includes early access, tea and coffee service, and access to a warming area and fire. The VIP program runs from 5:30 to 7:30 PM MST; check your booking confirmation for meeting details.', 'This is a separate, ticketed experience at Beaver Run, taking place the same night as the main Breck Sky Fest program at Breckenridge Ski Resort near the Quicksilver chair base area.'],
     highlights: ['Festival edition of the existing November 28 tour', '$57 per person · regular tour price with festival extras', 'Early access · program starts at 5:30 PM MST', 'Tea and coffee service included', 'Access to a warming area and fire', 'Guided telescope viewing and constellation stories'],
@@ -242,8 +242,8 @@ export const experiences: Experience[] = [
 ];
 
 export const faqs = [
-  {q:'When is Breck Sky Fest?', a:'The festival runs November 11–30, 2026. The main weekend is November 27–28, with free stargazing in Frisco on Friday and at the Quicksilver chair base in Breckenridge on Saturday. November 30 at Beaver Run is the weather backup for main-weekend astronomy. See the festival schedule for the full lineup.'},
-  {q:'Can I register yet?', a:'Free RSVPs are open for Frisco Historic Park Stargazing on November 27 and Main Festival Stargazing at Breckenridge Ski Resort on November 28. VIP Stargazing at Beaver Run on November 28 costs $57 per person and is limited to 22 guests. Use the festival schedule to register for these events and book directly with other hosts.'},
+  {q:'When is Breck Sky Fest?', a:'The festival runs November 11–30, 2026. Thanksgiving-weekend highlights run November 27–29, with free stargazing in Frisco on Friday and at the Quicksilver chair base in Breckenridge on Saturday, plus Create Among the Stars at Ready Paint Fire! on Sunday. November 30 at Beaver Run is the weather backup for main-weekend astronomy. See the festival schedule for the full lineup.'},
+  {q:'Can I register yet?', a:'Free RSVPs are open for Frisco Historic Park Stargazing on November 27 and Main Festival Stargazing at Breckenridge Ski Resort on November 28. The November 28 VIP festival edition of the existing Breckenridge Dark Sky Tour at Beaver Run costs $57 per person and runs 5:30–7:30 PM MST. Select November 28 in the AstroTours calendar; existing reservations include the festival extras. Check the calendar for current availability. Use the festival schedule to register for these events and book directly with other hosts.'},
   {q:'Is it suitable for children?', a:'Yes. Families can choose from Storytime, STEAM Saturday, community stargazing, and more. Check each event for age guidance. Children should stay with their accompanying adult.'},
   {q:'Do I need a telescope or astronomy experience?', a:'AstroTours provides telescopes at its stargazing programs. Beginners are welcome. Check individual event pages for any equipment you should bring.'},
   {q:'What should we wear?', a:'Bring a warm coat, insulating layers, a hat, gloves, warm socks, and sturdy footwear for possible snow or ice. Standing at a telescope can feel much colder than walking. A thermos and hand warmers can be useful.'},
