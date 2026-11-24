@@ -64,7 +64,7 @@ export const experiences: Experience[] = [
     summary: 'Create a galaxy-inspired painting in a Bob Ross–style class at Randall Barn. Breck Create brings an evening of art and cosmic inspiration to the festival on November 25, from 6 to 8:30 PM.',
     description: ['Join Breck Create at Randall Barn for Bob Ross Style Painting: Galaxies, a galaxy-inspired painting class during Breck Sky Fest.', 'The special festival session takes place on Wednesday, November 25, from 6 to 8:30 PM. Book this festival session directly with Breck Create.'],
     highlights: ['Galaxy-inspired Bob Ross–style painting', 'Hosted by Breck Create at Randall Barn', 'Wednesday, November 25 · 6–8:30 PM', 'See Breck Create for pricing and participation details'],
-    audience: 'Ages 17 and up · all experience levels', admission: '$41.25 for Breck Create members · $61.50 for nonmembers including fees', duration: '2.5 hours',
+    audience: 'Ages 17 and up · all experience levels', admission: '$61.50 for nonmembers including fees · see Breck Create for current member pricing', duration: '2.5 hours',
     practical: 'Wednesday, November 25, 6–8:30 PM MST at Randall Barn in the Breckenridge Arts District. See Breck Create’s booking page for pricing and contact Breck Create about age requirements or accessibility.',
     opportunity: 'Hosted by Breck Create as part of Breck Sky Fest.',
   },
