@@ -1,0 +1,44 @@
+---
+interface Props {
+  path: string;
+}
+
+const { path } = Astro.props;
+const isOverview = ['/', '/program/', '/visit/'].includes(path);
+const showFriday = isOverview || ['/program/frisco-historic-park-stargazing/', '/rsvp/frisco/'].includes(path);
+const showSaturday = isOverview || ['/program/community-stargazing/', '/program/vip-stargazing-beaver-run/', '/rsvp/breck/'].includes(path);
+---
+
+{(showFriday || showSaturday) && (
+  <aside class="weather-notice" aria-label="Stargazing weather update">
+    <div class="wrap">
+      <p class="weather-title">Stargazing weather update</p>
+      {showFriday && <p>Stargazing at Frisco Historic Park is still scheduled for <strong>Friday, November 27</strong>, from 5:30 to 7:30 PM MST. Clouds may limit telescope viewing.</p>}
+      {showSaturday && <p>Snow and clouds are forecast in Breckenridge for <strong>Saturday, November 28</strong>. Free stargazing at Quicksilver and VIP Stargazing at Beaver Run may be rescheduled.</p>}
+      <p>Check this site and your RSVP or booking email before heading out.</p>
+    </div>
+  </aside>
+)}
+
+<style>
+  .weather-notice {
+    padding-block: 1rem;
+    border-block-end: 3px solid var(--yellow);
+    background: #fff2ce;
+    color: var(--ink);
+  }
+
+  .weather-notice p {
+    max-width: 75ch;
+    font-size: 1rem;
+  }
+
+  .weather-notice p + p {
+    margin-top: 0.35rem;
+  }
+
+  .weather-notice .weather-title {
+    font-size: 1.125rem;
+    font-weight: 800;
+  }
+</style>

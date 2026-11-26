@@ -4,6 +4,7 @@ import '@fontsource/barlow-condensed/800.css';
 import '@fontsource-variable/dm-sans';
 import '../styles/global.css';
 import Icon from '../components/Icon.astro';
+import WeatherNotice from '../components/WeatherNotice.astro';
 import {festival} from '../data/festival';
 interface Props { title?: string; description?: string; image?: string; noindex?: boolean; }
 const {title='Breckenridge Sky Festival | Astronomy & Dark-Sky Festival', description=festival.description, image='/images/mountain-stars.webp', noindex=false} = Astro.props;
@@ -44,7 +45,10 @@ const current=(url:string)=>path===url||(url==='/program/'&&path.startsWith('/pr
         <details class="mobile-menu"><summary aria-label="Open navigation menu">Menu <span class="menu-lines" aria-hidden="true"></span></summary><nav aria-label="Mobile navigation">{nav.map(([label,url])=><a href={url} aria-current={current(url)?'page':undefined}>{label}</a>)}<a href="/about/">About the festival</a><a href="/gallery/">Photo gallery</a><a href="/contact/">Say hello</a></nav></details>
       </div>
     </header>
-    <main id="main" tabindex="-1"><slot/></main>
+    <main id="main" tabindex="-1">
+      <WeatherNotice path={path}/>
+      <slot/>
+    </main>
     <footer class="site-footer"><div class="wrap">
       <div class="footer-top"><div class="footer-brand"><a class="brand" href="/"><Icon name="stars" size={36}/><span>BRECK<span>SKY FEST</span></span></a><p>Breckenridge’s astronomy<br/>and dark-sky festival.</p><span class="footer-date">November 11–30, 2026 · Breckenridge &amp; Frisco</span></div>
         <div><h2>Come explore</h2><a href="/program/">Festival program</a><a href="/visit/">Plan your visit</a><a href="/visit/#questions">Frequently asked questions</a><a href="/gallery/">Photo gallery</a></div>
