@@ -1,0 +1,17 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import StargazingRsvp from '../../components/StargazingRsvp.astro';
+import { experiences } from '../../data/festival';
+
+const event = experiences.find(({ slug }) => slug === 'weather-backup-stargazing')!;
+const detailsHref = `/program/${event.slug}/`;
+---
+<Layout title="Free Monday Stargazing RSVP | Breck Sky Fest" description="Free RSVP for the Monday, November 30 weather backup at Beaver Run Resort in Breckenridge.">
+  <PageIntro eyebrow="Weather backup · Free admission" title="RSVP for Monday stargazing." description={`${event.date} · ${event.time} · ${event.venue}`} icon="stars"/>
+  <section class="section paper-section"><div class="wrap">
+    <p>Please submit a new free RSVP for Monday, including if you registered for Saturday. We’ll use your RSVP to plan attendance and send weather updates.</p>
+    <StargazingRsvp event="monday" title={event.title} date={event.date!} time={event.time!} venue={event.venue!} {detailsHref}/>
+    <p style="margin-top:30px"><a class="text-link" href={detailsHref}>See the full event details</a></p>
+  </div></section>
+</Layout>

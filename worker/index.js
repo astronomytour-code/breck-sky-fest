@@ -2,8 +2,9 @@ import { DurableObject } from 'cloudflare:workers';
 import { adminKeyDigest } from './admin-auth.js';
 const events={
   frisco:{id:'frisco-2026-11-27',label:'Frisco · 11/27',details:'Frisco Historic Park · Friday, November 27, 2026 · 5:30–7:30 PM MST.',slug:'frisco-historic-park-stargazing'},
-  boec:{id:'boec-2026-11-11',label:'BOEC public stargazing · 11/11',details:'Public accessible stargazing with BOEC · Wednesday, November 11, 2026 · 5:30–7:00 PM MST · BOEC Wilderness Campus',slug:'accessible-astronomy-boec'},
-  breck:{id:'breck-2026-11-28',label:'Breck Ski Resort main program · 11/28',details:'Main Festival Stargazing · Breckenridge Ski Resort · Quicksilver chair base area · Saturday, November 28, 2026 · 6:00–7:30 PM MST.',slug:'community-stargazing'}
+  boec:{id:'boec-2026-11-11',label:'BOEC public stargazing · 11/11',details:'Public accessible stargazing with BOEC · Wednesday, November 11, 2026 · 5:30–7:00 PM MST · BOEC Wilderness Campus',slug:'accessible-astronomy-boec',closedMessage:'Registration for November 11 BOEC stargazing is closed.'},
+  breck:{id:'breck-2026-11-28',label:'Breck Ski Resort main program · 11/28',details:'Main Festival Stargazing · Breckenridge Ski Resort · Quicksilver chair base area · Saturday, November 28, 2026 · 6:00–7:30 PM MST.',slug:'community-stargazing',closedMessage:'Saturday stargazing is canceled. Free Monday RSVPs are open at /rsvp/monday/.'},
+  monday:{id:'breck-2026-11-30',label:'Breck weather backup · 11/30',details:'Breck Sky Fest Weather Backup Night · Beaver Run Resort, Breckenridge · Monday, November 30, 2026 · 5:30–7:15 PM MST.',slug:'weather-backup-stargazing'}
 };
 const retiredProgramRoutes = new Map([
   ['/program/sky-day', '/program/community-stargazing/'],
@@ -56,13 +57,14 @@ export default {
         const raw=await request.text();if(new TextEncoder().encode(raw).byteLength>8192)return json({error:'Submission too large.'},413);
         const form=await new Request(request.url,{method:'POST',headers:{'Content-Type':request.headers.get('Content-Type')||''},body:raw}).formData();
         const name=String(form.get('name')||'').trim();const email=String(form.get('email')||'').trim().toLowerCase();const phone=String(form.get('phone')||'').trim();if(phone.length>50||(phone&&!/^[+\d\s().xX#-]+$/.test(phone)))return json({error:'Please enter a valid phone number, or leave the optional phone field blank.'},400);const people=Number(form.get('people'));const event=String(form.get('event')||'frisco');const accessibility=event==='boec'?String(form.get('accessibility')||'').trim():'';if(!Object.hasOwn(events,event)||accessibility.length>2000)return json({error:'Please select a valid event and keep accessibility notes under 2,000 characters.'},400);
-        if(event==='boec')return json({error:'Registration for November 11 BOEC stargazing is closed.'},410);
+        const selectedEvent=events[event];
+        if(selectedEvent.closedMessage)return json({error:selectedEvent.closedMessage},410);
         if(form.get('website'))return json({error:'Unable to save your RSVP. Please contact the festival.'},400);
         if(!name||name.length>120||email.length>254||! /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)||!Number.isInteger(people)||people<1||people>500)return json({error:'Please enter your name, a valid email address, and a whole-number group size from 1 to 500.'},400);
         const ipHash=await digest((request.headers.get('CF-Connecting-IP')||'local')+new Date().toISOString().slice(0,10));
-        const saved=await env.RSVP_STORE.get(env.RSVP_STORE.idFromName(events[event].id)).fetch('https://rsvp.internal/',{method:'POST',body:JSON.stringify({name,email,people,ipHash,accessibility,phone})});
+        const saved=await env.RSVP_STORE.get(env.RSVP_STORE.idFromName(selectedEvent.id)).fetch('https://rsvp.internal/',{method:'POST',body:JSON.stringify({name,email,people,ipHash,accessibility,phone})});
         if(request.headers.get('Accept')?.includes('application/json')||!saved.ok)return saved;
-        const data=await saved.json();return new Response(`<!doctype html><html lang="en"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>RSVP saved | Breck Sky Fest</title><link rel="stylesheet" href="/styles.css"><main style="max-width:650px;margin:60px auto;padding:24px"><h1>Your RSVP is saved.</h1><p>${events[event].details}</p><p>${event==='frisco'?'Drop in anytime during the evening. We’ll use your email for important weather updates.':'We’ll use your email for program details and important weather updates.'}</p><p>Reference: ${data.id}</p>${event==='breck'?'<p><a href="/program/vip-stargazing-beaver-run/">Explore VIP Stargazing at Beaver Run · $57 per person</a></p>':''}<a href="/program/${events[event].slug}/">Back to event details</a></main></html>`,{headers:{'Content-Type':'text/html;charset=utf-8','Cache-Control':'no-store'}});
+        const data=await saved.json();return new Response(`<!doctype html><html lang="en"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>RSVP saved | Breck Sky Fest</title><link rel="stylesheet" href="/styles.css"><main style="max-width:650px;margin:60px auto;padding:24px"><h1>Your RSVP is saved.</h1><p>${selectedEvent.details}</p><p>${event==='frisco'?'Drop in anytime during the evening. We’ll use your email for important weather updates.':'We’ll use your email for program details and important weather updates.'}</p><p>Reference: ${data.id}</p><a href="/program/${selectedEvent.slug}/">Back to event details</a></main></html>`,{headers:{'Content-Type':'text/html;charset=utf-8','Cache-Control':'no-store'}});
       }catch{return json({error:'Your RSVP could not be saved. Please try again or email Luke@AstroTours.org.'},503);}
     }
     return env.ASSETS.fetch(request);
