@@ -1,0 +1,71 @@
+---
+interface Props {
+  event: 'frisco' | 'monday';
+  title: string;
+  date: string;
+  time: string;
+  venue: string;
+  detailsHref: string;
+}
+
+const { event, title, date, time, venue, detailsHref } = Astro.props;
+---
+
+<form class="rsvp-form" action="/api/rsvp" method="post">
+  <input type="hidden" name="event" value={event}/>
+  <label for="attendee-name">Attendee name</label>
+  <input id="attendee-name" name="name" autocomplete="name" maxlength="120" required/>
+  <label for="attendee-email">Email address</label>
+  <input id="attendee-email" type="email" name="email" autocomplete="email" maxlength="254" required/>
+  <label for="attendee-phone">Phone number (optional)</label>
+  <input id="attendee-phone" type="tel" name="phone" autocomplete="tel" maxlength="50" aria-describedby="phone-help"/>
+  <p id="phone-help" style="font-size:1rem">Provide a number where the festival team can reach you about this event or important weather updates.</p>
+  <label for="attendee-count">Number of people attending (including you)</label>
+  <input id="attendee-count" type="number" inputmode="numeric" name="people" min="1" max="500" step="1" value="1" required/>
+  <div class="honeypot" aria-hidden="true">
+    <label for="website">Leave this blank</label>
+    <input id="website" name="website" tabindex="-1" autocomplete="off"/>
+  </div>
+  <p class="small" style="margin-top:20px;font-size:1rem">Your name, email, phone number if provided, and group size will be stored by the festival team for attendance planning and updates about this event.</p>
+  <button class="button button-dark" type="submit">Submit free RSVP · $0</button>
+  <p class="form-status" role="status" aria-live="polite"></p>
+</form>
+<div class="rsvp-confirmation" id="rsvp-confirmation" tabindex="-1" hidden>
+  <h2>You’re on the list.</h2>
+  <p>Your free RSVP has been saved for {title} on {date}.</p>
+  <p>{time} · {venue}. We’ll use your email for program details and important weather updates.</p>
+  <p id="rsvp-reference"></p>
+  <a class="text-link" href={detailsHref}>Back to event details</a>
+</div>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('.rsvp-form');
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+
+    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+    const status = form.querySelector<HTMLElement>('.form-status')!;
+    button.disabled = true;
+    status.textContent = 'Saving your RSVP…';
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || 'Unable to save your RSVP. Please try again.');
+
+      form.hidden = true;
+      const confirmation = document.getElementById('rsvp-confirmation')!;
+      document.getElementById('rsvp-reference')!.textContent = `RSVP reference: ${result.id}`;
+      confirmation.hidden = false;
+      confirmation.focus();
+    } catch (error) {
+      status.textContent = error instanceof Error ? error.message : 'Unable to save your RSVP. Please try again.';
+    } finally {
+      button.disabled = false;
+    }
+  });
+</script>

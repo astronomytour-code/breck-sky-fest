@@ -1,24 +1,22 @@
 ---
 import {experiences} from '../data/festival';
 const choices = [
-  {slug:'vip-stargazing-beaver-run', label:'Saturday · November 28 · VIP', price:'$57 per person', action:'Book November 28 VIP', note:'Select November 28 in the Breckenridge Dark Sky Tour calendar. Existing reservations include the festival extras.'},
-  {slug:'frisco-historic-park-stargazing', label:'Friday · November 27 · Free', price:'Free · RSVP required', action:'Free Frisco RSVP', note:'Drop in anytime during the program. RSVP for attendance planning and weather updates.'},
-  {slug:'community-stargazing', label:'Saturday · November 28 · Free', price:'Free · RSVP required', action:'Free Breckenridge RSVP', note:'Meet near the Quicksilver chair base. RSVP for attendance planning and weather updates.'},
+  {slug:'frisco-historic-park-stargazing', label:'Friday · November 27', action:'Free Frisco RSVP', note:'Going ahead with limited telescope viewing. Look for flags near the schoolhouse or gazebo.'},
+  {slug:'weather-backup-stargazing', label:'Monday · November 30', action:'Free Monday RSVP', note:'Breckenridge weather backup. Please RSVP for Monday even if you registered for Saturday.'},
 ].map(choice=>({...choice,event:experiences.find(event=>event.slug===choice.slug)!}));
 ---
 <section class="section paper-section weekend-bookings" id="weekend-bookings" aria-labelledby="weekend-heading">
   <div class="wrap">
     <div class="section-heading">
-      <div><span class="eyebrow">Thanksgiving weekend · November 27–29, 2026</span><h2 id="weekend-heading">Choose your night.</h2></div>
-      <p class="section-aside">Book Saturday’s VIP tour or RSVP for a free telescope night. All times are local Colorado time (MST).</p>
+      <div><span class="eyebrow">November 27–30, 2026</span><h2 id="weekend-heading">Choose your night.</h2></div>
+      <p class="section-aside">Friday in Frisco and Monday in Breckenridge are open for free RSVPs. Saturday’s outdoor stargazing is canceled. All times are MST.</p>
     </div>
     <div class="weekend-options">
-      {choices.map(({event,label,price,action,note})=><article class:list={['weekend-option',{'weekend-vip':event.slug==='vip-stargazing-beaver-run'}]}>
+      {choices.map(({event,label,action,note})=><article class="weekend-option">
         <span class="eyebrow">{label}</span>
         <h3><a href={`/program/${event.slug}/`}>{event.title}</a></h3>
-        <p class="weekend-price">{price}</p>
+        <p class="weekend-price">Free · RSVP required</p>
         <p><strong>{event.time}</strong><br/>{event.venue}</p>
-        {event.slug==='vip-stargazing-beaver-run'&&<p>Guided observing, tea and coffee, and access to a warming area and fire.</p>}
         <p class="weekend-note">{note}</p>
         <a class="button button-dark" href={event.ctaHref}>{action}</a>
       </article>)}
@@ -30,9 +28,8 @@ const choices = [
 
 <style>
   .weekend-bookings{padding-block:52px}
-  .weekend-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+  .weekend-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
   .weekend-option{display:flex;flex-direction:column;padding:27px;background:#faf7ef;border:1px solid var(--line);border-top:4px solid var(--green);border-radius:5px}
-  .weekend-vip{border-top-color:var(--yellow)}
   .weekend-option .eyebrow{font-size:.65rem;margin-bottom:18px}
   .weekend-option h3{font-size:2rem;margin-bottom:17px}
   .weekend-option h3 a:hover{text-decoration:underline;text-underline-offset:4px}

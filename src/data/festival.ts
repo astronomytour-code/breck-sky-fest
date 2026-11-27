@@ -35,14 +35,16 @@ export type Experience = {
   date?: string;
   time?: string;
   past?: boolean;
+  canceled?: boolean;
   ctaHref?: string;
   ctaLabel?: string;
 };
 
 export const boecStargazingVenue = 'BOEC Wilderness Campus · 300 Snowy Ridge Road';
 export const friscoStargazingVenue = 'Frisco Historic Park · 120 E. Main St., Frisco';
-export const breckStargazingVenue = 'Breckenridge Ski Resort · Quicksilver chair base area';
-export const breckStargazingTime = '6:00–7:30 PM MST';
+export const friscoWeather = 'About 57% cloud cover is forecast, so telescope views may be limited or unavailable. Expect around 29°F and bring extra warm layers.';
+export const saturdayWeather = 'Snow and about 87% cloud cover are forecast.';
+export const mondayWeather = 'About 44% cloud cover is forecast. Conditions can change and telescope viewing depends on clear breaks in the clouds.';
 const otherWorldsAdmission = '$10 adults · $15 ages 4–18 · free for children under 4 and eligible SNAP/Medicaid guests';
 
 export const experiences: Experience[] = [
@@ -125,16 +127,15 @@ export const experiences: Experience[] = [
     opportunity: 'Hosted by Ready Paint Fire! as part of Breck Sky Fest.',
   },
   {
-    slug: 'community-stargazing', title: 'Main Festival Stargazing', subtitle: 'Free community telescope viewing', category: 'After dark', filters: ['night', 'family'], accent: 'blue',
-    image: 'community-night', alt: 'Guests gathered around a telescope at an AstroTours evening program', icon: 'stars', status: 'Confirmed · free RSVP required',
-    date: 'Saturday, November 28, 2026', time: breckStargazingTime, venue: breckStargazingVenue,
-    ctaHref: '/rsvp/breck/', ctaLabel: 'Free RSVP · $0',
-    summary: 'Join us near the Quicksilver chair base for free telescope viewing, astronomy talks, and constellation pointing with AstroTours astronomers.',
-    description: ['Spend Saturday evening under the stars with Breck Sky Fest. Look through telescopes, learn to identify constellations, and ask astronomers your questions about the night sky.', `The program runs from ${breckStargazingTime} on November 28 at ${breckStargazingVenue}. RSVP for free so we can plan equipment and send important weather updates.`],
-    highlights: ['Telescope viewing with AstroTours astronomers', 'Short astronomy talks and constellation pointing', 'Free public stargazing near the Quicksilver chair base'],
-    audience: 'Families, visitors, and curious locals', admission: 'Free · $0 · RSVP required', duration: '90 minutes',
-    practical: 'Dress warmly for outdoor observing. Meet near the Quicksilver chair base. November 30 at Beaver Run Resort is the weather backup for astronomy affected by poor weather during the main weekend.',
-    opportunity: 'Contact the festival with questions about attending or access.',
+    slug: 'community-stargazing', title: 'Main Festival Stargazing', subtitle: 'Saturday program canceled', category: 'After dark', filters: ['night', 'family'], accent: 'blue',
+    image: 'community-night', alt: 'Guests gathered around a telescope at an AstroTours evening program', icon: 'stars', status: 'Canceled · Saturday RSVPs closed', canceled: true,
+    date: 'Saturday, November 28, 2026', time: '6:00–7:30 PM MST', venue: 'Breckenridge Ski Resort · Quicksilver chair base area',
+    summary: 'Saturday’s free stargazing at Quicksilver is canceled due to snow and heavy cloud cover. Join us for the weather backup on Monday, November 30.',
+    description: [saturdayWeather, 'Saturday RSVPs are closed. Please submit a new free RSVP if you can join us at Beaver Run Resort on Monday, November 30.'],
+    highlights: [],
+    audience: 'Families, visitors, and curious locals', admission: 'Canceled · RSVP closed', duration: '90 minutes',
+    practical: 'The Monday backup is at Beaver Run Resort.',
+    opportunity: 'Contact the festival with questions about attending the Monday backup.',
   },
   {
     slug: 'sky-school', title: 'Breck Sky School', subtitle: 'A school day with a bigger view', category: 'Schools & youth', filters: ['school', 'day'], accent: 'green',
@@ -192,14 +193,14 @@ export const experiences: Experience[] = [
   },
   {
     slug: 'frisco-historic-park-stargazing', title: 'Frisco Historic Park Stargazing', subtitle: 'Free drop-in astronomy', category: 'After dark', filters: ['night', 'family'], accent: 'blue',
-    image: 'friends-telescope', alt: 'Guests beside a telescope at an AstroTours astronomy program', icon: 'stars', status: 'Confirmed · free RSVP required',
+    image: 'friends-telescope', alt: 'Guests beside a telescope at an AstroTours astronomy program', icon: 'stars', status: 'Going ahead · limited telescope viewing',
     date: 'Friday, November 27, 2026', time: '5:30–7:30 PM MST · drop in anytime', venue: friscoStargazingVenue,
     ctaHref: '/rsvp/frisco/', ctaLabel: 'Free RSVP · $0',
-    summary: 'Drop in between 5:30 and 7:30 PM for free telescope viewing, short astronomy talks, and constellation pointing at Frisco Historic Park.',
-    description: ['Join Breck Sky Fest at Frisco Historic Park for an evening under the stars. Drop in anytime between 5:30 and 7:30 PM to look through telescopes, meet astronomers, explore the night sky, hear short astronomy talks, and learn to identify constellations overhead.', 'The program is free and designed as a flexible drop-in event, so guests may arrive and leave throughout the evening.', 'A free RSVP is required so we can plan attendance, provide enough equipment for everyone, and contact you with important weather updates, including postponement or cancellation.'],
-    highlights: ['Free telescope observing with astronomers', 'Short astronomy talks and constellation pointing', 'Flexible drop-in format: arrive and leave throughout the evening'],
+    summary: 'Friday stargazing is going ahead from 5:30 to 7:30 PM at Frisco Historic Park. Clouds may leave us with very little telescope viewing.',
+    description: [friscoWeather, 'Drop in anytime between 5:30 and 7:30 PM to meet the astronomers. We’ll watch for breaks in the clouds for telescope viewing.', 'The program is free and designed as a flexible drop-in event, so guests may arrive and leave throughout the evening.', 'A free RSVP is required so we can plan attendance, provide enough equipment for everyone, and contact you with important weather updates, including postponement or cancellation.'],
+    highlights: ['Free telescope observing with astronomers when the sky allows', 'Short astronomy talks and constellation pointing', 'Flexible drop-in format: arrive and leave throughout the evening'],
     audience: 'Families, visitors, and curious locals', admission: 'Free · $0 · RSVP required', duration: 'Drop in anytime from 5:30–7:30 PM',
-    practical: 'Dress warmly and keep children with their accompanying adult. A free RSVP is required for equipment planning and important weather updates. You do not need to arrive at 5:30 PM. Contact the festival with questions about access or facilities.',
+    practical: 'Look for Breck Sky Fest flags near the schoolhouse or gazebo to find our setup. Bring extra warm layers and keep children with their accompanying adult. A free RSVP is required for equipment planning and important weather updates. You do not need to arrive at 5:30 PM. Contact the festival with questions about access or facilities.',
     opportunity: 'Contact the festival with questions about attending or access.',
   },
   {
@@ -215,39 +216,38 @@ export const experiences: Experience[] = [
     opportunity: 'Hosted by AstroTours at Beaver Run Resort. Contact AstroTours with tour or accessibility questions.',
   },
   {
-    slug: 'vip-stargazing-beaver-run', title: 'VIP Stargazing at Beaver Run', subtitle: 'A special Breck Sky Fest experience', category: 'VIP experience', filters: ['night', 'family'], accent: 'orange',
-    image: 'evening-telescope', alt: 'An AstroTours telescope ready for an evening program', icon: 'stars', status: 'Booking open · festival edition of the regular tour',
+    slug: 'vip-stargazing-beaver-run', title: 'VIP Stargazing at Beaver Run', subtitle: 'Saturday program canceled', category: 'VIP experience', filters: ['night', 'family'], accent: 'orange',
+    image: 'evening-telescope', alt: 'An AstroTours telescope ready for an evening program', icon: 'stars', status: 'Canceled · Saturday, November 28', canceled: true,
     date: 'Saturday, November 28, 2026', time: '5:30–7:30 PM MST', venue: 'Beaver Run Resort',
-    ctaHref: 'https://www.astrotours.org/booking-calendar/breckenridge-dark-sky-tour-1?referral=service_list_widget', ctaLabel: 'Book VIP Stargazing · $57',
-    summary: 'Enjoy guided telescope viewing and constellation stories at Beaver Run, with early access, tea and coffee service, and access to a warming area and fire. Book the existing November 28 Breckenridge Dark Sky Tour at the regular $57 price.',
-    description: ['Celebrate Breck Sky Fest with a special VIP edition of the regular AstroTours Breckenridge tour at Beaver Run Resort on November 28. Admission stays at $57 per person. Select the existing November 28 Breckenridge Dark Sky Tour in the AstroTours booking calendar; no separate VIP reservation is needed.', 'Explore the night sky with AstroTours astronomers through guided telescope viewing, constellation pointing, and astronomy stories, with time for questions.', 'The festival experience includes early access, tea and coffee service, and access to a warming area and fire. The VIP program runs from 5:30 to 7:30 PM MST; check your booking confirmation for meeting details.', 'This is a separate, ticketed experience at Beaver Run, taking place the same night as the main Breck Sky Fest program at Breckenridge Ski Resort near the Quicksilver chair base area.'],
-    highlights: ['Festival edition of the existing November 28 tour', '$57 per person · regular tour price with festival extras', 'Early access · program starts at 5:30 PM MST', 'Tea and coffee service included', 'Access to a warming area and fire', 'Guided telescope viewing and constellation stories'],
-    audience: 'Families, visitors, and curious locals', admission: '$57 per person · advance booking required · check the booking calendar for current availability', duration: '2 hours',
-    practical: 'Book directly through AstroTours and select the November 28 Breckenridge tour at Beaver Run. The booking calendar calls this the Breckenridge Dark Sky Tour; this November 28 session includes the festival extras. Check your booking confirmation for meeting details. The VIP program runs from 5:30 to 7:30 PM MST. Dress warmly for outdoor observing, even with access to the warming area. Telescope viewing is weather-dependent; see AstroTours booking terms for weather and refund information. Existing reservations remain valid at their booked price and include the festival extras.',
-    opportunity: 'Hosted by AstroTours at Beaver Run Resort. Contact the festival with attendance or access questions.',
+    summary: 'Saturday’s VIP stargazing at Beaver Run is canceled due to snow and heavy cloud cover.',
+    description: [saturdayWeather, 'If you booked the Saturday VIP program, please check your booking email or contact AstroTours about your reservation. You can also RSVP separately for the free Monday backup.'],
+    highlights: [],
+    audience: 'Families, visitors, and curious locals', admission: 'Canceled', duration: '2 hours',
+    practical: 'The festival’s free weather backup is Monday, November 30, at Beaver Run Resort.',
+    opportunity: 'Contact AstroTours with questions about your Saturday VIP booking.',
   },
   {
-    slug: 'weather-backup-stargazing', title: 'Breck Sky Fest Weather Backup Night', subtitle: 'Weather backup date', category: 'After dark', filters: ['night', 'family'], accent: 'yellow',
-    image: 'evening-telescope', alt: 'An AstroTours telescope ready for an evening program', icon: 'stars', status: 'Weather backup · November 30',
-    date: 'Monday, November 30, 2026', time: '5:30–7:15 PM MST', venue: 'Beaver Run Resort',
-    ctaHref: 'https://www.astrotours.org/booking-calendar/breckenridge-dark-sky-tour-1?referral=service_list_widget', ctaLabel: 'Reserve Weather Backup Stargazing',
-    summary: 'The festival’s weather backup date at Beaver Run Resort for astronomy programming affected by poor weather during the main festival weekend.',
-    description: ['November 30 is reserved as the festival’s weather backup date for astronomy programming affected by poor weather during the main festival weekend.', 'Reserve the weather-backup astronomy program through AstroTours. The program runs from 5:30 to 7:15 PM MST. Check the booking page for admission and reservation details.'],
-    highlights: ['Weather backup for main-weekend astronomy programming', 'Location: Beaver Run Resort', 'Reservations handled directly by AstroTours'],
-    audience: 'See AstroTours booking details', admission: 'From $57 per person · reserve through AstroTours', duration: '1 hour 45 minutes',
-    practical: 'This is the weather backup night. Check the festival for weather changes and AstroTours for reservation details.',
-    opportunity: 'Contact the festival if you have questions about weather changes.',
+    slug: 'weather-backup-stargazing', title: 'Breck Sky Fest Weather Backup Night', subtitle: 'Free community telescope viewing', category: 'After dark', filters: ['night', 'family'], accent: 'yellow',
+    image: 'evening-telescope', alt: 'An AstroTours telescope ready for an evening program', icon: 'stars', status: 'Going ahead · free RSVP open',
+    date: 'Monday, November 30, 2026', time: '5:30–7:15 PM MST', venue: 'Beaver Run Resort · Breckenridge',
+    ctaHref: '/rsvp/monday/', ctaLabel: 'Free Monday RSVP · $0',
+    summary: 'Join us for free stargazing at Beaver Run Resort on Monday, November 30, the weather backup for Saturday’s canceled Breckenridge programs.',
+    description: ['Bring your questions for our astronomers and look through the telescopes when the sky allows. Please submit a new free RSVP for Monday, including if you registered for Saturday.', mondayWeather],
+    highlights: ['Telescope viewing with AstroTours astronomers, weather permitting', 'Free public stargazing at Beaver Run Resort', 'Monday, November 30 · 5:30–7:15 PM MST'],
+    audience: 'Families, visitors, and curious locals', admission: 'Free · $0 · RSVP required', duration: '1 hour 45 minutes',
+    practical: 'Dress warmly for outdoor stargazing and check this page and your RSVP email for weather updates before heading out.',
+    opportunity: 'Contact the festival with questions about weather changes or access.',
   },
 
 ];
 
 export const faqs = [
-  {q:'When is Breck Sky Fest?', a:'The festival runs November 11–30, 2026. Thanksgiving-weekend highlights run November 27–29, with free stargazing in Frisco on Friday and at the Quicksilver chair base in Breckenridge on Saturday, plus Create Among the Stars at Ready Paint Fire! on Sunday. November 30 at Beaver Run is the weather backup for main-weekend astronomy. See the festival schedule for the full lineup.'},
-  {q:'Can I register yet?', a:'Free RSVPs are open for Frisco Historic Park Stargazing on November 27 and Main Festival Stargazing at Breckenridge Ski Resort on November 28. The November 28 VIP festival edition of the existing Breckenridge Dark Sky Tour at Beaver Run costs $57 per person and runs 5:30–7:30 PM MST. Select November 28 in the AstroTours calendar; existing reservations include the festival extras. Check the calendar for current availability. Use the festival schedule to register for these events and book directly with other hosts.'},
+  {q:'When is Breck Sky Fest?', a:'The festival runs November 11–30, 2026. Frisco stargazing is going ahead on November 27 with limited telescope viewing. The November 28 outdoor stargazing programs in Breckenridge are canceled. See the schedule for indoor programs this weekend and the free November 30 stargazing backup at Beaver Run Resort.'},
+  {q:'Can I register yet?', a:'Free RSVPs are open for Friday, November 27 in Frisco and Monday, November 30 at Beaver Run Resort in Breckenridge. Saturday stargazing registration is closed. Please make a new RSVP for Monday if you previously registered for Saturday.'},
   {q:'Is it suitable for children?', a:'Yes. Families can choose from Storytime, STEAM Saturday, community stargazing, and more. Check each event for age guidance. Children should stay with their accompanying adult.'},
   {q:'Do I need a telescope or astronomy experience?', a:'AstroTours provides telescopes at its stargazing programs. Beginners are welcome. Check individual event pages for any equipment you should bring.'},
   {q:'What should we wear?', a:'Bring a warm coat, insulating layers, a hat, gloves, warm socks, and sturdy footwear for possible snow or ice. Standing at a telescope can feel much colder than walking. A thermos and hand warmers can be useful.'},
-  {q:'What happens if it is cloudy or snowy?', a:'Telescope viewing depends on the sky, and outdoor activities depend on conditions. November 30 at Beaver Run Resort is the festival’s weather backup for astronomy affected by poor weather during the main weekend. RSVP for free stargazing in Frisco or Breckenridge to receive updates about your event. For ticketed events, check the host’s booking information.'},
+  {q:'What happens if it is cloudy or snowy?', a:'Clouds can limit or prevent telescope viewing. Friday’s Frisco program is going ahead with limited visibility. Saturday’s Breckenridge stargazing is canceled due to snow and heavy cloud cover. RSVP for Monday’s weather backup to receive updates.'},
   {q:'Will the venues be accessible?', a:'Access varies by event. The Other Worlds exhibition at Old Masonic Hall is wheelchair accessible. Check individual event pages and contact the festival or event host with questions about paths, seating, or telescope access.'},
   {q:'Where should we park, and is there a shuttle?', a:'Check your event listing or booking confirmation for the venue and arrival details. For local transit, see Breck Free Ride on the visitor page.'},
   {q:'Is the festival only for Breckenridge?', a:'Events take place in Breckenridge and Frisco. Frisco Historic Park hosts free stargazing on November 27, and FDRD leads a night hike from Miners Creek Trailhead that evening.'},

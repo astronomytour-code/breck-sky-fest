@@ -1,4 +1,6 @@
 ---
+import { friscoWeather, mondayWeather, saturdayWeather } from '../data/festival';
+
 interface Props {
   path: string;
 }
@@ -7,14 +9,17 @@ const { path } = Astro.props;
 const isOverview = ['/', '/program/', '/visit/'].includes(path);
 const showFriday = isOverview || ['/program/frisco-historic-park-stargazing/', '/rsvp/frisco/'].includes(path);
 const showSaturday = isOverview || ['/program/community-stargazing/', '/program/vip-stargazing-beaver-run/', '/rsvp/breck/'].includes(path);
+const isMonday = ['/program/weather-backup-stargazing/', '/rsvp/monday/'].includes(path);
+const showMonday = showSaturday || isMonday;
 ---
 
-{(showFriday || showSaturday) && (
+{(showFriday || showSaturday || showMonday) && (
   <aside class="weather-notice" aria-label="Stargazing weather update">
     <div class="wrap">
       <p class="weather-title">Stargazing weather update</p>
-      {showFriday && <p>Stargazing at Frisco Historic Park is still scheduled for <strong>Friday, November 27</strong>, from 5:30 to 7:30 PM MST. Clouds may limit telescope viewing.</p>}
-      {showSaturday && <p>Snow and clouds are forecast in Breckenridge for <strong>Saturday, November 28</strong>. Free stargazing at Quicksilver and VIP Stargazing at Beaver Run may be rescheduled.</p>}
+      {showFriday && <p><strong>Friday, November 27 · Frisco is going ahead.</strong> Join us at Frisco Historic Park from 5:30 to 7:30 PM MST. {friscoWeather} Look for our flags near the schoolhouse or gazebo.</p>}
+      {showSaturday && <p><strong>Saturday, November 28 · Breckenridge stargazing is canceled.</strong> {saturdayWeather} This covers the free program at Quicksilver and VIP stargazing at Beaver Run.</p>}
+      {showMonday && <p><strong>Monday, November 30 · Breckenridge backup night.</strong> {mondayWeather} {path !== '/rsvp/monday/' && <a class="text-link" href="/rsvp/monday/">Free Monday RSVP</a>}</p>}
       <p>Check this site and your RSVP or booking email before heading out.</p>
     </div>
   </aside>
