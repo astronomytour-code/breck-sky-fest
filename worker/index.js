@@ -1,10 +1,10 @@
 import { DurableObject } from 'cloudflare:workers';
 import { adminKeyDigest } from './admin-auth.js';
 const events={
-  frisco:{id:'frisco-2026-11-27',label:'Frisco · 11/27',details:'Frisco Historic Park · Friday, November 27, 2026 · 5:30–7:30 PM MST.',slug:'frisco-historic-park-stargazing'},
+  frisco:{id:'frisco-2026-11-27',label:'Frisco · 11/27',details:'Frisco Historic Park · Friday, November 27, 2026 · 5:30–7:30 PM MST.',slug:'frisco-historic-park-stargazing',closedMessage:'Frisco registration is closed. Free Monday RSVPs are open at /rsvp/monday/.'},
   boec:{id:'boec-2026-11-11',label:'BOEC public stargazing · 11/11',details:'Public accessible stargazing with BOEC · Wednesday, November 11, 2026 · 5:30–7:00 PM MST · BOEC Wilderness Campus',slug:'accessible-astronomy-boec',closedMessage:'Registration for November 11 BOEC stargazing is closed.'},
-  breck:{id:'breck-2026-11-28',label:'Breck Ski Resort main program · 11/28',details:'Main Festival Stargazing · Breckenridge Ski Resort · Quicksilver chair base area · Saturday, November 28, 2026 · 6:00–7:30 PM MST.',slug:'community-stargazing',closedMessage:'Saturday stargazing is canceled. Free Monday RSVPs are open at /rsvp/monday/.'},
-  monday:{id:'breck-2026-11-30',label:'Breck weather backup · 11/30',details:'Breck Sky Fest Weather Backup Night · Beaver Run Resort, Breckenridge · Monday, November 30, 2026 · 5:30–7:15 PM MST.',slug:'weather-backup-stargazing'}
+  breck:{id:'breck-2026-11-28',label:'Breck Ski Resort main program · 11/28',details:'Main Festival Stargazing · Breckenridge Ski Resort · Quicksilver chair base area · Saturday, November 28, 2026 · 6:00–7:30 PM MST.',slug:'community-stargazing',closedMessage:'Saturday free stargazing is postponed. Free Monday RSVPs are open at /rsvp/monday/.'},
+  monday:{id:'breck-2026-11-30',label:'Breck weather backup · 11/30',details:'Breck Sky Fest Main Stargazing · Beaver Run Resort, Breckenridge · Monday, November 30, 2026 · 5:30–7:15 PM MST.',slug:'weather-backup-stargazing'}
 };
 const retiredProgramRoutes = new Map([
   ['/program/sky-day', '/program/community-stargazing/'],

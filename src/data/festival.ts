@@ -43,8 +43,8 @@ export type Experience = {
 export const boecStargazingVenue = 'BOEC Wilderness Campus · 300 Snowy Ridge Road';
 export const friscoStargazingVenue = 'Frisco Historic Park · 120 E. Main St., Frisco';
 export const friscoWeather = 'About 57% cloud cover is forecast, so telescope views may be limited or unavailable. Expect around 29°F and bring extra warm layers.';
-export const saturdayWeather = 'Snow and about 87% cloud cover are forecast.';
-export const mondayWeather = 'About 44% cloud cover is forecast. Conditions can change and telescope viewing depends on clear breaks in the clouds.';
+export const saturdayWeather = 'Snow and heavy cloud cover prompted the Saturday schedule change.';
+export const mondayWeather = 'Conditions can change and telescope viewing depends on clear breaks in the clouds. Please check your RSVP email for weather updates before heading out.';
 const otherWorldsAdmission = '$10 adults · $15 ages 4–18 · free for children under 4 and eligible SNAP/Medicaid guests';
 
 export const experiences: Experience[] = [
@@ -60,7 +60,7 @@ export const experiences: Experience[] = [
     opportunity: 'Hosted by Breck Create and included in the Breck Sky Fest program.',
   },
   {
-    slug: 'bob-ross-style-painting-galaxies', title: 'Bob Ross Style Painting: Galaxies', subtitle: 'A galaxy-inspired painting evening with Breck Create', category: 'Arts & making', filters: ['arts', 'night'], accent: 'purple', icon: 'stars', status: 'Confirmed · booking open',
+    slug: 'bob-ross-style-painting-galaxies', title: 'Bob Ross Style Painting: Galaxies', subtitle: 'A galaxy-inspired painting evening with Breck Create', category: 'Arts & making', filters: ['arts', 'night'], accent: 'purple', icon: 'stars', status: 'Past event · November 25', past: true,
     date: 'Wednesday, November 25, 2026', time: '6:00–8:30 PM MST', venue: 'Randall Barn · Breckenridge Arts District',
     ctaHref: 'https://tickets.breckcreate.org/Online/seatSelect.asp?createBO::WSmap=1&BOparam::WSmap::loadBestAvailable::performance_ids=94E3AF9D-C94C-4C87-A546-7DA3C5A32BA6', ctaLabel: 'Book with Breck Create',
     summary: 'Create a galaxy-inspired painting in a Bob Ross–style class at Randall Barn. Breck Create brings an evening of art and cosmic inspiration to the festival on November 25, from 6 to 8:30 PM.',
@@ -71,7 +71,7 @@ export const experiences: Experience[] = [
     opportunity: 'Hosted by Breck Create as part of Breck Sky Fest.',
   },
   {
-    slug: 'full-moon-hike-with-pride', image: 'fdrd-full-moon-pride', alt: 'Full Moon framed by bare tree branches with a rainbow across a blue night sky', title: 'Trail Tuesdays: Full Moon Hike with Pride at Gold Hill', subtitle: 'An educational and social hike with FDRD & Mountain Pride', category: 'Night hikes', filters: ['night'], accent: 'purple', icon: 'moon', status: 'Confirmed · registration open',
+    slug: 'full-moon-hike-with-pride', image: 'fdrd-full-moon-pride', alt: 'Full Moon framed by bare tree branches with a rainbow across a blue night sky', title: 'Trail Tuesdays: Full Moon Hike with Pride at Gold Hill', subtitle: 'An educational and social hike with FDRD & Mountain Pride', category: 'Night hikes', filters: ['night'], accent: 'purple', icon: 'moon', status: 'Past event · November 24', past: true,
     date: 'Tuesday, November 24, 2026', time: '5:30–7:30 PM MST', venue: 'Gold Hill Trailhead · Breckenridge',
     ctaHref: 'https://fdrd.app.neoncrm.com/nx/portal/neonevents/events?path=%2Fportal%2Fevents%2F43813', ctaLabel: 'Register with FDRD',
     summary: 'Join Friends of the Dillon Ranger District and Mountain Pride for a free educational and social full-moon hike from Gold Hill Trailhead. All are welcome! Bring a headlamp and a thermos for hot drinks before departure.',
@@ -82,7 +82,7 @@ export const experiences: Experience[] = [
     opportunity: 'Hosted by Friends of the Dillon Ranger District and Mountain Pride as part of Trail Tuesdays, included in the Breck Sky Fest program.',
   },
   {
-    slug: 'night-sky-hike-fdrd', image: 'fdrd-night-sky-hike', alt: 'Hikers on a snowy forest trail beneath a bright Moon', title: 'Night Sky Hike with FDRD', subtitle: 'A leisurely hike or snowshoe tour beneath the night sky', category: 'Night hikes', filters: ['night'], accent: 'blue', icon: 'mountain', status: 'Confirmed · registration open',
+    slug: 'night-sky-hike-fdrd', image: 'fdrd-night-sky-hike', alt: 'Hikers on a snowy forest trail beneath a bright Moon', title: 'Night Sky Hike with FDRD', subtitle: 'A leisurely hike or snowshoe tour beneath the night sky', category: 'Night hikes', filters: ['night'], accent: 'blue', icon: 'mountain', status: 'Past event · November 27', past: true,
     date: 'Friday, November 27, 2026', time: '7:30–9:30 PM MST', venue: 'Miners Creek Trailhead · Frisco',
     ctaHref: 'https://fdrd.app.neoncrm.com/nx/portal/neonevents/events?path=%2Fportal%2Fevents%2F62734', ctaLabel: 'Register with FDRD',
     summary: 'Explore the night sky on a leisurely, educational hike or snowshoe tour with Friends of the Dillon Ranger District. Take in sweeping views of Peak 1 and Rainbow Lake, with hot drinks before setting off.',
@@ -93,7 +93,7 @@ export const experiences: Experience[] = [
     opportunity: 'Hosted by Friends of the Dillon Ranger District as part of the Breck Sky Fest program.',
   },
   {
-    slug: 'reach-for-the-stars-storytime', title: 'Storytime at Other Worlds with Breck Sky Fest', subtitle: 'Stories, movement, and a fun craft', category: 'Storytime & play', filters: ['family', 'day', 'arts'], accent: 'green', icon: 'stars', status: 'Confirmed · November 25',
+    slug: 'reach-for-the-stars-storytime', title: 'Storytime at Other Worlds with Breck Sky Fest', subtitle: 'Stories, movement, and a fun craft', category: 'Storytime & play', filters: ['family', 'day', 'arts'], accent: 'green', icon: 'stars', status: 'Past event · November 25', past: true,
     date: 'Wednesday, November 25, 2026', time: '10:30 AM–11:30 AM MST', venue: 'Other Worlds exhibition · Old Masonic Hall · 136 S. Main St., Breckenridge',
     ctaHref: 'https://breckcreate.org/events/storytime', ctaLabel: 'Purchase Storytime tickets',
     summary: 'Bring your little explorers, ages 0–8, for an interactive Storytime inspired by the wonders of nature and themed for Breck Sky Fest. Enjoy a book, movement activity, and fun craft, then keep exploring through art and play.',
@@ -127,19 +127,19 @@ export const experiences: Experience[] = [
     opportunity: 'Hosted by Ready Paint Fire! as part of Breck Sky Fest.',
   },
   {
-    slug: 'community-stargazing', title: 'Main Festival Stargazing', subtitle: 'Saturday program canceled', category: 'After dark', filters: ['night', 'family'], accent: 'blue',
-    image: 'community-night', alt: 'Guests gathered around a telescope at an AstroTours evening program', icon: 'stars', status: 'Canceled · Saturday RSVPs closed', canceled: true,
+    slug: 'community-stargazing', title: 'Main Festival Stargazing', subtitle: 'Saturday program postponed', category: 'After dark', filters: ['night', 'family'], accent: 'blue',
+    image: 'community-night', alt: 'Guests gathered around a telescope at an AstroTours evening program', icon: 'stars', status: 'Postponed to November 30 · Saturday RSVPs closed', canceled: true,
     date: 'Saturday, November 28, 2026', time: '6:00–7:30 PM MST', venue: 'Breckenridge Ski Resort · Quicksilver chair base area',
-    summary: 'Saturday’s free stargazing at Quicksilver is canceled due to snow and heavy cloud cover. Join us for the weather backup on Monday, November 30.',
+    summary: 'Saturday’s free stargazing at Quicksilver has been postponed due to snow and heavy cloud cover. Join us on Monday, November 30 at Beaver Run Resort.',
     description: [saturdayWeather, 'Saturday RSVPs are closed. Please submit a new free RSVP if you can join us at Beaver Run Resort on Monday, November 30.'],
     highlights: [],
-    audience: 'Families, visitors, and curious locals', admission: 'Canceled · RSVP closed', duration: '90 minutes',
+    audience: 'Families, visitors, and curious locals', admission: 'Postponed · Saturday RSVP closed', duration: '90 minutes',
     practical: 'The Monday backup is at Beaver Run Resort.',
     opportunity: 'Contact the festival with questions about attending the Monday backup.',
   },
   {
     slug: 'sky-school', title: 'Breck Sky School', subtitle: 'A school day with a bigger view', category: 'Schools & youth', filters: ['school', 'day'], accent: 'green',
-    image: 'solar-discovery', alt: 'Young visitors and an adult looking through a solar telescope', icon: 'sun', status: 'Confirmed · participating students only',
+    image: 'solar-discovery', alt: 'Young visitors and an adult looking through a solar telescope', icon: 'sun', status: 'Past event · November 23', past: true,
     date: 'Monday, November 23, 2026', time: '8:00 AM–4:00 PM MST',
     summary: 'Astronomy and hands-on science at Breckenridge Elementary and Upper Blue Elementary on November 23. The school program runs from 8:00 AM to 4:00 PM MST; individual session details are arranged with the schools.',
     description: ['Breck Sky School takes place at Breckenridge Elementary and Upper Blue Elementary on Monday, November 23, 2026, so students can take part during their school day. The school program runs from 8:00 AM to 4:00 PM MST. Individual session lengths are arranged directly with the schools.', 'AstroTours and local partners are bringing astronomy and hands-on science stations to the two schools. The program is for participating students.'],
@@ -174,7 +174,7 @@ export const experiences: Experience[] = [
     image: 'family-telescope', alt: 'Visitors taking turns at an AstroTours telescope', icon: 'stars', status: 'Past event · November 11', past: true,
     date: 'Wednesday, November 11, 2026', time: '5:30–7:00 PM MST', venue: boecStargazingVenue,
     summary: 'Public accessible stargazing with BOEC, with priority for community members and their families who need increased accessibility.',
-    description: ['The November 11 festival kickoff featured accessible stargazing in partnership with Breckenridge Outdoor Education Center (BOEC).', 'The public evening session gave priority to community members and families with accessibility needs. For more telescope viewing this November, see the free Frisco and Breckenridge stargazing programs.'],
+    description: ['The November 11 festival kickoff featured accessible stargazing in partnership with Breckenridge Outdoor Education Center (BOEC).', 'The public evening session gave priority to community members and families with accessibility needs. For our next telescope viewing opportunity, see the free Monday Breckenridge stargazing program.'],
     highlights: ['Public evening accessible stargazing', 'Priority for community members and families who need increased accessibility', 'Hosted at the BOEC Wilderness Campus'],
     audience: 'Public, with priority for community members and families who need increased accessibility', admission: 'Registration closed', duration: '90 minutes',
     practical: 'The evening program was scheduled for 5:30–7:00 PM MST. BOEC also hosted a separate session for homeschool students.',
@@ -193,14 +193,13 @@ export const experiences: Experience[] = [
   },
   {
     slug: 'frisco-historic-park-stargazing', title: 'Frisco Historic Park Stargazing', subtitle: 'Free drop-in astronomy', category: 'After dark', filters: ['night', 'family'], accent: 'blue',
-    image: 'friends-telescope', alt: 'Guests beside a telescope at an AstroTours astronomy program', icon: 'stars', status: 'Going ahead · limited telescope viewing',
+    image: 'friends-telescope', alt: 'Guests beside a telescope at an AstroTours astronomy program', icon: 'stars', status: 'Past event · November 27', past: true,
     date: 'Friday, November 27, 2026', time: '5:30–7:30 PM MST · drop in anytime', venue: friscoStargazingVenue,
-    ctaHref: '/rsvp/frisco/', ctaLabel: 'Free RSVP · $0',
-    summary: 'Friday stargazing is going ahead from 5:30 to 7:30 PM at Frisco Historic Park. Clouds may leave us with very little telescope viewing.',
-    description: [friscoWeather, 'Drop in anytime between 5:30 and 7:30 PM to meet the astronomers. We’ll watch for breaks in the clouds for telescope viewing.', 'The program is free and designed as a flexible drop-in event, so guests may arrive and leave throughout the evening.', 'A free RSVP is required so we can plan attendance, provide enough equipment for everyone, and contact you with important weather updates, including postponement or cancellation.'],
+    summary: 'Friday’s stargazing date at Frisco Historic Park has passed. Join us for the free Breckenridge stargazing program on Monday, November 30.',
+    description: ['The Frisco Historic Park program was scheduled for Friday, November 27, from 5:30 to 7:30 PM. Registration is now closed. Our next free stargazing program is Monday, November 30 at Beaver Run Resort in Breckenridge.'],
     highlights: ['Free telescope observing with astronomers when the sky allows', 'Short astronomy talks and constellation pointing', 'Flexible drop-in format: arrive and leave throughout the evening'],
     audience: 'Families, visitors, and curious locals', admission: 'Free · $0 · RSVP required', duration: 'Drop in anytime from 5:30–7:30 PM',
-    practical: 'Look for Breck Sky Fest flags near the schoolhouse or gazebo to find our setup. Bring extra warm layers and keep children with their accompanying adult. A free RSVP is required for equipment planning and important weather updates. You do not need to arrive at 5:30 PM. Contact the festival with questions about access or facilities.',
+    practical: 'Friday registration is closed. Visit the Monday program page for the next stargazing opportunity.',
     opportunity: 'Contact the festival with questions about attending or access.',
   },
   {
@@ -227,11 +226,11 @@ export const experiences: Experience[] = [
     opportunity: 'Contact AstroTours with questions about your Saturday VIP booking.',
   },
   {
-    slug: 'weather-backup-stargazing', title: 'Breck Sky Fest Weather Backup Night', subtitle: 'Free community telescope viewing', category: 'After dark', filters: ['night', 'family'], accent: 'yellow',
+    slug: 'weather-backup-stargazing', title: 'Breck Sky Fest Main Stargazing · Monday', subtitle: 'Rescheduled free community telescope viewing', category: 'After dark', filters: ['night', 'family'], accent: 'yellow',
     image: 'evening-telescope', alt: 'An AstroTours telescope ready for an evening program', icon: 'stars', status: 'Going ahead · free RSVP open',
     date: 'Monday, November 30, 2026', time: '5:30–7:15 PM MST', venue: 'Beaver Run Resort · Breckenridge',
     ctaHref: '/rsvp/monday/', ctaLabel: 'Free Monday RSVP · $0',
-    summary: 'Join us for free stargazing at Beaver Run Resort on Monday, November 30, the weather backup for Saturday’s canceled Breckenridge programs.',
+    summary: 'Join us for free stargazing at Beaver Run Resort on Monday, November 30, the rescheduled main festival stargazing night.',
     description: ['Bring your questions for our astronomers and look through the telescopes when the sky allows. Please submit a new free RSVP for Monday, including if you registered for Saturday.', mondayWeather],
     highlights: ['Telescope viewing with AstroTours astronomers, weather permitting', 'Free public stargazing at Beaver Run Resort', 'Monday, November 30 · 5:30–7:15 PM MST'],
     audience: 'Families, visitors, and curious locals', admission: 'Free · $0 · RSVP required', duration: '1 hour 45 minutes',
@@ -242,12 +241,12 @@ export const experiences: Experience[] = [
 ];
 
 export const faqs = [
-  {q:'When is Breck Sky Fest?', a:'The festival runs November 11–30, 2026. Frisco stargazing is going ahead on November 27 with limited telescope viewing. The November 28 outdoor stargazing programs in Breckenridge are canceled. See the schedule for indoor programs this weekend and the free November 30 stargazing backup at Beaver Run Resort.'},
-  {q:'Can I register yet?', a:'Free RSVPs are open for Friday, November 27 in Frisco and Monday, November 30 at Beaver Run Resort in Breckenridge. Saturday stargazing registration is closed. Please make a new RSVP for Monday if you previously registered for Saturday.'},
+  {q:'When is Breck Sky Fest?', a:'The festival runs November 11–30, 2026. Saturday’s free outdoor stargazing has been postponed to Monday, November 30 at Beaver Run Resort. Saturday’s VIP session will not take place. Indoor programs remain on schedule.'},
+  {q:'Can I register yet?', a:'Free RSVPs are open for Monday, November 30 at Beaver Run Resort in Breckenridge. Saturday stargazing registration is closed. Please make a new RSVP for Monday if you previously registered for Saturday.'},
   {q:'Is it suitable for children?', a:'Yes. Families can choose from Storytime, STEAM Saturday, community stargazing, and more. Check each event for age guidance. Children should stay with their accompanying adult.'},
   {q:'Do I need a telescope or astronomy experience?', a:'AstroTours provides telescopes at its stargazing programs. Beginners are welcome. Check individual event pages for any equipment you should bring.'},
   {q:'What should we wear?', a:'Bring a warm coat, insulating layers, a hat, gloves, warm socks, and sturdy footwear for possible snow or ice. Standing at a telescope can feel much colder than walking. A thermos and hand warmers can be useful.'},
-  {q:'What happens if it is cloudy or snowy?', a:'Clouds can limit or prevent telescope viewing. Friday’s Frisco program is going ahead with limited visibility. Saturday’s Breckenridge stargazing is canceled due to snow and heavy cloud cover. RSVP for Monday’s weather backup to receive updates.'},
+  {q:'What happens if it is cloudy or snowy?', a:'Clouds can limit or prevent telescope viewing. Saturday’s free Breckenridge stargazing is postponed due to snow and heavy cloud cover. RSVP for Monday’s rescheduled program to receive updates.'},
   {q:'Will the venues be accessible?', a:'Access varies by event. The Other Worlds exhibition at Old Masonic Hall is wheelchair accessible. Check individual event pages and contact the festival or event host with questions about paths, seating, or telescope access.'},
   {q:'Where should we park, and is there a shuttle?', a:'Check your event listing or booking confirmation for the venue and arrival details. For local transit, see Breck Free Ride on the visitor page.'},
   {q:'Is the festival only for Breckenridge?', a:'Events take place in Breckenridge and Frisco. Frisco Historic Park hosts free stargazing on November 27, and FDRD leads a night hike from Miners Creek Trailhead that evening.'},

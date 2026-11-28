@@ -1,17 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import PageIntro from '../../components/PageIntro.astro';
-import StargazingRsvp from '../../components/StargazingRsvp.astro';
-import { experiences } from '../../data/festival';
-
-const event = experiences.find(({ slug }) => slug === 'frisco-historic-park-stargazing')!;
-const detailsHref = `/program/${event.slug}/`;
 ---
-<Layout title="Free Frisco Stargazing RSVP | Breck Sky Fest" description="Free RSVP for Frisco Historic Park Stargazing on November 27, 2026. The program is going ahead with limited telescope viewing.">
-  <PageIntro eyebrow="Free admission · $0" title="RSVP for Frisco stargazing." description={`${event.date} · ${event.time} · ${event.venue}`} icon="stars"/>
+<Layout title="Frisco Stargazing RSVP Closed | Breck Sky Fest" description="November 27 Frisco stargazing registration is closed. Join us Monday in Breckenridge." noindex>
+  <PageIntro eyebrow="November 27 · Past event" title="Frisco RSVPs are closed." description="The November 27 stargazing date has passed." icon="stars"/>
   <section class="section paper-section"><div class="wrap">
-    <p>RSVP so we can plan ahead and contact you about weather changes. Drop in anytime during the program.</p>
-    <StargazingRsvp event="frisco" title={event.title} date={event.date!} time={event.time!} venue={event.venue!} {detailsHref}/>
-    <p style="margin-top:30px"><a class="text-link" href={detailsHref}>See the full event details</a></p>
+    <p>Our next free stargazing program is Monday, November 30, from 5:30 to 7:15 PM at Beaver Run Resort in Breckenridge.</p>
+    <div class="actions"><a class="button button-dark" href="/rsvp/monday/">Free Monday RSVP · $0</a></div>
   </div></section>
 </Layout>

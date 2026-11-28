@@ -1,15 +1,14 @@
 ---
 import {experiences} from '../data/festival';
 const choices = [
-  {slug:'frisco-historic-park-stargazing', label:'Friday · November 27', action:'Free Frisco RSVP', note:'Going ahead with limited telescope viewing. Look for flags near the schoolhouse or gazebo.'},
-  {slug:'weather-backup-stargazing', label:'Monday · November 30', action:'Free Monday RSVP', note:'Breckenridge weather backup. Please RSVP for Monday even if you registered for Saturday.'},
+  {slug:'weather-backup-stargazing', label:'Monday · November 30', action:'Free Monday RSVP', note:'Rescheduled main festival stargazing. Please RSVP for Monday even if you registered for Saturday.'},
 ].map(choice=>({...choice,event:experiences.find(event=>event.slug===choice.slug)!}));
 ---
 <section class="section paper-section weekend-bookings" id="weekend-bookings" aria-labelledby="weekend-heading">
   <div class="wrap">
     <div class="section-heading">
-      <div><span class="eyebrow">November 27–30, 2026</span><h2 id="weekend-heading">Choose your night.</h2></div>
-      <p class="section-aside">Friday in Frisco and Monday in Breckenridge are open for free RSVPs. Saturday’s outdoor stargazing is canceled. All times are MST.</p>
+      <div><span class="eyebrow">November 28–30, 2026</span><h2 id="weekend-heading">Join us Monday night.</h2></div>
+      <p class="section-aside">Saturday’s free outdoor stargazing has been postponed to Monday. Saturday’s VIP session will not take place. Indoor programs remain on schedule. All times are MST.</p>
     </div>
     <div class="weekend-options">
       {choices.map(({event,label,action,note})=><article class="weekend-option">
@@ -21,6 +20,7 @@ const choices = [
         <a class="button button-dark" href={event.ctaHref}>{action}</a>
       </article>)}
     </div>
+    <p class="weekend-after">Join <a class="text-link" href="/program/cosmic-creators-steam-saturday/">STEAM Saturday at Other Worlds</a> on November 28, 10 AM–1 PM. Indoor activities remain on schedule.</p>
     <p class="weekend-after">Keep exploring on Sunday, November 29: <a class="text-link" href="/program/create-among-the-stars/">Create Among the Stars at Ready Paint Fire!</a> Noon–3 PM · $40 plus taxes · Book directly with the studio.</p>
     <p class="weekend-weather">Outdoor programs depend on conditions. Dress warmly and check your event page or booking updates before heading out.</p>
   </div>
@@ -28,7 +28,7 @@ const choices = [
 
 <style>
   .weekend-bookings{padding-block:52px}
-  .weekend-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+  .weekend-options{display:grid;grid-template-columns:1fr;gap:22px}
   .weekend-option{display:flex;flex-direction:column;padding:27px;background:#faf7ef;border:1px solid var(--line);border-top:4px solid var(--green);border-radius:5px}
   .weekend-option .eyebrow{font-size:.65rem;margin-bottom:18px}
   .weekend-option h3{font-size:2rem;margin-bottom:17px}
